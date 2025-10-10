@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Project Codes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #333;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .project {
+            margin-bottom: 40px;
+            border: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        .project-header {
+            background: #333;
+            color: white;
+            padding: 10px 15px;
+            margin: -20px -20px 20px -20px;
+        }
+
+        .project-header h2 {
+            font-size: 1.2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #666;
+            color: white;
+            padding: 3px 8px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 15px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .copy-btn {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .copy-btn:hover {
+            background: #555;
+        }
+
+        .toc {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .toc h2 {
+            margin-bottom: 15px;
+        }
+
+        .toc ol {
+            margin-left: 20px;
+        }
+
+        .toc a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>All Project Source Codes</h1>
+            <p>Complete collection of 20 projects</p>
+        </header>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#project-1">College Event Poster (HTML + CSS)</a></li>
+                <li><a href="#project-2">Digital Clock (JavaScript)</a></li>
+                <li><a href="#project-3">Employee Salary Calculator (TypeScript)</a></li>
+                <li><a href="#project-4">Feedback Form (JavaScript)</a></li>
+                <li><a href="#project-5">Image Slider Gallery (Bootstrap)</a></li>
+                <li><a href="#project-6">Personal Profile Card (HTML + CSS)</a></li>
+                <li><a href="#project-7">Portfolio with Navbar (Bootstrap)</a></li>
+                <li><a href="#project-8">Pricing Table (Bootstrap)</a></li>
+                <li><a href="#project-9">Product Landing Page (Bootstrap)</a></li>
+                <li><a href="#project-10">Quiz Application (JavaScript)</a></li>
+                <li><a href="#project-11">Restaurant Menu (HTML + CSS)</a></li>
+                <li><a href="#project-12">Resume Web Page (HTML + CSS)</a></li>
+                <li><a href="#project-13">Simple Calculator (JavaScript)</a></li>
+                <li><a href="#project-14">Student Class Example (TypeScript)</a></li>
+                <li><a href="#project-15">Student Marks Table (JavaScript)</a></li>
+                <li><a href="#project-16">Student Registration Form (Bootstrap + JS)</a></li>
+                <li><a href="#project-17">Temperature Converter (JavaScript)</a></li>
+                <li><a href="#project-18">To-Do List Application (JavaScript)</a></li>
+                <li><a href="#project-19">Travel Destination Page (HTML + CSS)</a></li>
+                <li><a href="#project-20">Course List Display - Simulated Angular (JavaScript)</a></li>
+            </ol>
+        </div>
+
+        <!-- Project 1 -->
+        <div class="project" id="project-1">
+            <div class="project-header">
+                <h2>1. College Event Poster <span class="badge">HTML + CSS</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code1')">Copy Code</button>
+            <pre><code id="code1">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;
+  &lt;title&gt;TechFusion 2025 — College Fest&lt;/title&gt;
+  &lt;style&gt;
+    :root{
+      --bg:#fff7ef;
+      --card:#ffffff;
+      --accent:#ff6b6b;
+      --accent-2:#ffd166;
+      --text:#102a43;
+      --muted:#556270;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#fff 0%,var(--bg) 100%);padding:28px;display:flex;align-items:center;justify-content:center;min-height:100vh}
+
+    .poster{
+      width:900px;max-width:96vw;background:var(--card);border-radius:var(--radius);overflow:hidden;border:6px solid var(--accent-2);box-shadow:0 18px 40px rgba(15,30,60,0.08);
+    }
+
+    .banner{
+      width:100%;height:320px;background-image:linear-gradient(rgba(0,0,0,0.28),rgba(0,0,0,0.16)),url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=');
+      background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:28px;color:white
+    }
+
+    .title{
+      font-size:2.2rem;margin:0;line-height:1.02;font-weight:700;text-shadow:0 6px 18px rgba(0,0,0,0.35)
+    }
+    .subtitle{margin:6px 0 0;font-weight:600;opacity:0.95}
+
+    .content{display:flex;gap:22px;padding:26px}
+
+    .left{flex:1;min-width:240px}
+    .right{width:300px}
+
+    .card{background:linear-gradient(180deg,#fff,#fffafa);padding:18px;border-radius:12px;border:1px solid rgba(16,42,67,0.06)}
+
+    h3{margin:0 0 10px;color:var(--text)}
+    p{margin:0 0 10px;color:var(--muted)}
+
+    .details{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:8px}
+    .detail{background:linear-gradient(90deg,rgba(255,255,255,0.8),rgba(255,255,255,0.6));padding:10px;border-radius:8px;border:1px dashed rgba(16,42,67,0.04);font-weight:600;color:var(--text);text-align:center}
+
+    .cta{display:flex;gap:12px;align-items:center;margin-top:14px}
+    .btn{background:var(--accent);color:white;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700;border:0;display:inline-block}
+    .btn.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent);font-weight:700}
+
+    .sponsors{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .sponsors img{height:36px;opacity:0.9}
+
+    .schedule ul{padding-left:18px;margin:0}
+    .schedule li{margin:8px 0}
+
+    .poster-footer{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:linear-gradient(90deg,rgba(255,215,102,0.12),rgba(255,107,107,0.06));border-top:1px solid rgba(16,42,67,0.03)}
+    .tag{font-weight:700;color:var(--accent-2)}
+
+    @media (max-width:880px){
+      .content{flex-direction:column}
+      .right{width:100%}
+      .banner{height:220px;padding:18px}
+      .title{font-size:1.6rem}
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;article class="poster" role="region" aria-label="College event poster"&gt;
+    &lt;div class="banner"&gt;
+      &lt;div&gt;
+        &lt;h1 class="title"&gt;TechFusion 2025&lt;/h1&gt;
+        &lt;div class="subtitle"&gt;Innovation • Robotics • Hackathons&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="content"&gt;
+      &lt;div class="left"&gt;
+        &lt;section class="card"&gt;
+          &lt;h3&gt;What is TechFusion?&lt;/h3&gt;
+          &lt;p&gt;TechFusion is an inter-college technology festival showcasing student projects, workshops on AI & IoT, competitive hackathons, and guest talks from industry experts. Join us for hands-on learning and networking.&lt;/p&gt;
+
+          &lt;div class="details" aria-hidden="false"&gt;
+            &lt;div class="detail"&gt;📅 20–22 Nov 2025&lt;/div&gt;
+            &lt;div class="detail"&gt;📍 Sanjivani University Campus&lt;/div&gt;
+            &lt;div class="detail"&gt;⏰ 9:00 AM — 6:00 PM&lt;/div&gt;
+            &lt;div class="detail"&gt;🎫 Free Registration&lt;/div&gt;
+          &lt;/div&gt;
+
+          &lt;div class="cta"&gt;
+            &lt;a class="btn" href="#register"&gt;Register Now&lt;/a&gt;
+            &lt;a class="btn secondary" href="#schedule"&gt;View Schedule&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section class="card" style="margin-top:14px"&gt;
+          &lt;h3&gt;Highlights&lt;/h3&gt;
+          &lt;ul class="schedule"&gt;
+            &lt;li&gt;Hackathon — 24-hour team challenge&lt;/li&gt;
+            &lt;li&gt;Robotics Workshop — Build & test&lt;/li&gt;
+            &lt;li&gt;AI Talk — Industry experts&lt;/li&gt;
+            &lt;li&gt;Project Exhibition — Student showcases&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/section&gt;
+      &lt;/div&gt;
+
+      &lt;aside class="right"&gt;
+        &lt;div class="card"&gt;
+          &lt;h3&gt;Event Schedule (Day 1)&lt;/h3&gt;
+          &lt;p&gt;&lt;strong&gt;9:00&lt;/strong&gt; — Opening & Keynote&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;11:00&lt;/strong&gt; — Workshops&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;14:00&lt;/strong&gt; — Lunch & Expo&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;16:00&lt;/strong&gt; — Panel Discussion&lt;/p&gt;
+
+          &lt;div class="sponsors" aria-label="Sponsors"&gt;
+            &lt;img src="https://via.placeholder.com/120x36?text=Sponsor+1" alt="Sponsor 1"&gt;
+            &lt;img src="https://via.placeholder.com/120x36?text=Sponsor+2" alt="Sponsor 2"&gt;
+            &lt;img src="https://via.placeholder.com/120x36?text=Sponsor+3" alt="Sponsor 3"&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="card" style="margin-top:14px;text-align:center"&gt;
+          &lt;h3&gt;Contact&lt;/h3&gt;
+          &lt;p&gt;Email: events@sanjivani.edu.in&lt;/p&gt;
+          &lt;p&gt;Phone: +91 98765 43210&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/aside&gt;
+    &lt;/div&gt;
+
+    &lt;div class="poster-footer"&gt;
+      &lt;div class="tag"&gt;#TechFusion2025&lt;/div&gt;
+      &lt;div&gt;Follow us on social media • @TechFusion&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project" id="project-2">
+            <div class="project-header">
+                <h2>2. Digital Clock <span class="badge">JavaScript</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code2')">Copy Code</button>
+            <pre><code id="code2">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Digital Clock&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: 'Poppins', sans-serif; display:flex; justify-content:center; align-items:center; height:100vh; background:#f5f5f5; }
+    .clock { font-size:4rem; background:white; padding:50px 80px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;div class="clock" id="clock"&gt;00:00:00&lt;/div&gt;
+
+  &lt;script&gt;
+    function updateClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      let seconds = now.getSeconds();
+
+      hours = hours &lt; 10 ? '0'+hours : hours;
+      minutes = minutes &lt; 10 ? '0'+minutes : minutes;
+      seconds = seconds &lt; 10 ? '0'+seconds : seconds;
+
+      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project" id="project-3">
+            <div class="project-header">
+                <h2>3. Employee Salary Calculator <span class="badge">TypeScript</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code3')">Copy Code</button>
+            <pre><code id="code3">class Employee {
+  name: string;
+  basicPay: number;
+  hra: number;
+  deductions: number;
+
+  constructor(name: string, basicPay: number, hra: number, deductions: number) {
+    this.name = name;
+    this.basicPay = basicPay;
+    this.hra = hra;
+    this.deductions = deductions;
+  }
+
+  calculateNetSalary(): number {
+    return this.basicPay + this.hra - this.deductions;
+  }
+
+  displaySalary(): void {
+    console.log(`Employee Name: ${this.name}`);
+    console.log(`Basic Pay: ₹${this.basicPay}`);
+    console.log(`HRA: ₹${this.hra}`);
+    console.log(`Deductions: ₹${this.deductions}`);
+    console.log(`Net Salary: ₹${this.calculateNetSalary()}`);
+  }
+}
+
+const emp1 = new Employee('Yuvraj', 50000, 12000, 8000);
+emp1.displaySalary();
+
+const emp2 = new Employee('Anjali', 40000, 10000, 5000);
+emp2.displaySalary();</code></pre>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project" id="project-4">
+            <div class="project-header">
+                <h2>4. Feedback Form <span class="badge">JavaScript</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code4')">Copy Code</button>
+            <pre><code id="code4">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Feedback Form&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: 'Poppins', sans-serif; padding:50px; background:#f5f5f5; }
+    input, textarea { width:100%; padding:10px; margin-bottom:10px; border-radius:6px; border:1px solid #ccc; }
+    button { padding:10px 20px; border:none; border-radius:6px; background:#0d6efd; color:white; cursor:pointer; }
+    .feedback-list { margin-top:30px; list-style:none; padding:0; }
+    .feedback-list li { background:white; padding:15px; margin-bottom:10px; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h2&gt;Feedback Form&lt;/h2&gt;
+  &lt;form id="feedbackForm"&gt;
+    &lt;input type="text" id="name" placeholder="Your Name" required&gt;
+    &lt;textarea id="feedback" rows="4" placeholder="Your Feedback" required&gt;&lt;/textarea&gt;
+    &lt;button type="submit"&gt;Submit Feedback&lt;/button&gt;
+  &lt;/form&gt;
+
+  &lt;ul class="feedback-list" id="feedbackList"&gt;&lt;/ul&gt;
+
+  &lt;script&gt;
+    const form = document.getElementById('feedbackForm');
+    const feedbackList = document.getElementById('feedbackList');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const feedback = document.getElementById('feedback').value.trim();
+
+      if(!name || !feedback){ alert('Please enter all fields'); return; }
+
+      const li = document.createElement('li');
+      li.innerHTML = `&lt;strong&gt;${name}:&lt;/strong&gt; ${feedback}`;
+      feedbackList.appendChild(li);
+
+      form.reset();
+    });
+  &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project" id="project-5">
+            <div class="project-header">
+                <h2>5. Image Slider Gallery <span class="badge">Bootstrap</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code5')">Copy Code</button>
+            <pre><code id="code5">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Image Slider Gallery&lt;/title&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+  &lt;style&gt;
+    body { font-family: 'Poppins', sans-serif; background:#f5f5f5; padding:40px; }
+    .carousel-item img { border-radius:12px; max-height:500px; object-fit:cover; }
+    h1 { text-align:center; margin-bottom:30px; color:#0d6efd; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Travel Photo Gallery&lt;/h1&gt;
+
+  &lt;div id="imageCarousel" class="carousel slide" data-bs-ride="carousel"&gt;
+    &lt;div class="carousel-inner"&gt;
+      &lt;div class="carousel-item active"&gt;
+        &lt;img src="https://via.placeholder.com/900x500.png?text=Image+1" class="d-block w-100" alt="Image 1"&gt;
+      &lt;/div&gt;
+      &lt;div class="carousel-item"&gt;
+        &lt;img src="https://via.placeholder.com/900x500.png?text=Image+2" class="d-block w-100" alt="Image 2"&gt;
+      &lt;/div&gt;
+      &lt;div class="carousel-item"&gt;
+        &lt;img src="https://via.placeholder.com/900x500.png?text=Image+3" class="d-block w-100" alt="Image 3"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev"&gt;
+      &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next"&gt;
+      &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+
+    &lt;div class="carousel-indicators"&gt;
+      &lt;button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+      &lt;button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1"&gt;&lt;/button&gt;
+      &lt;button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project" id="project-6">
+            <div class="project-header">
+                <h2>6. Personal Profile Card <span class="badge">HTML + CSS</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code6')">Copy Code</button>
+            <pre><code id="code6">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Personal Profile Card&lt;/title&gt;
+  &lt;style&gt;
+    :root{ --bg: #f0f4f8; --accent: #5b8cff; --muted: #6b7280; }
+    *{box-sizing:border-box}
+    body{ margin:0; font-family:Arial, sans-serif; background: var(--bg); display:flex; align-items:center; justify-content:center; padding:40px; }
+    .card{ width:320px; background:white; border-radius:16px; padding:22px; border:1px solid #ddd; text-align:center; }
+    .avatar-wrap{ width:120px; height:120px; margin:-32px auto 4px; border-radius:50%; padding:6px; background:#f0f0f0; }
+    .avatar{ width:100%; height:100%; border-radius:50%; object-fit:cover; }
+    h2{ margin:4px 0 0; font-size:1.05rem; color:#333; }
+    p.role{ margin:6px 0 8px; color:var(--accent); font-weight:600; font-size:0.85rem }
+    p.bio{ margin:0; padding:0 6px; color:var(--muted); font-size:0.95rem; line-height:1.45 }
+    .meta{ display:flex; gap:10px; align-items:center; justify-content:center; margin-top:8px }
+    .meta span{ padding:8px 12px; border-radius:999px; background:#f5f5f5; font-size:0.88rem; }
+    .social{ display:flex; gap:10px; justify-content:center; margin-top:12px }
+    .social a{ display:inline-block; padding:10px 15px; border-radius:10px; text-decoration:none; border:1px solid #ddd; background:white; color:#333; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;article class="card"&gt;
+    &lt;div class="avatar-wrap"&gt;
+      &lt;img class="avatar" src="https://via.placeholder.com/300x300.png?text=Photo" alt="Profile photo"&gt;
+    &lt;/div&gt;
+    &lt;h2&gt;Your Name&lt;/h2&gt;
+    &lt;p class="role"&gt;Web Developer • Designer&lt;/p&gt;
+    &lt;p class="bio"&gt;I am a passionate developer building delightful interfaces and reliable web systems.&lt;/p&gt;
+    &lt;div class="meta"&gt;
+      &lt;span&gt;📍 Pune, India&lt;/span&gt;
+      &lt;span&gt;💼 Open to work&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="social"&gt;
+      &lt;a href="#"&gt;GitHub&lt;/a&gt;
+      &lt;a href="#"&gt;LinkedIn&lt;/a&gt;
+      &lt;a href="#"&gt;Email&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project" id="project-7">
+            <div class="project-header">
+                <h2>7. Portfolio with Navbar <span class="badge">Bootstrap</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code7')">Copy Code</button>
+            <pre><code id="code7">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Portfolio&lt;/title&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;
+    &lt;div class="container"&gt;
+      &lt;a class="navbar-brand" href="#"&gt;Yuvraj&lt;/a&gt;
+      &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"&gt;
+        &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+        &lt;ul class="navbar-nav ms-auto"&gt;
+          &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;
+          &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+
+  &lt;section style="padding: 80px 0; text-align: center; background: #0d6efd; color: white;"&gt;
+    &lt;div class="container"&gt;
+      &lt;h1&gt;Welcome to My Portfolio&lt;/h1&gt;
+      &lt;p&gt;Developer | Innovator | Problem Solver&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section id="projects" class="container py-5"&gt;
+    &lt;h2 class="text-center mb-5"&gt;Projects&lt;/h2&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-md-4"&gt;
+        &lt;div class="card"&gt;
+          &lt;img src="https://via.placeholder.com/400x250.png?text=Project+1" class="card-img-top" alt="Project"&gt;
+          &lt;div class="card-body"&gt;
+            &lt;h5&gt;Smart Car Prototype&lt;/h5&gt;
+            &lt;p&gt;Automated system using Peltier modules.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="project" id="project-8">
+            <div class="project-header">
+                <h2>8. Pricing Table <span class="badge">Bootstrap</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code8')">Copy Code</button>
+            <pre><code id="code8">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Pricing Plans&lt;/title&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body style="background: #f8f9fa; padding: 50px 0;"&gt;
+  &lt;div class="container"&gt;
+    &lt;h1 class="text-center mb-5"&gt;Our Pricing Plans&lt;/h1&gt;
+    &lt;div class="row g-4 justify-content-center"&gt;
+      &lt;div class="col-md-4"&gt;
+        &lt;div class="card text-center p-4"&gt;
+          &lt;h3&gt;Basic&lt;/h3&gt;
+          &lt;div style="font-size: 2rem; font-weight: 700; color: #0d6efd;"&gt;₹499&lt;/div&gt;
+          &lt;ul class="list-unstyled mb-4"&gt;
+            &lt;li&gt;5 Projects&lt;/li&gt;
+            &lt;li&gt;Email Support&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;button class="btn btn-primary"&gt;Buy Now&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="col-md-4"&gt;
+        &lt;div class="card text-center p-4"&gt;
+          &lt;h3&gt;Pro&lt;/h3&gt;
+          &lt;div style="font-size: 2rem; font-weight: 700; color: #0d6efd;"&gt;₹999&lt;/div&gt;
+          &lt;ul class="list-unstyled mb-4"&gt;
+            &lt;li&gt;20 Projects&lt;/li&gt;
+            &lt;li&gt;Priority Support&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;button class="btn btn-primary"&gt;Buy Now&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 9 -->
+        <div class="project" id="project-9">
+            <div class="project-header">
+                <h2>9. Product Landing Page <span class="badge">Bootstrap</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code9')">Copy Code</button>
+            <pre><code id="code9">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;GizmoPro 2025&lt;/title&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;
+    &lt;div class="container"&gt;
+      &lt;a class="navbar-brand" href="#"&gt;GizmoPro&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/nav&gt;
+
+  &lt;section style="padding: 80px 0; background-color: #f8f9fa;"&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="row align-items-center"&gt;
+        &lt;div class="col-md-6"&gt;
+          &lt;h1&gt;GizmoPro 2025&lt;/h1&gt;
+          &lt;p&gt;Experience the next generation of smart devices.&lt;/p&gt;
+          &lt;a href="#" class="btn btn-primary"&gt;Buy Now&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="col-md-6 text-center"&gt;
+          &lt;img src="https://via.placeholder.com/400x400.png?text=GizmoPro" alt="Product" style="max-width: 100%; border-radius: 12px;"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 10 -->
+        <div class="project" id="project-10">
+            <div class="project-header">
+                <h2>10. Quiz Application <span class="badge">JavaScript</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code10')">Copy Code</button>
+            <pre><code id="code10">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Quiz Application&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: Arial, sans-serif; padding:50px; background:#f5f5f5; }
+    .quiz-container { background:white; padding:30px; border-radius:12px; max-width:600px; margin:auto; }
+    h2 { color:#0d6efd; }
+    .options { list-style:none; padding:0; }
+    .options li { background:#f8f9fa; padding:10px; margin-bottom:10px; cursor:pointer; }
+    .btn { margin-top:20px; padding:10px 20px; background:#0d6efd; color:white; border:none; cursor:pointer; }
+    .score { text-align:center; font-size:1.5rem; color:#28a745; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="quiz-container"&gt;
+    &lt;h2 id="question"&gt;Question text&lt;/h2&gt;
+    &lt;ul class="options" id="options"&gt;&lt;/ul&gt;
+    &lt;button class="btn" id="nextBtn"&gt;Next&lt;/button&gt;
+    &lt;div class="score" id="score"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    const quizData = [
+      { question: "What is the capital of France?", options: ["Paris", "London", "Berlin", "Rome"], answer: "Paris" },
+      { question: "2 + 2 = ?", options: ["3","4","5","6"], answer: "4" },
+      { question: "Which language is used for web apps?", options: ["Python","JavaScript","C++","Java"], answer: "JavaScript" }
+    ];
+
+    let currentQuestion = 0, score = 0;
+
+    function loadQuestion() {
+      const q = quizData[currentQuestion];
+      document.getElementById('question').textContent = q.question;
+      const optionsEl = document.getElementById('options');
+      optionsEl.innerHTML = '';
+      q.options.forEach(option => {
+        const li = document.createElement('li');
+        li.textContent = option;
+        li.onclick = function() {
+          if(option === q.answer) score++;
+          document.getElementById('nextBtn').style.display = 'inline-block';
+        };
+        optionsEl.appendChild(li);
+      });
+    }
+
+    document.getElementById('nextBtn').onclick = function() {
+      currentQuestion++;
+      if(currentQuestion < quizData.length){
+        loadQuestion();
+        this.style.display = 'none';
+      } else {
+        document.getElementById('question').textContent = 'Quiz Completed!';
+        document.getElementById('options').innerHTML = '';
+        this.style.display = 'none';
+        document.getElementById('score').textContent = `Your Score: ${score} / ${quizData.length}`;
+      }
+    };
+
+    loadQuestion();
+    document.getElementById('nextBtn').style.display = 'none';
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 11 -->
+        <div class="project" id="project-11">
+            <div class="project-header">
+                <h2>11. Restaurant Menu <span class="badge">HTML + CSS</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code11')">Copy Code</button>
+            <pre><code id="code11">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Restaurant Menu&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: Arial, sans-serif; background-color: #fffaf0; margin: 0; }
+    header { background-color: #c0392b; color: white; text-align: center; padding: 1.5rem 0; }
+    .menu-section { max-width: 800px; margin: 30px auto; background: white; padding: 20px; border-radius: 12px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Delight Dine Restaurant Menu&lt;/h1&gt;
+  &lt;/header&gt;
+
+  &lt;div class="menu-section"&gt;
+    &lt;h2&gt;Starters&lt;/h2&gt;
+    &lt;table&gt;
+      &lt;tr&gt;&lt;th&gt;Dish&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Tomato Soup&lt;/td&gt;&lt;td&gt;₹80&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Paneer Tikka&lt;/td&gt;&lt;td&gt;₹150&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+
+  &lt;div class="menu-section"&gt;
+    &lt;h2&gt;Main Course&lt;/h2&gt;
+    &lt;table&gt;
+      &lt;tr&gt;&lt;th&gt;Dish&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Butter Chicken&lt;/td&gt;&lt;td&gt;₹250&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;Veg Biryani&lt;/td&gt;&lt;td&gt;₹180&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 12 -->
+        <div class="project" id="project-12">
+            <div class="project-header">
+                <h2>12. Resume Web Page <span class="badge">HTML + CSS</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code12')">Copy Code</button>
+            <pre><code id="code12">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Resume&lt;/title&gt;
+  &lt;style&gt;
+    body{ margin:0; font-family: Arial, sans-serif; background:#f4f6f9; padding:40px 0; }
+    .container{ max-width:800px; background:#fff; margin:auto; padding:30px 40px; border-radius:12px; }
+    header{ text-align:center; margin-bottom:30px; }
+    header h1{ color:#0056b3; }
+    section{ margin-bottom:24px; background:#f9fafc; padding:18px 22px; border-radius:10px; }
+    section h2{ color:#003f7d; border-bottom:2px solid #ddd; padding-bottom:6px; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Your Name&lt;/h1&gt;
+      &lt;p&gt;Email: yourname@example.com&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;section&gt;
+      &lt;h2&gt;Education&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;B.Tech in Computer Engineering&lt;/strong&gt; — University, 2021–2025&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+      &lt;h2&gt;Skills&lt;/h2&gt;
+      &lt;p&gt;HTML, CSS, JavaScript, Python, React&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 13 -->
+        <div class="project" id="project-13">
+            <div class="project-header">
+                <h2>13. Simple Calculator <span class="badge">JavaScript</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code13')">Copy Code</button>
+            <pre><code id="code13">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Calculator&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: Arial, sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; background:#f5f5f5; }
+    .calculator { background:white; padding:30px; border-radius:12px; }
+    input { width:100%; padding:10px; margin-bottom:10px; font-size:1.2rem; }
+    .buttons { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+    button { padding:15px; font-size:1rem; border:none; background:#0d6efd; color:white; cursor:pointer; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="calculator"&gt;
+    &lt;input type="text" id="display" readonly&gt;
+    &lt;div class="buttons"&gt;
+      &lt;button onclick="appendValue('7')"&gt;7&lt;/button&gt;
+      &lt;button onclick="appendValue('8')"&gt;8&lt;/button&gt;
+      &lt;button onclick="appendValue('9')"&gt;9&lt;/button&gt;
+      &lt;button onclick="appendValue('/')"&gt;/&lt;/button&gt;
+      &lt;button onclick="appendValue('4')"&gt;4&lt;/button&gt;
+      &lt;button onclick="appendValue('5')"&gt;5&lt;/button&gt;
+      &lt;button onclick="appendValue('6')"&gt;6&lt;/button&gt;
+      &lt;button onclick="appendValue('*')"&gt;*&lt;/button&gt;
+      &lt;button onclick="appendValue('1')"&gt;1&lt;/button&gt;
+      &lt;button onclick="appendValue('2')"&gt;2&lt;/button&gt;
+      &lt;button onclick="appendValue('3')"&gt;3&lt;/button&gt;
+      &lt;button onclick="appendValue('-')"&gt;-&lt;/button&gt;
+      &lt;button onclick="appendValue('0')"&gt;0&lt;/button&gt;
+      &lt;button onclick="appendValue('.')">'.&lt;/button&gt;
+      &lt;button onclick="calculate()"&gt;=&lt;/button&gt;
+      &lt;button onclick="appendValue('+')"&gt;+&lt;/button&gt;
+      &lt;button onclick="clearDisplay()" style="grid-column: span 4; background:#dc3545;"&gt;Clear&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    function appendValue(val) { document.getElementById('display').value += val; }
+    function calculate() { document.getElementById('display').value = eval(document.getElementById('display').value); }
+    function clearDisplay() { document.getElementById('display').value = ''; }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 14 -->
+        <div class="project" id="project-14">
+            <div class="project-header">
+                <h2>14. Student Class Example <span class="badge">TypeScript</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code14')">Copy Code</button>
+            <pre><code id="code14">class Student {
+  name: string;
+  rollNo: number;
+  marks: number;
+
+  constructor(name: string, rollNo: number, marks: number) {
+    this.name = name;
+    this.rollNo = rollNo;
+    this.marks = marks;
+  }
+
+  calculateGrade(): string {
+    if(this.marks >= 90) return 'A+';
+    else if(this.marks >= 80) return 'A';
+    else if(this.marks >= 70) return 'B+';
+    else if(this.marks >= 60) return 'B';
+    else if(this.marks >= 50) return 'C';
+    else return 'F';
+  }
+
+  display(): void {
+    console.log(`Name: ${this.name}`);
+    console.log(`Roll No: ${this.rollNo}`);
+    console.log(`Marks: ${this.marks}`);
+    console.log(`Grade: ${this.calculateGrade()}`);
+  }
+}
+
+const student1 = new Student('Yuvraj', 101, 85);
+student1.display();
+
+const student2 = new Student('Anjali', 102, 72);
+student2.display();</code></pre>
+        </div>
+
+        <!-- Project 15 -->
+        <div class="project" id="project-15">
+            <div class="project-header">
+                <h2>15. Student Marks Table <span class="badge">JavaScript</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code15')">Copy Code</button>
+            <pre><code id="code15">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Student Marks Table&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: Arial, sans-serif; padding:50px; background:#f5f5f5; }
+    input { padding:10px; margin:5px; border:1px solid #ccc; }
+    button { padding:10px 20px; border:none; background:#0d6efd; color:white; cursor:pointer; }
+    table { width:100%; border-collapse:collapse; margin-top:20px; background:white; }
+    th, td { padding:15px; text-align:left; border-bottom:1px solid #ddd; }
+    th { background:#0d6efd; color:white; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h2&gt;Student Marks Table&lt;/h2&gt;
+  &lt;input type="text" id="studentName" placeholder="Student Name"&gt;
+  &lt;input type="number" id="studentMarks" placeholder="Marks"&gt;
+  &lt;button onclick="addStudent()"&gt;Add Student&lt;/button&gt;
+
+  &lt;table id="marksTable"&gt;
+    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Student Name&lt;/th&gt;&lt;th&gt;Marks&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+    &lt;tbody&gt;&lt;/tbody&gt;
+  &lt;/table&gt;
+
+  &lt;div id="summary"&gt;&lt;/div&gt;
+
+  &lt;script&gt;
+    const students = [];
+
+    function addStudent() {
+      const name = document.getElementById('studentName').value.trim();
+      const marks = parseFloat(document.getElementById('studentMarks').value);
+      if(!name || isNaN(marks)) return;
+
+      students.push({name, marks});
+      displayTable();
+      document.getElementById('studentName').value = '';
+      document.getElementById('studentMarks').value = '';
+    }
+
+    function displayTable() {
+      const tbody = document.querySelector('#marksTable tbody');
+      tbody.innerHTML = '';
+      let total = 0;
+
+      students.forEach(student => {
+        const row = document.createElement('tr');
+        row.innerHTML = `&lt;td&gt;${student.name}&lt;/td&gt;&lt;td&gt;${student.marks}&lt;/td&gt;`;
+        tbody.appendChild(row);
+        total += student.marks;
+      });
+
+      const avg = students.length > 0 ? (total / students.length).toFixed(2) : 0;
+      document.getElementById('summary').textContent = `Total: ${total} | Average: ${avg}`;
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 16 -->
+        <div class="project" id="project-16">
+            <div class="project-header">
+                <h2>16. Student Registration Form <span class="badge">Bootstrap + JS</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code16')">Copy Code</button>
+            <pre><code id="code16">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Student Registration&lt;/title&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body style="background:#f5f5f5; padding:50px;"&gt;
+  &lt;div style="max-width:500px; margin:auto; background:white; padding:30px; border-radius:12px;"&gt;
+    &lt;h2 class="text-center mb-4"&gt;Student Registration&lt;/h2&gt;
+    &lt;form id="registrationForm"&gt;
+      &lt;div class="mb-3"&gt;
+        &lt;label class="form-label"&gt;Full Name&lt;/label&gt;
+        &lt;input type="text" class="form-control" id="name"&gt;
+      &lt;/div&gt;
+      &lt;div class="mb-3"&gt;
+        &lt;label class="form-label"&gt;Email&lt;/label&gt;
+        &lt;input type="email" class="form-control" id="email"&gt;
+      &lt;/div&gt;
+      &lt;button type="submit" class="btn btn-primary w-100"&gt;Register&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    document.getElementById('registrationForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      alert(`Registration Successful!\nName: ${name}\nEmail: ${email}`);
+      this.reset();
+    });
+  &lt;/script&gt;
+
+  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 17 -->
+        <div class="project" id="project-17">
+            <div class="project-header">
+                <h2>17. Temperature Converter <span class="badge">JavaScript</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code17')">Copy Code</button>
+            <pre><code id="code17">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Temperature Converter&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: Arial, sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; background:#f5f5f5; }
+    .converter { background:white; padding:30px; border-radius:12px; text-align:center; }
+    input { padding:10px; width:150px; border:1px solid #ccc; margin-bottom:15px; }
+    button { padding:10px 20px; margin:5px; border:none; background:#0d6efd; color:white; cursor:pointer; }
+    .result { margin-top:20px; font-size:1.5rem; color:#28a745; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="converter"&gt;
+    &lt;h2&gt;Temperature Converter&lt;/h2&gt;
+    &lt;input type="number" id="tempInput" placeholder="Enter Temperature"&gt;
+    &lt;div&gt;
+      &lt;button onclick="toCelsius()"&gt;To Celsius&lt;/button&gt;
+      &lt;button onclick="toFahrenheit()"&gt;To Fahrenheit&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="result" id="result"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    function toCelsius() {
+      const temp = parseFloat(document.getElementById('tempInput').value);
+      if(isNaN(temp)) return;
+      const celsius = ((temp - 32) * 5/9).toFixed(2);
+      document.getElementById('result').textContent = `${celsius} °C`;
+    }
+
+    function toFahrenheit() {
+      const temp = parseFloat(document.getElementById('tempInput').value);
+      if(isNaN(temp)) return;
+      const fahrenheit = ((temp * 9/5) + 32).toFixed(2);
+      document.getElementById('result').textContent = `${fahrenheit} °F`;
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 18 -->
+        <div class="project" id="project-18">
+            <div class="project-header">
+                <h2>18. To-Do List Application <span class="badge">JavaScript</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code18')">Copy Code</button>
+            <pre><code id="code18">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;To-Do List&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: Arial, sans-serif; background:#f5f5f5; display:flex; justify-content:center; padding:50px; }
+    .todo-container { background:white; padding:30px; border-radius:12px; width:100%; max-width:500px; }
+    h2 { text-align:center; color:#0d6efd; }
+    input[type='text'] { width:70%; padding:10px; border:1px solid #ccc; }
+    button { padding:10px 15px; margin-left:10px; border:none; background:#0d6efd; color:white; cursor:pointer; }
+    ul { list-style:none; padding:0; margin-top:20px; }
+    li { background:#f8f9fa; padding:10px; margin-bottom:10px; display:flex; justify-content:space-between; }
+    li.completed { text-decoration:line-through; color:#6c757d; }
+    .delete-btn { background:red; padding:5px 10px; cursor:pointer; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="todo-container"&gt;
+    &lt;h2&gt;To-Do List&lt;/h2&gt;
+    &lt;div&gt;
+      &lt;input type="text" id="taskInput" placeholder="Enter a task"&gt;
+      &lt;button onclick="addTask()"&gt;Add&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;ul id="taskList"&gt;&lt;/ul&gt;
+  &lt;/div&gt;
+
+  &lt;script&gt;
+    function addTask() {
+      const input = document.getElementById('taskInput');
+      const taskText = input.value.trim();
+      if(!taskText) return;
+
+      const li = document.createElement('li');
+      li.textContent = taskText;
+
+      li.onclick = function(){ li.classList.toggle('completed'); };
+
+      const delBtn = document.createElement('span');
+      delBtn.textContent = 'Delete';
+      delBtn.className = 'delete-btn';
+      delBtn.onclick = function(e){ e.stopPropagation(); li.remove(); };
+
+      li.appendChild(delBtn);
+      document.getElementById('taskList').appendChild(li);
+      input.value = '';
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 19 -->
+        <div class="project" id="project-19">
+            <div class="project-header">
+                <h2>19. Travel Destination Page <span class="badge">HTML + CSS</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code19')">Copy Code</button>
+            <pre><code id="code19">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8" /&gt;
+  &lt;title&gt;Travel Destination - Manali&lt;/title&gt;
+  &lt;style&gt;
+    body{ margin:0; font-family:Arial, sans-serif; background:#f5f9ff; color:#222; }
+    header{ background:#0066cc; color:#fff; text-align:center; padding:40px 20px; }
+    .container{ max-width:1000px; margin:40px auto; padding:0 20px; }
+    .intro{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
+    .intro img{ width:100%; border-radius:12px; }
+    section{ background:#fff; padding:24px; border-radius:12px; margin-bottom:20px; }
+    ul{ list-style:square inside; padding:0; }
+    footer{ text-align:center; padding:20px; background:#004b9b; color:#fff; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Explore Manali&lt;/h1&gt;
+    &lt;p&gt;The Himalayan Paradise&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;main class="container"&gt;
+    &lt;section class="intro"&gt;
+      &lt;img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Manali_town_2014.jpg" alt="Manali"&gt;
+      &lt;div&gt;
+        &lt;h2&gt;About Manali&lt;/h2&gt;
+        &lt;p&gt;Manali is a stunning hill station in Himachal Pradesh, known for snow-capped mountains and lush valleys.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section&gt;
+      &lt;h2&gt;Key Attractions&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Solang Valley — skiing and paragliding&lt;/li&gt;
+        &lt;li&gt;Rohtang Pass — breathtaking mountain pass&lt;/li&gt;
+        &lt;li&gt;Hidimba Temple — ancient wooden temple&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;© 2025 Travel with Yuvraj&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <!-- Project 20 -->
+        <div class="project" id="project-20">
+            <div class="project-header">
+                <h2>20. Course List Display - Simulated Angular <span class="badge">JavaScript</span></h2>
+            </div>
+            <button class="copy-btn" onclick="copyCode('code20')">Copy Code</button>
+            <p style="margin: 15px 0; color: #666;"><strong>File 1:</strong> course_list_display_simulated_angular.html</p>
+            <pre><code id="code20">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Course List Display&lt;/title&gt;
+  &lt;style&gt;
+    body { font-family: 'Poppins', sans-serif; padding:50px; background:#f5f5f5; }
+    table { width:100%; border-collapse:collapse; background:white; border-radius:12px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.1); }
+    th, td { padding:15px; text-align:left; border-bottom:1px solid #ddd; }
+    th { background:#0d6efd; color:white; }
+    tr:hover { background:#e7f1ff; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h2&gt;Course List&lt;/h2&gt;
+  &lt;table id="courseTable"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Course ID&lt;/th&gt;
+        &lt;th&gt;Course Name&lt;/th&gt;
+        &lt;th&gt;Duration&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;!-- Dynamic rows will be inserted here --&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+
+  &lt;script type="module" src="courses.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <button class="copy-btn" onclick="copyCode('code20b')" style="margin-top: 20px;">Copy Code</button>
+            <p style="margin: 15px 0; color: #666;"><strong>File 2:</strong> courses.js</p>
+            <pre><code id="code20b">// Simulated Angular Component Logic
+
+const courses = [
+  { id: 'C101', name: 'Web Development', duration: '3 months' },
+  { id: 'C102', name: 'Data Science', duration: '4 months' },
+  { id: 'C103', name: 'Machine Learning', duration: '5 months' },
+  { id: 'C104', name: 'Cybersecurity', duration: '3 months' }
+];
+
+const tbody = document.querySelector('#courseTable tbody');
+
+function displayCourses(courseList) {
+  tbody.innerHTML = '';
+  courseList.forEach(course =&gt; {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      &lt;td&gt;${course.id}&lt;/td&gt;
+      &lt;td&gt;${course.name}&lt;/td&gt;
+      &lt;td&gt;${course.duration}&lt;/td&gt;
+    `;
+    tbody.appendChild(row);
+  });
+}
+
+// Initialize table
+displayCourses(courses);</code></pre>
+        </div>
+
+    </div>
+
+    <script>
+        function copyCode(elementId) {
+            const code = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Code copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>
