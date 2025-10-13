@@ -136,16 +136,16 @@
                 <li><a href="#project-8">PKI infrastructure in one Python script</a></li>
                 <li><a href="#project-9">SHA and MD5 hash generation and verification</a></li>
                 <li><a href="#project-10">machine learning to detect obfuscated command-line strings.(pip install scikit-learn pandas)</a></li>
-                <li><a href="#project-11">**********************this is different node dont reffer it***********Restaurant Menu (HTML + CSS)</a></li>
-                <li><a href="#project-12">Resume Web Page (HTML + CSS)</a></li>
-                <li><a href="#project-13">Simple Calculator (JavaScript)</a></li>
-                <li><a href="#project-14">Student Class Example (TypeScript)</a></li>
-                <li><a href="#project-15">Student Marks Table (JavaScript)</a></li>
-                <li><a href="#project-16">Student Registration Form (Bootstrap + JS)</a></li>
-                <li><a href="#project-17">Temperature Converter (JavaScript)</a></li>
-                <li><a href="#project-18">To-Do List Application (JavaScript)</a></li>
-                <li><a href="#project-19">Travel Destination Page (HTML + CSS)</a></li>
-                <li><a href="#project-20">Course List Display - Simulated Angular (JavaScript)</a></li>
+                <li><a href="#project-11">Q1. Write a program to perform encryption and decryption using caeser cipher </a></li>
+                <li><a href="#project-12">Q2. Write a program to perform encryption and decryption using substitution cipher</a></li>
+                <li><a href="#project-13">Q3. Write a program to perform encryption and decryption using Hill cipher simpel code</a></li>
+                <li><a href="#project-14">Q4. User A want to send the message “Meet me very urgently” to user B by using DES algorithms encrypt it at sender end and decrypt it at receiver end</a></li>
+                <li><a href="#project-15">Q5. AES algorithms encrypt it and decrypt it at receiver end.</a></li>
+                <li><a href="#project-16">Q6. A confidential message to User B using RSA </a></li>
+                <li><a href="#project-17">Q7. User A want to send the message “Sanjivani University” to user B by using ECC algorithms encrypt it at sender end and decrypt it at receiver end.Comment on Key sharing.</a></li>
+                <li><a href="#project-18">*************************************</a></li>
+                <li><a href="#project-19">***************************************</a></li>
+                <li><a href="#project-20">****************************************</a></li>
             </ol>
         </div>
 
@@ -174,7 +174,7 @@ decrypted = caesar_decrypt(encrypted, shift_key)
 print("Original Text:", plain_text)
 print("Encrypted Text:", encrypted)
 print("Decrypted Text:", decrypted)
- </code></pre>
+ &gt;</code></pre>
         </div>
 
         <!-- Project 2 -->
@@ -183,8 +183,7 @@ print("Decrypted Text:", decrypted)
                 <h2>2. encryption and decryption using a substitution cipher <span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code2')">Copy Code</button>
-            <pre><code id="code2">&lt;
-def generate_key_map(key):
+            <pre><code id="code2">&lt;def generate_key_map(key):
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 key = key.upper()
 return dict(zip(alphabet, key))
@@ -212,7 +211,7 @@ decrypted = decrypt(encrypted, key_map)
 print("Original Text:", text)
 print("Encrypted Text:", encrypted)
 print("Decrypted Text:", decrypted)
-</code></pre>
+&gt;</code></pre>
         </div>
 
         <!-- Project 3 -->
@@ -221,7 +220,7 @@ print("Decrypted Text:", decrypted)
                 <h2>3. Hill Cipher encryption and decryption <span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code3')">Copy Code</button>
-            <pre><code id="code3">
+            <pre><code id="code3">&lt;
 import numpy as np
 # Convert text to numbers (A=0, B=1, ..., Z=25)
 def text_to_numbers(text):
@@ -269,7 +268,7 @@ decrypted = hill_decrypt(encrypted, key)
 print("Original Text:", text)
 print("Encrypted Text:", encrypted)
 print("Decrypted Text:", decrypted)    
-            </code></pre>
+            &gt;</code></pre>
         </div>
 
         <!-- Project 4 -->
@@ -294,7 +293,7 @@ decipher = DES.new(key, DES.MODE_ECB)
 decrypted = unpad(decipher.decrypt(encrypted), DES.block_size)
 print("Decrypted:", decrypted.decode())       
             
-            </code></pre>
+           &gt;</code></pre>
         </div>
 
         <!-- Project 5 -->
@@ -318,7 +317,7 @@ print("Encrypted:", encrypted)
 decipher = AES.new(key, AES.MODE_ECB)
 decrypted = unpad(decipher.decrypt(encrypted), AES.block_size)
 print("Decrypted:", decrypted.decode())  
-            </code></pre>
+            &gt;</code></pre>
         </div>
 
         <!-- Project 6 -->
@@ -366,7 +365,7 @@ print("Encrypted:", encrypted_message.hex()) # Show as hex for readability
 decrypted_message = decrypt(receiver_private_key.to_bytes(),
 encrypted_message)
 print("Decrypted:", decrypted_message.decode())               
-            </code></pre>
+            &gt;</code></pre>
         </div>
 
         <!-- Project 8 -->
@@ -433,7 +432,7 @@ padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA2
 print("Encrypted:", encrypted.hex())
 print("Decrypted:", decrypted.decode())
             
-            </code></pre>
+            &gt;</code></pre>
         </div>
 
         <!-- Project 9 -->
@@ -469,7 +468,7 @@ print("MD5 Verified:", verify_hash("Sanjivani University",
 md5_hash, 'md5'))
 print("SHA-256 Verified:", verify_hash("Sanjivani
 University", sha256_hash, 'sha256')) 
-            </code></pre>
+            &gt;</code></pre>
         </div>
 
         <!-- Project 10 -->
@@ -528,529 +527,331 @@ new_vec = vectorizer.transform(new_command)
 prediction = model.predict(new_vec)
 print("Prediction:", "Obfuscated" if prediction[0] == 1 else
 "Normal")            
-            </code></pre>
+           &gt;</code></pre>
         </div>
 
         <!-- Project 11 -->
         <div class="project" id="project-11">
             <div class="project-header">
-                <h2>11. *****************************dont go down****************Restaurant Menu <span class="badge">HTML + CSS</span></h2>
+                <h2>11.Q1. Write a program to perform encryption and decryption using caeser cipher <span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code11')">Copy Code</button>
-            <pre><code id="code11">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Restaurant Menu&lt;/title&gt;
-  &lt;style&gt;
-    body { font-family: Arial, sans-serif; background-color: #fffaf0; margin: 0; }
-    header { background-color: #c0392b; color: white; text-align: center; padding: 1.5rem 0; }
-    .menu-section { max-width: 800px; margin: 30px auto; background: white; padding: 20px; border-radius: 12px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-    th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;header&gt;
-    &lt;h1&gt;Delight Dine Restaurant Menu&lt;/h1&gt;
-  &lt;/header&gt;
+            <pre><code id="code11">&lt;text=input("Enter a message to encrypt")
+shift=int(input("Enter ashift number"))
+#encryption
+encrypted=""
+for ch in text:
+if ch.isalpha():
+if ch.isupper():
+encrypted+=chr((ord(ch)-65+shift)%26+65)
+else:
+encrypted+=chr((ord(ch)-97+shift)%26+97)
+else:
+encrypted+=ch
+print("encrypted:",encrypted)
+#decryption
+decrypted=""
+for ch in encrypted:
+if ch.isalpha():
+if ch.isupper():
+decrypted+=chr((ord(ch)-65-shift)%26+65)
+else:
+decrypted+=chr((ord(ch)-97-shift)%26+97)
+else:
+decrypted+=ch
+print("decrypted:", decrypted)
 
-  &lt;div class="menu-section"&gt;
-    &lt;h2&gt;Starters&lt;/h2&gt;
-    &lt;table&gt;
-      &lt;tr&gt;&lt;th&gt;Dish&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;Tomato Soup&lt;/td&gt;&lt;td&gt;₹80&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;Paneer Tikka&lt;/td&gt;&lt;td&gt;₹150&lt;/td&gt;&lt;/tr&gt;
-    &lt;/table&gt;
-  &lt;/div&gt;
-
-  &lt;div class="menu-section"&gt;
-    &lt;h2&gt;Main Course&lt;/h2&gt;
-    &lt;table&gt;
-      &lt;tr&gt;&lt;th&gt;Dish&lt;/th&gt;&lt;th&gt;Price&lt;/th&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;Butter Chicken&lt;/td&gt;&lt;td&gt;₹250&lt;/td&gt;&lt;/tr&gt;
-      &lt;tr&gt;&lt;td&gt;Veg Biryani&lt;/td&gt;&lt;td&gt;₹180&lt;/td&gt;&lt;/tr&gt;
-    &lt;/table&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+                
+'''Encryption part
+1. text = input(...) → takes the message.
+2. shift = int(input(...)) → takes how many letters to shift.
+3. Loop through each character in text:
+o If it’s a letter, shift it by shift positions using ASCII (ord() and chr()).
+ Uppercase → base 65 ('A')
+ Lowercase → base 97 ('a')
+o If it’s not a letter, keep it unchanged.
+4. Print the encrypted text.
+Decryption part
+1. Loop through each character in encrypted:
+o If it’s a letter, shift backward by the same number (-shift).
+o Keep non-letters unchanged.
+2. Print the decrypted text (it matches the original message).'''&gt;</code></pre>
         </div>
 
         <!-- Project 12 -->
         <div class="project" id="project-12">
             <div class="project-header">
-                <h2>12. Resume Web Page <span class="badge">HTML + CSS</span></h2>
+                <h2>12.Q2. Write a program to perform encryption and decryption using substitution cipher <span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code12')">Copy Code</button>
-            <pre><code id="code12">&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;Resume&lt;/title&gt;
-  &lt;style&gt;
-    body{ margin:0; font-family: Arial, sans-serif; background:#f4f6f9; padding:40px 0; }
-    .container{ max-width:800px; background:#fff; margin:auto; padding:30px 40px; border-radius:12px; }
-    header{ text-align:center; margin-bottom:30px; }
-    header h1{ color:#0056b3; }
-    section{ margin-bottom:24px; background:#f9fafc; padding:18px 22px; border-radius:10px; }
-    section h2{ color:#003f7d; border-bottom:2px solid #ddd; padding-bottom:6px; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div class="container"&gt;
-    &lt;header&gt;
-      &lt;h1&gt;Your Name&lt;/h1&gt;
-      &lt;p&gt;Email: yourname@example.com&lt;/p&gt;
-    &lt;/header&gt;
-
-    &lt;section&gt;
-      &lt;h2&gt;Education&lt;/h2&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;strong&gt;B.Tech in Computer Engineering&lt;/strong&gt; — University, 2021–2025&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/section&gt;
-
-    &lt;section&gt;
-      &lt;h2&gt;Skills&lt;/h2&gt;
-      &lt;p&gt;HTML, CSS, JavaScript, Python, React&lt;/p&gt;
-    &lt;/section&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code12">&lt;plain_text="BABADONS"
+cipher_text="BABCAZYB"
+text=input("enter a text").upper()
+#encrypted
+encrypted=""
+for ch in text:
+if ch.isalpha():
+index=plain_text.index(ch)
+encrypted+=cipher_text[index]
+else:
+encrypted+=ch
+print("Encrypted",encrypted)
+#decrypted
+decrypted=""
+for ch in encrypted:
+if ch.isalpha():
+index=cipher_text.index(ch)
+decrypted+=plain_text[index]
+else:
+decrypted+=ch
+print("decrypted",decrypted)
+    
+'''Encryption part
+1. plain_text → defines original letters (mapping source).
+2. cipher_text → defines replacement letters (mapping target).
+3. text = input(...).upper() → takes user input and converts it to uppercase.
+4. Loop through each character in text:
+o If it’s a letter, find its index in plain_text.
+o Replace it with the letter at the same index in cipher_text.
+o If it’s not a letter, keep it unchanged.
+5. Print the encrypted text.
+Decryption part
+1. Loop through each character in the encrypted text:
+o If it’s a letter, find its index in cipher_text.
+o Replace it with the letter at the same index in plain_text.
+o Keep non-letters unchanged.
+2. Print the decrypted text (original message restored).'''&gt;</code></pre>
         </div>
 
         <!-- Project 13 -->
         <div class="project" id="project-13">
             <div class="project-header">
-                <h2>13. Simple Calculator <span class="badge">JavaScript</span></h2>
+                <h2>13. Q3. Write a program to perform encryption and decryption using Hill cipher simpel code <span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code13')">Copy Code</button>
-            <pre><code id="code13">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Calculator&lt;/title&gt;
-  &lt;style&gt;
-    body { font-family: Arial, sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; background:#f5f5f5; }
-    .calculator { background:white; padding:30px; border-radius:12px; }
-    input { width:100%; padding:10px; margin-bottom:10px; font-size:1.2rem; }
-    .buttons { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
-    button { padding:15px; font-size:1rem; border:none; background:#0d6efd; color:white; cursor:pointer; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div class="calculator"&gt;
-    &lt;input type="text" id="display" readonly&gt;
-    &lt;div class="buttons"&gt;
-      &lt;button onclick="appendValue('7')"&gt;7&lt;/button&gt;
-      &lt;button onclick="appendValue('8')"&gt;8&lt;/button&gt;
-      &lt;button onclick="appendValue('9')"&gt;9&lt;/button&gt;
-      &lt;button onclick="appendValue('/')"&gt;/&lt;/button&gt;
-      &lt;button onclick="appendValue('4')"&gt;4&lt;/button&gt;
-      &lt;button onclick="appendValue('5')"&gt;5&lt;/button&gt;
-      &lt;button onclick="appendValue('6')"&gt;6&lt;/button&gt;
-      &lt;button onclick="appendValue('*')"&gt;*&lt;/button&gt;
-      &lt;button onclick="appendValue('1')"&gt;1&lt;/button&gt;
-      &lt;button onclick="appendValue('2')"&gt;2&lt;/button&gt;
-      &lt;button onclick="appendValue('3')"&gt;3&lt;/button&gt;
-      &lt;button onclick="appendValue('-')"&gt;-&lt;/button&gt;
-      &lt;button onclick="appendValue('0')"&gt;0&lt;/button&gt;
-      &lt;button onclick="appendValue('.')">'.&lt;/button&gt;
-      &lt;button onclick="calculate()"&gt;=&lt;/button&gt;
-      &lt;button onclick="appendValue('+')"&gt;+&lt;/button&gt;
-      &lt;button onclick="clearDisplay()" style="grid-column: span 4; background:#dc3545;"&gt;Clear&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;script&gt;
-    function appendValue(val) { document.getElementById('display').value += val; }
-    function calculate() { document.getElementById('display').value = eval(document.getElementById('display').value); }
-    function clearDisplay() { document.getElementById('display').value = ''; }
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code13">&lt;def to_num(text): return [ord(c)-65 for c in text.upper()]
+def to_text(nums): return ''.join([chr(n+65) for n in nums])
+def encrypt(msg, k):
+ if len(msg)%2: msg += 'X'
+ nums = to_num(msg)
+ res = []
+ for i in range(0,len(nums),2):
+ a,b = nums[i], nums[i+1]
+ res += [(k[0][0]*a + k[0][1]*b)%26, (k[1][0]*a + k[1][1]*b)%26]
+ return to_text(res)
+def decrypt(msg, k):
+ det = k[0][0]*k[1][1]-k[0][1]*k[1][0]
+ inv = pow(det, -1, 26)
+ k_inv = [[k[1][1]*inv%26, -k[0][1]*inv%26], [-k[1][0]*inv%26, k[0][0]*inv%26]]
+ return encrypt(msg, k_inv) # reuse encrypt with inverse key
+# Example
+key = [[3,3],[2,5]]
+msg = "HELP"
+cipher = encrypt(msg,key)
+print("Encrypted:", cipher)
+print("Decrypted:", decrypt(cipher,key))
+                
+'''Encryption part
+1. Import the required libraries: DES for encryption/decryption and pad, unpad for data padding.
+2. Define an 8-byte secret key → key = b'8bytekey'.
+3. Enter the plaintext message to encrypt → "Meet me very urgently".
+4. Create a DES cipher object using the key and ECB mode → DES.new(key, DES.MODE_ECB).
+5. Convert the message to bytes and pad it to make its length a multiple of 8 bytes.
+6. Encrypt the padded message using the cipher object → produces ciphertext.
+7. Print the encrypted message (ciphertext).
+Decryption part
+1. Create a new DES cipher object with the same key and mode for decryption.
+2. Use it to decrypt the encrypted message (ciphertext).
+3. Unpad the decrypted bytes to remove the extra padding added earlier.
+4. Convert the decrypted bytes back to text using .decode().
+5. Print the decrypted text (original plaintext restored).'''&gt;</code></pre>
         </div>
 
         <!-- Project 14 -->
         <div class="project" id="project-14">
             <div class="project-header">
-                <h2>14. Student Class Example <span class="badge">TypeScript</span></h2>
+                <h2>14.Q4. User A want to send the message “Meet me very urgently” to user B by using DES algorithms encrypt it at sender end and decrypt it at receiver end<span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code14')">Copy Code</button>
-            <pre><code id="code14">class Student {
-  name: string;
-  rollNo: number;
-  marks: number;
-
-  constructor(name: string, rollNo: number, marks: number) {
-    this.name = name;
-    this.rollNo = rollNo;
-    this.marks = marks;
-  }
-
-  calculateGrade(): string {
-    if(this.marks >= 90) return 'A+';
-    else if(this.marks >= 80) return 'A';
-    else if(this.marks >= 70) return 'B+';
-    else if(this.marks >= 60) return 'B';
-    else if(this.marks >= 50) return 'C';
-    else return 'F';
-  }
-
-  display(): void {
-    console.log(`Name: ${this.name}`);
-    console.log(`Roll No: ${this.rollNo}`);
-    console.log(`Marks: ${this.marks}`);
-    console.log(`Grade: ${this.calculateGrade()}`);
-  }
-}
-
-const student1 = new Student('Yuvraj', 101, 85);
-student1.display();
-
-const student2 = new Student('Anjali', 102, 72);
-student2.display();</code></pre>
+            <pre><code id="code14">DES encryption and decryption
+from Crypto.Cipher import DES
+from Crypto.Util.Padding import pad, unpad
+# Key must be 8 bytes
+key = b'8bytekey' # Shared secret key
+# Message to send
+message = "Meet me very urgently"
+# Encrypt at sender (User A)
+cipher = DES.new(key, DES.MODE_ECB)
+encrypted = cipher.encrypt(pad(message.encode(), DES.block_size))
+print("Encrypted:", encrypted)
+# Decrypt at receiver (User B)
+decipher = DES.new(key, DES.MODE_ECB)
+decrypted = unpad(decipher.decrypt(encrypted), DES.block_size)
+print("Decrypted:", decrypted.decode())
+                
+'''Encryption part (Sender)
+1. Import necessary libraries: DES for encryption/decryption, pad and unpad for block padding.
+2. Define an 8-byte secret key → key = b'8bytekey'.
+3. Prepare the plaintext message → "Meet me very urgently".
+4. Create a DES cipher object in ECB mode → DES.new(key, DES.MODE_ECB).
+5. Convert the message to bytes, pad it to a multiple of 8 bytes, and encrypt → produces
+encrypted ciphertext.
+6. Print the encrypted message.
+Decryption part (Receiver)
+1. Create a new DES cipher object with the same key and mode for decryption.
+2. Decrypt the encrypted ciphertext using the cipher object.
+3. Unpad the decrypted bytes to remove extra padding.
+4. Convert the decrypted bytes back to string using .decode().
+5. Print the decrypted message (original plaintext restored).'''</code></pre>
         </div>
 
         <!-- Project 15 -->
         <div class="project" id="project-15">
             <div class="project-header">
-                <h2>15. Student Marks Table <span class="badge">JavaScript</span></h2>
+                <h2>15.Q5. AES algorithms encrypt it and decrypt it at receiver end. <span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code15')">Copy Code</button>
-            <pre><code id="code15">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Student Marks Table&lt;/title&gt;
-  &lt;style&gt;
-    body { font-family: Arial, sans-serif; padding:50px; background:#f5f5f5; }
-    input { padding:10px; margin:5px; border:1px solid #ccc; }
-    button { padding:10px 20px; border:none; background:#0d6efd; color:white; cursor:pointer; }
-    table { width:100%; border-collapse:collapse; margin-top:20px; background:white; }
-    th, td { padding:15px; text-align:left; border-bottom:1px solid #ddd; }
-    th { background:#0d6efd; color:white; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h2&gt;Student Marks Table&lt;/h2&gt;
-  &lt;input type="text" id="studentName" placeholder="Student Name"&gt;
-  &lt;input type="number" id="studentMarks" placeholder="Marks"&gt;
-  &lt;button onclick="addStudent()"&gt;Add Student&lt;/button&gt;
-
-  &lt;table id="marksTable"&gt;
-    &lt;thead&gt;&lt;tr&gt;&lt;th&gt;Student Name&lt;/th&gt;&lt;th&gt;Marks&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
-    &lt;tbody&gt;&lt;/tbody&gt;
-  &lt;/table&gt;
-
-  &lt;div id="summary"&gt;&lt;/div&gt;
-
-  &lt;script&gt;
-    const students = [];
-
-    function addStudent() {
-      const name = document.getElementById('studentName').value.trim();
-      const marks = parseFloat(document.getElementById('studentMarks').value);
-      if(!name || isNaN(marks)) return;
-
-      students.push({name, marks});
-      displayTable();
-      document.getElementById('studentName').value = '';
-      document.getElementById('studentMarks').value = '';
-    }
-
-    function displayTable() {
-      const tbody = document.querySelector('#marksTable tbody');
-      tbody.innerHTML = '';
-      let total = 0;
-
-      students.forEach(student => {
-        const row = document.createElement('tr');
-        row.innerHTML = `&lt;td&gt;${student.name}&lt;/td&gt;&lt;td&gt;${student.marks}&lt;/td&gt;`;
-        tbody.appendChild(row);
-        total += student.marks;
-      });
-
-      const avg = students.length > 0 ? (total / students.length).toFixed(2) : 0;
-      document.getElementById('summary').textContent = `Total: ${total} | Average: ${avg}`;
-    }
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code15">&lt;from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+# AES key must be 16, 24, or 32 bytes
+key = b'ThisIsA16ByteKey' # Shared secret key (16 bytes)
+message = "welcome to cse"
+# Encrypt at sender (User C)
+cipher = AES.new(key, AES.MODE_ECB)
+encrypted = cipher.encrypt(pad(message.encode(), AES.block_size))
+print("Encrypted:", encrypted)
+# Decrypt at receiver (User D)
+decipher = AES.new(key, AES.MODE_ECB)
+decrypted = unpad(decipher.decrypt(encrypted), AES.block_size)
+print("Decrypted:", decrypted.decode())
+                
+'''Encryption part
+1. Import necessary libraries: AES for encryption/decryption, pad and unpad for padding.
+2. Define a shared secret key of valid length (16, 24, or 32 bytes) → key =
+b'ThisIsA16ByteKey'.
+3. Enter the plaintext message → "welcome to cse".
+4. Create an AES cipher object using the key in ECB mode → AES.new(key, AES.MODE_ECB).
+5. Convert the message to bytes and pad it to make its length a multiple of AES block size (16
+bytes).
+6. Encrypt the padded message using the cipher object → produces ciphertext.
+7. Print the encrypted message.
+Decryption part
+1. Create a new AES cipher object with the same key and mode for decryption.
+2. Decrypt the encrypted message (ciphertext) using the cipher object.
+3. Unpad the decrypted bytes to remove extra padding.
+4. Convert the decrypted bytes back to string using .decode().
+5. Print the decrypted text (original message restored).'''&gt;</code></pre>
         </div>
 
         <!-- Project 16 -->
         <div class="project" id="project-16">
             <div class="project-header">
-                <h2>16. Student Registration Form <span class="badge">Bootstrap + JS</span></h2>
+                <h2>16. Q6. A confidential message to User B using RSA <span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code16')">Copy Code</button>
-            <pre><code id="code16">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Student Registration&lt;/title&gt;
-  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
-&lt;/head&gt;
-&lt;body style="background:#f5f5f5; padding:50px;"&gt;
-  &lt;div style="max-width:500px; margin:auto; background:white; padding:30px; border-radius:12px;"&gt;
-    &lt;h2 class="text-center mb-4"&gt;Student Registration&lt;/h2&gt;
-    &lt;form id="registrationForm"&gt;
-      &lt;div class="mb-3"&gt;
-        &lt;label class="form-label"&gt;Full Name&lt;/label&gt;
-        &lt;input type="text" class="form-control" id="name"&gt;
-      &lt;/div&gt;
-      &lt;div class="mb-3"&gt;
-        &lt;label class="form-label"&gt;Email&lt;/label&gt;
-        &lt;input type="email" class="form-control" id="email"&gt;
-      &lt;/div&gt;
-      &lt;button type="submit" class="btn btn-primary w-100"&gt;Register&lt;/button&gt;
-    &lt;/form&gt;
-  &lt;/div&gt;
-
-  &lt;script&gt;
-    document.getElementById('registrationForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      alert(`Registration Successful!\nName: ${name}\nEmail: ${email}`);
-      this.reset();
-    });
-  &lt;/script&gt;
-
-  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code16">&lt;from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+# Generate RSA key pair for User B
+key = RSA.generate(2048)
+public_key = key.publickey()
+# User A encrypts the message using User B's public key
+message = "Hello User B, this is confidential"
+cipher = PKCS1_OAEP.new(public_key)
+encrypted = cipher.encrypt(message.encode())
+print("Encrypted:", encrypted)
+# User B decrypts the message using their private key
+decipher = PKCS1_OAEP.new(key)
+decrypted = decipher.decrypt(encrypted)
+print("Decrypted:", decrypted.decode())
+                
+'''Encryption part (User A sending to User B)
+1. Import necessary libraries: RSA for key generation and PKCS1_OAEP for encryption/decryption.
+2. Generate an RSA key pair for User B (2048-bit key).
+ key → private key (kept secret by User B).
+ public_key → public key (shared with User A).
+3. User A prepares the plaintext message → "Hello User B, this is confidential".
+4. Create a cipher object using User B’s public key → PKCS1_OAEP.new(public_key).
+5. Encrypt the message → produces ciphertext.
+6. Print the encrypted message.
+Decryption part (User B receiving message)
+1. Create a decipher object using User B’s private key → PKCS1_OAEP.new(key).
+2. Decrypt the ciphertext → recovers the original message in bytes.
+3. Convert the decrypted bytes back to string using .decode().
+4. Print the decrypted message (original plaintext restored)'''&gt;</code></pre>
         </div>
 
         <!-- Project 17 -->
         <div class="project" id="project-17">
             <div class="project-header">
-                <h2>17. Temperature Converter <span class="badge">JavaScript</span></h2>
+                <h2>17.Q7. User A want to send the message “Sanjivani University” to user B by using ECC algorithms encrypt it at sender end and decrypt it at receiver end. Comment on Key sharing.<span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code17')">Copy Code</button>
-            <pre><code id="code17">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Temperature Converter&lt;/title&gt;
-  &lt;style&gt;
-    body { font-family: Arial, sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; background:#f5f5f5; }
-    .converter { background:white; padding:30px; border-radius:12px; text-align:center; }
-    input { padding:10px; width:150px; border:1px solid #ccc; margin-bottom:15px; }
-    button { padding:10px 20px; margin:5px; border:none; background:#0d6efd; color:white; cursor:pointer; }
-    .result { margin-top:20px; font-size:1.5rem; color:#28a745; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div class="converter"&gt;
-    &lt;h2&gt;Temperature Converter&lt;/h2&gt;
-    &lt;input type="number" id="tempInput" placeholder="Enter Temperature"&gt;
-    &lt;div&gt;
-      &lt;button onclick="toCelsius()"&gt;To Celsius&lt;/button&gt;
-      &lt;button onclick="toFahrenheit()"&gt;To Fahrenheit&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class="result" id="result"&gt;&lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;script&gt;
-    function toCelsius() {
-      const temp = parseFloat(document.getElementById('tempInput').value);
-      if(isNaN(temp)) return;
-      const celsius = ((temp - 32) * 5/9).toFixed(2);
-      document.getElementById('result').textContent = `${celsius} °C`;
-    }
-
-    function toFahrenheit() {
-      const temp = parseFloat(document.getElementById('tempInput').value);
-      if(isNaN(temp)) return;
-      const fahrenheit = ((temp * 9/5) + 32).toFixed(2);
-      document.getElementById('result').textContent = `${fahrenheit} °F`;
-    }
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code17">&lt;pip install eciespy
+from ecies.utils import generate_key
+from ecies import encrypt, decrypt
+# Receiver (User B) generates ECC key pair
+receiver_private_key = generate_key()
+receiver_public_key = receiver_private_key.public_key
+# Sender (User A) encrypts the message using receiver's public key
+message = "Sanjivani University"
+encrypted_message = encrypt(receiver_public_key.format(True),
+message.encode())
+print("Encrypted:", encrypted_message.hex()) # Show as hex for readability
+# Receiver (User B) decrypts the message using their private key
+decrypted_message = decrypt(receiver_private_key.to_bytes(),
+encrypted_message)
+print("Decrypted:", decrypted_message.decode())
+                
+'''Encryption part (User A sending to User B)
+1. Install and import eciespy libraries:
+ generate_key → generate ECC keys.
+ encrypt / decrypt → perform ECC encryption/decryption.
+2. User B generates an ECC key pair:
+ receiver_private_key → private key (kept secret).
+ receiver_public_key → public key (shared with sender).
+3. User A prepares the plaintext message → "Sanjivani University".
+4. Encrypt the message using User B’s public key → produces encrypted_message.
+5. Print the encrypted message in hex format for readability.
+Decryption part (User B receiving message)
+1. User B uses their private key to decrypt the encrypted_message.
+2. Convert the decrypted bytes back to string using .decode().
+3. Print the decrypted message (original plaintext restored).'''&gt;</code></pre>
         </div>
 
         <!-- Project 18 -->
         <div class="project" id="project-18">
             <div class="project-header">
-                <h2>18. To-Do List Application <span class="badge">JavaScript</span></h2>
+                <h2>**********************************<span class="badge">***************</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code18')">Copy Code</button>
-            <pre><code id="code18">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;To-Do List&lt;/title&gt;
-  &lt;style&gt;
-    body { font-family: Arial, sans-serif; background:#f5f5f5; display:flex; justify-content:center; padding:50px; }
-    .todo-container { background:white; padding:30px; border-radius:12px; width:100%; max-width:500px; }
-    h2 { text-align:center; color:#0d6efd; }
-    input[type='text'] { width:70%; padding:10px; border:1px solid #ccc; }
-    button { padding:10px 15px; margin-left:10px; border:none; background:#0d6efd; color:white; cursor:pointer; }
-    ul { list-style:none; padding:0; margin-top:20px; }
-    li { background:#f8f9fa; padding:10px; margin-bottom:10px; display:flex; justify-content:space-between; }
-    li.completed { text-decoration:line-through; color:#6c757d; }
-    .delete-btn { background:red; padding:5px 10px; cursor:pointer; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div class="todo-container"&gt;
-    &lt;h2&gt;To-Do List&lt;/h2&gt;
-    &lt;div&gt;
-      &lt;input type="text" id="taskInput" placeholder="Enter a task"&gt;
-      &lt;button onclick="addTask()"&gt;Add&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;ul id="taskList"&gt;&lt;/ul&gt;
-  &lt;/div&gt;
-
-  &lt;script&gt;
-    function addTask() {
-      const input = document.getElementById('taskInput');
-      const taskText = input.value.trim();
-      if(!taskText) return;
-
-      const li = document.createElement('li');
-      li.textContent = taskText;
-
-      li.onclick = function(){ li.classList.toggle('completed'); };
-
-      const delBtn = document.createElement('span');
-      delBtn.textContent = 'Delete';
-      delBtn.className = 'delete-btn';
-      delBtn.onclick = function(e){ e.stopPropagation(); li.remove(); };
-
-      li.appendChild(delBtn);
-      document.getElementById('taskList').appendChild(li);
-      input.value = '';
-    }
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code18">&lt;
+                ********************************************************
+                &gt;</code></pre>
         </div>
 
         <!-- Project 19 -->
         <div class="project" id="project-19">
             <div class="project-header">
-                <h2>19. Travel Destination Page <span class="badge">HTML + CSS</span></h2>
+                <h2>****************** <span class="badge">********</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code19')">Copy Code</button>
-            <pre><code id="code19">&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;Travel Destination - Manali&lt;/title&gt;
-  &lt;style&gt;
-    body{ margin:0; font-family:Arial, sans-serif; background:#f5f9ff; color:#222; }
-    header{ background:#0066cc; color:#fff; text-align:center; padding:40px 20px; }
-    .container{ max-width:1000px; margin:40px auto; padding:0 20px; }
-    .intro{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; }
-    .intro img{ width:100%; border-radius:12px; }
-    section{ background:#fff; padding:24px; border-radius:12px; margin-bottom:20px; }
-    ul{ list-style:square inside; padding:0; }
-    footer{ text-align:center; padding:20px; background:#004b9b; color:#fff; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;header&gt;
-    &lt;h1&gt;Explore Manali&lt;/h1&gt;
-    &lt;p&gt;The Himalayan Paradise&lt;/p&gt;
-  &lt;/header&gt;
-
-  &lt;main class="container"&gt;
-    &lt;section class="intro"&gt;
-      &lt;img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Manali_town_2014.jpg" alt="Manali"&gt;
-      &lt;div&gt;
-        &lt;h2&gt;About Manali&lt;/h2&gt;
-        &lt;p&gt;Manali is a stunning hill station in Himachal Pradesh, known for snow-capped mountains and lush valleys.&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;section&gt;
-      &lt;h2&gt;Key Attractions&lt;/h2&gt;
-      &lt;ul&gt;
-        &lt;li&gt;Solang Valley — skiing and paragliding&lt;/li&gt;
-        &lt;li&gt;Rohtang Pass — breathtaking mountain pass&lt;/li&gt;
-        &lt;li&gt;Hidimba Temple — ancient wooden temple&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/section&gt;
-  &lt;/main&gt;
-
-  &lt;footer&gt;© 2025 Travel with Yuvraj&lt;/footer&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code19">&lt;
+                ***********************************************
+                &gt;</code></pre>
         </div>
 
         <!-- Project 20 -->
         <div class="project" id="project-20">
             <div class="project-header">
-                <h2>20. Course List Display - Simulated Angular <span class="badge">JavaScript</span></h2>
+                <h2>*********************<span class="badge">***************8</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code20')">Copy Code</button>
             <p style="margin: 15px 0; color: #666;"><strong>File 1:</strong> course_list_display_simulated_angular.html</p>
-            <pre><code id="code20">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;Course List Display&lt;/title&gt;
-  &lt;style&gt;
-    body { font-family: 'Poppins', sans-serif; padding:50px; background:#f5f5f5; }
-    table { width:100%; border-collapse:collapse; background:white; border-radius:12px; overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.1); }
-    th, td { padding:15px; text-align:left; border-bottom:1px solid #ddd; }
-    th { background:#0d6efd; color:white; }
-    tr:hover { background:#e7f1ff; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-  &lt;h2&gt;Course List&lt;/h2&gt;
-  &lt;table id="courseTable"&gt;
-    &lt;thead&gt;
-      &lt;tr&gt;
-        &lt;th&gt;Course ID&lt;/th&gt;
-        &lt;th&gt;Course Name&lt;/th&gt;
-        &lt;th&gt;Duration&lt;/th&gt;
-      &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;!-- Dynamic rows will be inserted here --&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-
-  &lt;script type="module" src="courses.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-
-            <button class="copy-btn" onclick="copyCode('code20b')" style="margin-top: 20px;">Copy Code</button>
-            <p style="margin: 15px 0; color: #666;"><strong>File 2:</strong> courses.js</p>
-            <pre><code id="code20b">// Simulated Angular Component Logic
-
-const courses = [
-  { id: 'C101', name: 'Web Development', duration: '3 months' },
-  { id: 'C102', name: 'Data Science', duration: '4 months' },
-  { id: 'C103', name: 'Machine Learning', duration: '5 months' },
-  { id: 'C104', name: 'Cybersecurity', duration: '3 months' }
-];
-
-const tbody = document.querySelector('#courseTable tbody');
-
-function displayCourses(courseList) {
-  tbody.innerHTML = '';
-  courseList.forEach(course =&gt; {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      &lt;td&gt;${course.id}&lt;/td&gt;
-      &lt;td&gt;${course.name}&lt;/td&gt;
-      &lt;td&gt;${course.duration}&lt;/td&gt;
-    `;
-    tbody.appendChild(row);
-  });
-}
-
-// Initialize table
-displayCourses(courses);</code></pre>
+            <pre><code id="code20">
+                
+                ***************************
+            
+            </code></pre>
         </div>
 
     </div>
@@ -1066,4 +867,5 @@ displayCourses(courses);</code></pre>
 </body>
 
 </html>
+
 
