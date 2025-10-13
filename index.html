@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Project Codes</title>
+    <title>eduplusCampus</title>
     <style>
         * {
             margin: 0;
@@ -126,17 +126,17 @@
         <div class="toc">
             <h2>Table of Contents</h2>
             <ol>
-                <li><a href="#project-1">College Event Poster (HTML + CSS)</a></li>
-                <li><a href="#project-2">Digital Clock (JavaScript)</a></li>
-                <li><a href="#project-3">Employee Salary Calculator (TypeScript)</a></li>
-                <li><a href="#project-4">Feedback Form (JavaScript)</a></li>
-                <li><a href="#project-5">Image Slider Gallery (Bootstrap)</a></li>
-                <li><a href="#project-6">Personal Profile Card (HTML + CSS)</a></li>
-                <li><a href="#project-7">Portfolio with Navbar (Bootstrap)</a></li>
-                <li><a href="#project-8">Pricing Table (Bootstrap)</a></li>
-                <li><a href="#project-9">Product Landing Page (Bootstrap)</a></li>
-                <li><a href="#project-10">Quiz Application (JavaScript)</a></li>
-                <li><a href="#project-11">Restaurant Menu (HTML + CSS)</a></li>
+                <li><a href="#project-1">Caesar Cipher ENCRYPTION AND DECRYPTION</a></li>
+                <li><a href="#project-2">encryption and decryption using a substitution cipher</a></li>
+                <li><a href="#project-3">Hill Cipher encryption and decryption</a></li>
+                <li><a href="#project-4">DES encryption and decryption</a></li>
+                <li><a href="#project-5">AES Encryption & Decryption in Python</a></li>
+                <li><a href="#project-6">a confidential message to User B using RSA encryption</a></li>
+                <li><a href="#project-7">User B using Elliptic Curve Cryptography (ECC)(pip install eciespy)</a></li>
+                <li><a href="#project-8">PKI infrastructure in one Python script</a></li>
+                <li><a href="#project-9">SHA and MD5 hash generation and verification</a></li>
+                <li><a href="#project-10">machine learning to detect obfuscated command-line strings.(pip install scikit-learn pandas)</a></li>
+                <li><a href="#project-11">**********************this is different node dont reffer it***********Restaurant Menu (HTML + CSS)</a></li>
                 <li><a href="#project-12">Resume Web Page (HTML + CSS)</a></li>
                 <li><a href="#project-13">Simple Calculator (JavaScript)</a></li>
                 <li><a href="#project-14">Student Class Example (TypeScript)</a></li>
@@ -152,74 +152,28 @@
         <!-- Project 1 -->
         <div class="project" id="project-1">
             <div class="project-header">
-                <h2>1. College Event Poster <span class="badge">HTML + CSS</span></h2>
+                <h2>1. Caesar Cipher ENCRYPTION AND DECRYPTION <span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code1')">Copy Code</button>
-            <pre><code id="code1">&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;meta name="viewport" content="width=device-width,initial-scale=1" /&gt;
-  &lt;title&gt;TechFusion 2025 — College Fest&lt;/title&gt;
-  &lt;style&gt;
-    :root{
-      --bg:#fff7ef;
-      --card:#ffffff;
-      --accent:#ff6b6b;
-      --accent-2:#ffd166;
-      --text:#102a43;
-      --muted:#556270;
-      --radius:14px;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#fff 0%,var(--bg) 100%);padding:28px;display:flex;align-items:center;justify-content:center;min-height:100vh}
-
-    .poster{
-      width:900px;max-width:96vw;background:var(--card);border-radius:var(--radius);overflow:hidden;border:6px solid var(--accent-2);box-shadow:0 18px 40px rgba(15,30,60,0.08);
-    }
-
-    .banner{
-      width:100%;height:320px;background-image:linear-gradient(rgba(0,0,0,0.28),rgba(0,0,0,0.16)),url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=');
-      background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:28px;color:white
-    }
-
-    .title{
-      font-size:2.2rem;margin:0;line-height:1.02;font-weight:700;text-shadow:0 6px 18px rgba(0,0,0,0.35)
-    }
-    .subtitle{margin:6px 0 0;font-weight:600;opacity:0.95}
-
-    .content{display:flex;gap:22px;padding:26px}
-
-    .left{flex:1;min-width:240px}
-    .right{width:300px}
-
-    .card{background:linear-gradient(180deg,#fff,#fffafa);padding:18px;border-radius:12px;border:1px solid rgba(16,42,67,0.06)}
-
-    h3{margin:0 0 10px;color:var(--text)}
-    p{margin:0 0 10px;color:var(--muted)}
-
-    .details{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:8px}
-    .detail{background:linear-gradient(90deg,rgba(255,255,255,0.8),rgba(255,255,255,0.6));padding:10px;border-radius:8px;border:1px dashed rgba(16,42,67,0.04);font-weight:600;color:var(--text);text-align:center}
-
-    .cta{display:flex;gap:12px;align-items:center;margin-top:14px}
-    .btn{background:var(--accent);color:white;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700;border:0;display:inline-block}
-    .btn.secondary{background:transparent;color:var(--accent);border:2px solid var(--accent);font-weight:700}
-
-    .sponsors{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .sponsors img{height:36px;opacity:0.9}
-
-    .schedule ul{padding-left:18px;margin:0}
-    .schedule li{margin:8px 0}
-
-    .poster-footer{display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:linear-gradient(90deg,rgba(255,215,102,0.12),rgba(255,107,107,0.06));border-top:1px solid rgba(16,42,67,0.03)}
-    .tag{font-weight:700;color:var(--accent-2)}
-
-    @media (max-width:880px){
-      .content{flex-direction:column}
-      .right{width:100%}
-      .banner{height:220px;padding:18px}
-      .title{font-size:1.6rem}
-    }
+            <pre><code id="code1">&lt;
+def caesar_encrypt(text, shift):
+result = ""
+for char in text:
+if char.isalpha():
+base = ord('A') if char.isupper() else ord('a')
+result += chr((ord(char) - base + shift) % 26 + base)
+else:
+result += char
+return result
+def caesar_decrypt(cipher, shift):
+return caesar_encrypt(cipher, -shift)
+plain_text = "Hello, Sayali!"
+shift_key = 3
+encrypted = caesar_encrypt(plain_text, shift_key)
+decrypted = caesar_decrypt(encrypted, shift_key)
+print("Original Text:", plain_text)
+print("Encrypted Text:", encrypted)
+print("Decrypted Text:", decrypted)
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -1284,4 +1238,5 @@ displayCourses(courses);</code></pre>
         }
     </script>
 </body>
+
 </html>
