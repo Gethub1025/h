@@ -119,7 +119,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>All Project Source Codes</h1>
+            <h1>eduplusCampus</h1>
             <p>Complete collection of 20 projects</p>
         </header>
 
@@ -174,541 +174,367 @@ decrypted = caesar_decrypt(encrypted, shift_key)
 print("Original Text:", plain_text)
 print("Encrypted Text:", encrypted)
 print("Decrypted Text:", decrypted)
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;article class="poster" role="region" aria-label="College event poster"&gt;
-    &lt;div class="banner"&gt;
-      &lt;div&gt;
-        &lt;h1 class="title"&gt;TechFusion 2025&lt;/h1&gt;
-        &lt;div class="subtitle"&gt;Innovation • Robotics • Hackathons&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;div class="content"&gt;
-      &lt;div class="left"&gt;
-        &lt;section class="card"&gt;
-          &lt;h3&gt;What is TechFusion?&lt;/h3&gt;
-          &lt;p&gt;TechFusion is an inter-college technology festival showcasing student projects, workshops on AI & IoT, competitive hackathons, and guest talks from industry experts. Join us for hands-on learning and networking.&lt;/p&gt;
-
-          &lt;div class="details" aria-hidden="false"&gt;
-            &lt;div class="detail"&gt;📅 20–22 Nov 2025&lt;/div&gt;
-            &lt;div class="detail"&gt;📍 Sanjivani University Campus&lt;/div&gt;
-            &lt;div class="detail"&gt;⏰ 9:00 AM — 6:00 PM&lt;/div&gt;
-            &lt;div class="detail"&gt;🎫 Free Registration&lt;/div&gt;
-          &lt;/div&gt;
-
-          &lt;div class="cta"&gt;
-            &lt;a class="btn" href="#register"&gt;Register Now&lt;/a&gt;
-            &lt;a class="btn secondary" href="#schedule"&gt;View Schedule&lt;/a&gt;
-          &lt;/div&gt;
-        &lt;/section&gt;
-
-        &lt;section class="card" style="margin-top:14px"&gt;
-          &lt;h3&gt;Highlights&lt;/h3&gt;
-          &lt;ul class="schedule"&gt;
-            &lt;li&gt;Hackathon — 24-hour team challenge&lt;/li&gt;
-            &lt;li&gt;Robotics Workshop — Build & test&lt;/li&gt;
-            &lt;li&gt;AI Talk — Industry experts&lt;/li&gt;
-            &lt;li&gt;Project Exhibition — Student showcases&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/section&gt;
-      &lt;/div&gt;
-
-      &lt;aside class="right"&gt;
-        &lt;div class="card"&gt;
-          &lt;h3&gt;Event Schedule (Day 1)&lt;/h3&gt;
-          &lt;p&gt;&lt;strong&gt;9:00&lt;/strong&gt; — Opening & Keynote&lt;/p&gt;
-          &lt;p&gt;&lt;strong&gt;11:00&lt;/strong&gt; — Workshops&lt;/p&gt;
-          &lt;p&gt;&lt;strong&gt;14:00&lt;/strong&gt; — Lunch & Expo&lt;/p&gt;
-          &lt;p&gt;&lt;strong&gt;16:00&lt;/strong&gt; — Panel Discussion&lt;/p&gt;
-
-          &lt;div class="sponsors" aria-label="Sponsors"&gt;
-            &lt;img src="https://via.placeholder.com/120x36?text=Sponsor+1" alt="Sponsor 1"&gt;
-            &lt;img src="https://via.placeholder.com/120x36?text=Sponsor+2" alt="Sponsor 2"&gt;
-            &lt;img src="https://via.placeholder.com/120x36?text=Sponsor+3" alt="Sponsor 3"&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div class="card" style="margin-top:14px;text-align:center"&gt;
-          &lt;h3&gt;Contact&lt;/h3&gt;
-          &lt;p&gt;Email: events@sanjivani.edu.in&lt;/p&gt;
-          &lt;p&gt;Phone: +91 98765 43210&lt;/p&gt;
-        &lt;/div&gt;
-      &lt;/aside&gt;
-    &lt;/div&gt;
-
-    &lt;div class="poster-footer"&gt;
-      &lt;div class="tag"&gt;#TechFusion2025&lt;/div&gt;
-      &lt;div&gt;Follow us on social media • @TechFusion&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/article&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+ </code></pre>
         </div>
 
         <!-- Project 2 -->
         <div class="project" id="project-2">
             <div class="project-header">
-                <h2>2. Digital Clock <span class="badge">JavaScript</span></h2>
+                <h2>2. encryption and decryption using a substitution cipher <span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code2')">Copy Code</button>
-            <pre><code id="code2">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;Digital Clock&lt;/title&gt;
-  &lt;style&gt;
-    body { font-family: 'Poppins', sans-serif; display:flex; justify-content:center; align-items:center; height:100vh; background:#f5f5f5; }
-    .clock { font-size:4rem; background:white; padding:50px 80px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-  &lt;div class="clock" id="clock"&gt;00:00:00&lt;/div&gt;
-
-  &lt;script&gt;
-    function updateClock() {
-      const now = new Date();
-      let hours = now.getHours();
-      let minutes = now.getMinutes();
-      let seconds = now.getSeconds();
-
-      hours = hours &lt; 10 ? '0'+hours : hours;
-      minutes = minutes &lt; 10 ? '0'+minutes : minutes;
-      seconds = seconds &lt; 10 ? '0'+seconds : seconds;
-
-      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-    }
-
-    setInterval(updateClock, 1000);
-    updateClock();
-  &lt;/script&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code2">&lt;
+def generate_key_map(key):
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+key = key.upper()
+return dict(zip(alphabet, key))
+def invert_key_map(key_map):
+return {v: k for k, v in key_map.items()}
+def encrypt(text, key_map):
+result = ""
+for char in text:
+if char.isalpha():
+base = 'A' if char.isupper() else 'a'
+mapped = key_map[char.upper()]
+result += mapped if char.isupper() else mapped.lower()
+else:
+result += char
+return result
+def decrypt(cipher, key_map):
+inverse_map = invert_key_map(key_map)
+return encrypt(cipher, inverse_map)
+# Example usage
+key = "QWERTYUIOPASDFGHJKLZXCVBNM" # 26-letter substitution key
+text = "Hello, People!"
+key_map = generate_key_map(key)
+encrypted = encrypt(text, key_map)
+decrypted = decrypt(encrypted, key_map)
+print("Original Text:", text)
+print("Encrypted Text:", encrypted)
+print("Decrypted Text:", decrypted)
+</code></pre>
         </div>
 
         <!-- Project 3 -->
         <div class="project" id="project-3">
             <div class="project-header">
-                <h2>3. Employee Salary Calculator <span class="badge">TypeScript</span></h2>
+                <h2>3. Hill Cipher encryption and decryption <span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code3')">Copy Code</button>
-            <pre><code id="code3">class Employee {
-  name: string;
-  basicPay: number;
-  hra: number;
-  deductions: number;
-
-  constructor(name: string, basicPay: number, hra: number, deductions: number) {
-    this.name = name;
-    this.basicPay = basicPay;
-    this.hra = hra;
-    this.deductions = deductions;
-  }
-
-  calculateNetSalary(): number {
-    return this.basicPay + this.hra - this.deductions;
-  }
-
-  displaySalary(): void {
-    console.log(`Employee Name: ${this.name}`);
-    console.log(`Basic Pay: ₹${this.basicPay}`);
-    console.log(`HRA: ₹${this.hra}`);
-    console.log(`Deductions: ₹${this.deductions}`);
-    console.log(`Net Salary: ₹${this.calculateNetSalary()}`);
-  }
-}
-
-const emp1 = new Employee('Yuvraj', 50000, 12000, 8000);
-emp1.displaySalary();
-
-const emp2 = new Employee('Anjali', 40000, 10000, 5000);
-emp2.displaySalary();</code></pre>
+            <pre><code id="code3">
+import numpy as np
+# Convert text to numbers (A=0, B=1, ..., Z=25)
+def text_to_numbers(text):
+return [ord(char.upper()) - ord('A') for char in text if char.isalpha()]
+# Convert numbers back to text
+def numbers_to_text(numbers):
+return ''.join([chr(num % 26 + ord('A')) for num in numbers])
+# Pad text to match matrix size
+def pad_text(text, size):
+while len(text) % size != 0:
+text += 'X' # Padding with 'X'
+return text
+# Encryption: C = (K × P) mod 26
+def hill_encrypt(plain_text, key_matrix):
+size = key_matrix.shape[0]
+plain_text = pad_text(plain_text, size)
+numbers = text_to_numbers(plain_text)
+cipher = []
+for i in range(0, len(numbers), size):
+block = np.array(numbers[i:i+size])
+encrypted_block = np.dot(key_matrix, block) % 26
+cipher.extend(encrypted_block)
+return numbers_to_text(cipher)
+# Decryption: P = (K⁻¹ × C) mod 26
+def hill_decrypt(cipher_text, key_matrix):
+size = key_matrix.shape[0]
+numbers = text_to_numbers(cipher_text)
+# Compute inverse of key matrix mod 26
+det = int(np.round(np.linalg.det(key_matrix)))
+det_inv = pow(det, -1, 26) # Modular inverse of determinant
+adj = np.round(det * np.linalg.inv(key_matrix)).astype(int) % 26
+inverse_matrix = (det_inv * adj) % 26
+plain = []
+for i in range(0, len(numbers), size):
+block = np.array(numbers[i:i+size])
+decrypted_block = np.dot(inverse_matrix, block) % 26
+plain.extend(decrypted_block)
+return numbers_to_text(plain)
+# Example usage
+key = np.array([[3, 3],
+[2, 5]]) # Must be invertible mod 26
+text = "HELLO"
+encrypted = hill_encrypt(text, key)
+decrypted = hill_decrypt(encrypted, key)
+print("Original Text:", text)
+print("Encrypted Text:", encrypted)
+print("Decrypted Text:", decrypted)    
+            </code></pre>
         </div>
 
         <!-- Project 4 -->
         <div class="project" id="project-4">
             <div class="project-header">
-                <h2>4. Feedback Form <span class="badge">JavaScript</span></h2>
+                <h2>4.DES encryption and decryption<span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code4')">Copy Code</button>
-            <pre><code id="code4">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;Feedback Form&lt;/title&gt;
-  &lt;style&gt;
-    body { font-family: 'Poppins', sans-serif; padding:50px; background:#f5f5f5; }
-    input, textarea { width:100%; padding:10px; margin-bottom:10px; border-radius:6px; border:1px solid #ccc; }
-    button { padding:10px 20px; border:none; border-radius:6px; background:#0d6efd; color:white; cursor:pointer; }
-    .feedback-list { margin-top:30px; list-style:none; padding:0; }
-    .feedback-list li { background:white; padding:15px; margin-bottom:10px; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-  &lt;h2&gt;Feedback Form&lt;/h2&gt;
-  &lt;form id="feedbackForm"&gt;
-    &lt;input type="text" id="name" placeholder="Your Name" required&gt;
-    &lt;textarea id="feedback" rows="4" placeholder="Your Feedback" required&gt;&lt;/textarea&gt;
-    &lt;button type="submit"&gt;Submit Feedback&lt;/button&gt;
-  &lt;/form&gt;
-
-  &lt;ul class="feedback-list" id="feedbackList"&gt;&lt;/ul&gt;
-
-  &lt;script&gt;
-    const form = document.getElementById('feedbackForm');
-    const feedbackList = document.getElementById('feedbackList');
-
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-
-      const name = document.getElementById('name').value.trim();
-      const feedback = document.getElementById('feedback').value.trim();
-
-      if(!name || !feedback){ alert('Please enter all fields'); return; }
-
-      const li = document.createElement('li');
-      li.innerHTML = `&lt;strong&gt;${name}:&lt;/strong&gt; ${feedback}`;
-      feedbackList.appendChild(li);
-
-      form.reset();
-    });
-  &lt;/script&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code4">&lt;
+from Crypto.Cipher import DES
+from Crypto.Util.Padding import pad, unpad
+# Key must be 8 bytes
+key = b'8bytekey' # Shared secret key
+# Message to send
+message = "Meet me very urgently"
+# Encrypt at sender (User A)
+cipher = DES.new(key, DES.MODE_ECB)
+encrypted = cipher.encrypt(pad(message.encode(), DES.block_size))
+print("Encrypted:", encrypted)
+# Decrypt at receiver (User B)
+decipher = DES.new(key, DES.MODE_ECB)
+decrypted = unpad(decipher.decrypt(encrypted), DES.block_size)
+print("Decrypted:", decrypted.decode())       
+            
+            </code></pre>
         </div>
 
         <!-- Project 5 -->
         <div class="project" id="project-5">
             <div class="project-header">
-                <h2>5. Image Slider Gallery <span class="badge">Bootstrap</span></h2>
+                <h2>5. AES Encryption & Decryption in Python <span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code5')">Copy Code</button>
-            <pre><code id="code5">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;title&gt;Image Slider Gallery&lt;/title&gt;
-  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
-  &lt;style&gt;
-    body { font-family: 'Poppins', sans-serif; background:#f5f5f5; padding:40px; }
-    .carousel-item img { border-radius:12px; max-height:500px; object-fit:cover; }
-    h1 { text-align:center; margin-bottom:30px; color:#0d6efd; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-  &lt;h1&gt;Travel Photo Gallery&lt;/h1&gt;
-
-  &lt;div id="imageCarousel" class="carousel slide" data-bs-ride="carousel"&gt;
-    &lt;div class="carousel-inner"&gt;
-      &lt;div class="carousel-item active"&gt;
-        &lt;img src="https://via.placeholder.com/900x500.png?text=Image+1" class="d-block w-100" alt="Image 1"&gt;
-      &lt;/div&gt;
-      &lt;div class="carousel-item"&gt;
-        &lt;img src="https://via.placeholder.com/900x500.png?text=Image+2" class="d-block w-100" alt="Image 2"&gt;
-      &lt;/div&gt;
-      &lt;div class="carousel-item"&gt;
-        &lt;img src="https://via.placeholder.com/900x500.png?text=Image+3" class="d-block w-100" alt="Image 3"&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev"&gt;
-      &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
-    &lt;/button&gt;
-    &lt;button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next"&gt;
-      &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
-    &lt;/button&gt;
-
-    &lt;div class="carousel-indicators"&gt;
-      &lt;button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
-      &lt;button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1"&gt;&lt;/button&gt;
-      &lt;button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="2"&gt;&lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code5">&lt;
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad, unpad
+# AES key must be 16, 24, or 32 bytes
+key = b'ThisIsA16ByteKey' # Shared secret key (16 bytes)
+# Message to send
+message = "welcome to cse"
+# Encrypt at sender (User C)
+cipher = AES.new(key, AES.MODE_ECB)
+encrypted = cipher.encrypt(pad(message.encode(), AES.block_size))
+print("Encrypted:", encrypted)
+# Decrypt at receiver (User D)
+decipher = AES.new(key, AES.MODE_ECB)
+decrypted = unpad(decipher.decrypt(encrypted), AES.block_size)
+print("Decrypted:", decrypted.decode())  
+            </code></pre>
         </div>
 
         <!-- Project 6 -->
         <div class="project" id="project-6">
             <div class="project-header">
-                <h2>6. Personal Profile Card <span class="badge">HTML + CSS</span></h2>
+                <h2>6. a confidential message to User B using RSA encryption<span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code6')">Copy Code</button>
-            <pre><code id="code6">&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8" /&gt;
-  &lt;title&gt;Personal Profile Card&lt;/title&gt;
-  &lt;style&gt;
-    :root{ --bg: #f0f4f8; --accent: #5b8cff; --muted: #6b7280; }
-    *{box-sizing:border-box}
-    body{ margin:0; font-family:Arial, sans-serif; background: var(--bg); display:flex; align-items:center; justify-content:center; padding:40px; }
-    .card{ width:320px; background:white; border-radius:16px; padding:22px; border:1px solid #ddd; text-align:center; }
-    .avatar-wrap{ width:120px; height:120px; margin:-32px auto 4px; border-radius:50%; padding:6px; background:#f0f0f0; }
-    .avatar{ width:100%; height:100%; border-radius:50%; object-fit:cover; }
-    h2{ margin:4px 0 0; font-size:1.05rem; color:#333; }
-    p.role{ margin:6px 0 8px; color:var(--accent); font-weight:600; font-size:0.85rem }
-    p.bio{ margin:0; padding:0 6px; color:var(--muted); font-size:0.95rem; line-height:1.45 }
-    .meta{ display:flex; gap:10px; align-items:center; justify-content:center; margin-top:8px }
-    .meta span{ padding:8px 12px; border-radius:999px; background:#f5f5f5; font-size:0.88rem; }
-    .social{ display:flex; gap:10px; justify-content:center; margin-top:12px }
-    .social a{ display:inline-block; padding:10px 15px; border-radius:10px; text-decoration:none; border:1px solid #ddd; background:white; color:#333; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;article class="card"&gt;
-    &lt;div class="avatar-wrap"&gt;
-      &lt;img class="avatar" src="https://via.placeholder.com/300x300.png?text=Photo" alt="Profile photo"&gt;
-    &lt;/div&gt;
-    &lt;h2&gt;Your Name&lt;/h2&gt;
-    &lt;p class="role"&gt;Web Developer • Designer&lt;/p&gt;
-    &lt;p class="bio"&gt;I am a passionate developer building delightful interfaces and reliable web systems.&lt;/p&gt;
-    &lt;div class="meta"&gt;
-      &lt;span&gt;📍 Pune, India&lt;/span&gt;
-      &lt;span&gt;💼 Open to work&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;div class="social"&gt;
-      &lt;a href="#"&gt;GitHub&lt;/a&gt;
-      &lt;a href="#"&gt;LinkedIn&lt;/a&gt;
-      &lt;a href="#"&gt;Email&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/article&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code6">&lt;   
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+# Generate RSA key pair for User B
+key = RSA.generate(2048)
+public_key = key.publickey()
+# User A encrypts the message using User B's public key
+message = "Hello User B, this is confidential"
+cipher = PKCS1_OAEP.new(public_key)
+encrypted = cipher.encrypt(message.encode())
+print("Encrypted:", encrypted)
+# User B decrypts the message using their private key
+decipher = PKCS1_OAEP.new(key)
+decrypted = decipher.decrypt(encrypted)
+print("Decrypted:", decrypted.decode())
+            </code></pre>
         </div>
 
         <!-- Project 7 -->
         <div class="project" id="project-7">
             <div class="project-header">
-                <h2>7. Portfolio with Navbar <span class="badge">Bootstrap</span></h2>
+                <h2>7. User B using Elliptic Curve Cryptography (ECC)<span class="badge">pip install eciespy</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code7')">Copy Code</button>
-            <pre><code id="code7">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Portfolio&lt;/title&gt;
-  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;
-    &lt;div class="container"&gt;
-      &lt;a class="navbar-brand" href="#"&gt;Yuvraj&lt;/a&gt;
-      &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"&gt;
-        &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
-      &lt;/button&gt;
-      &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
-        &lt;ul class="navbar-nav ms-auto"&gt;
-          &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;
-          &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/nav&gt;
-
-  &lt;section style="padding: 80px 0; text-align: center; background: #0d6efd; color: white;"&gt;
-    &lt;div class="container"&gt;
-      &lt;h1&gt;Welcome to My Portfolio&lt;/h1&gt;
-      &lt;p&gt;Developer | Innovator | Problem Solver&lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-
-  &lt;section id="projects" class="container py-5"&gt;
-    &lt;h2 class="text-center mb-5"&gt;Projects&lt;/h2&gt;
-    &lt;div class="row"&gt;
-      &lt;div class="col-md-4"&gt;
-        &lt;div class="card"&gt;
-          &lt;img src="https://via.placeholder.com/400x250.png?text=Project+1" class="card-img-top" alt="Project"&gt;
-          &lt;div class="card-body"&gt;
-            &lt;h5&gt;Smart Car Prototype&lt;/h5&gt;
-            &lt;p&gt;Automated system using Peltier modules.&lt;/p&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-
-  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code7">&lt;
+from ecies.utils import generate_key
+from ecies import encrypt, decrypt
+# Receiver (User B) generates ECC key pair
+receiver_private_key = generate_key()
+receiver_public_key = receiver_private_key.public_key
+# Sender (User A) encrypts the message using receiver's public key
+message = "Sanjivani University"
+encrypted_message = encrypt(receiver_public_key.format(True),
+message.encode())
+print("Encrypted:", encrypted_message.hex()) # Show as hex for readability
+# Receiver (User B) decrypts the message using their private key
+decrypted_message = decrypt(receiver_private_key.to_bytes(),
+encrypted_message)
+print("Decrypted:", decrypted_message.decode())               
+            </code></pre>
         </div>
 
         <!-- Project 8 -->
         <div class="project" id="project-8">
             <div class="project-header">
-                <h2>8. Pricing Table <span class="badge">Bootstrap</span></h2>
+                <h2>8.PKI infrastructure in one Python script <span class="badge">Python Script + Pip install cryptography</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code8')">Copy Code</button>
-            <pre><code id="code8">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Pricing Plans&lt;/title&gt;
-  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
-&lt;/head&gt;
-&lt;body style="background: #f8f9fa; padding: 50px 0;"&gt;
-  &lt;div class="container"&gt;
-    &lt;h1 class="text-center mb-5"&gt;Our Pricing Plans&lt;/h1&gt;
-    &lt;div class="row g-4 justify-content-center"&gt;
-      &lt;div class="col-md-4"&gt;
-        &lt;div class="card text-center p-4"&gt;
-          &lt;h3&gt;Basic&lt;/h3&gt;
-          &lt;div style="font-size: 2rem; font-weight: 700; color: #0d6efd;"&gt;₹499&lt;/div&gt;
-          &lt;ul class="list-unstyled mb-4"&gt;
-            &lt;li&gt;5 Projects&lt;/li&gt;
-            &lt;li&gt;Email Support&lt;/li&gt;
-          &lt;/ul&gt;
-          &lt;button class="btn btn-primary"&gt;Buy Now&lt;/button&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class="col-md-4"&gt;
-        &lt;div class="card text-center p-4"&gt;
-          &lt;h3&gt;Pro&lt;/h3&gt;
-          &lt;div style="font-size: 2rem; font-weight: 700; color: #0d6efd;"&gt;₹999&lt;/div&gt;
-          &lt;ul class="list-unstyled mb-4"&gt;
-            &lt;li&gt;20 Projects&lt;/li&gt;
-            &lt;li&gt;Priority Support&lt;/li&gt;
-          &lt;/ul&gt;
-          &lt;button class="btn btn-primary"&gt;Buy Now&lt;/button&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
+            <pre><code id="code8">&lt;
+Pip install cryptography
+from cryptography.hazmat.primitives import serialization,
+hashes
+from cryptography.hazmat.primitives.asymmetric import rsa,
+padding
+from cryptography.x509 import NameOID, CertificateBuilder
+from cryptography import x509
+from datetime import datetime, timedelta
+# Step 1: Generate Root CA key and self-signed certificate
+root_key = rsa.generate_private_key(public_exponent=65537,
+key_size=2048)
+root_subject =
+x509.Name([x509.NameAttribute(NameOID.COMMON_NA
+ME, "Root CA")])
+root_cert = CertificateBuilder().subject_name(root_subject)\
+ .issuer_name(root_subject)\
+ .public_key(root_key.public_key())\
+ .serial_number(x509.random_serial_number())\
+ .not_valid_before(datetime.utcnow())\
+ .not_valid_after(datetime.utcnow() + timedelta(days=365))\
+ .sign(root_key, hashes.SHA256())
+# Step 2: Generate User B's key and CSR
+user_key = rsa.generate_private_key(public_exponent=65537,
+key_size=2048)
+user_subject =
+x509.Name([x509.NameAttribute(NameOID.COMMON_NA
+ME, "User B")])
+csr =
+x509.CertificateSigningRequestBuilder().subject_name(user_
+subject).sign(user_key, hashes.SHA256())
+# Step 3: CA signs User B's certificate
+user_cert = CertificateBuilder().subject_name(user_subject)\
+ .issuer_name(root_cert.subject)\
+ .public_key(user_key.public_key())\
+ .serial_number(x509.random_serial_number())\
+ .not_valid_before(datetime.utcnow())\
+ .not_valid_after(datetime.utcnow() + timedelta(days=365))\
+ .sign(root_key, hashes.SHA256())
+# Step 4: User A encrypts message using User B's public key
+message = b"Sanjivani University"
+encrypted = user_key.public_key().encrypt(
+ message,
 
-  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA2
+56()), algorithm=hashes.SHA256(), label=None)
+)
+# Step 5: User B decrypts using their private key
+decrypted = user_key.decrypt(
+ encrypted,
+
+padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA2
+56()), algorithm=hashes.SHA256(), label=None)
+)
+# Output
+print("Encrypted:", encrypted.hex())
+print("Decrypted:", decrypted.decode())
+            
+            </code></pre>
         </div>
 
         <!-- Project 9 -->
         <div class="project" id="project-9">
             <div class="project-header">
-                <h2>9. Product Landing Page <span class="badge">Bootstrap</span></h2>
+                <h2>9.SHA and MD5 hash generation and verification<span class="badge">Python</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code9')">Copy Code</button>
-            <pre><code id="code9">&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="utf-8"&gt;
-  &lt;title&gt;GizmoPro 2025&lt;/title&gt;
-  &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;
-    &lt;div class="container"&gt;
-      &lt;a class="navbar-brand" href="#"&gt;GizmoPro&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/nav&gt;
-
-  &lt;section style="padding: 80px 0; background-color: #f8f9fa;"&gt;
-    &lt;div class="container"&gt;
-      &lt;div class="row align-items-center"&gt;
-        &lt;div class="col-md-6"&gt;
-          &lt;h1&gt;GizmoPro 2025&lt;/h1&gt;
-          &lt;p&gt;Experience the next generation of smart devices.&lt;/p&gt;
-          &lt;a href="#" class="btn btn-primary"&gt;Buy Now&lt;/a&gt;
-        &lt;/div&gt;
-        &lt;div class="col-md-6 text-center"&gt;
-          &lt;img src="https://via.placeholder.com/400x400.png?text=GizmoPro" alt="Product" style="max-width: 100%; border-radius: 12px;"&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-
-  &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code9">&lt;
+import hashlib
+# Message to hash
+message = "Sanjivani University"
+# Generate MD5 hash
+md5_hash = hashlib.md5(message.encode()).hexdigest()
+print("MD5 Hash:", md5_hash)
+# Generate SHA-256 hash
+sha256_hash = hashlib.sha256(message.encode()).hexdigest()
+print("SHA-256 Hash:", sha256_hash)
+# Verification example
+def verify_hash(input_text, original_hash,
+algorithm='sha256'):
+if algorithm == 'md5':
+new_hash =
+hashlib.md5(input_text.encode()).hexdigest()
+elif algorithm == 'sha256':
+new_hash =
+hashlib.sha256(input_text.encode()).hexdigest()
+else:
+return False
+return new_hash == original_hash
+# Verify both hashes
+print("MD5 Verified:", verify_hash("Sanjivani University",
+md5_hash, 'md5'))
+print("SHA-256 Verified:", verify_hash("Sanjivani
+University", sha256_hash, 'sha256')) 
+            </code></pre>
         </div>
 
         <!-- Project 10 -->
         <div class="project" id="project-10">
             <div class="project-header">
-                <h2>10. Quiz Application <span class="badge">JavaScript</span></h2>
+                <h2>10.machine learning to detect obfuscated command-line strings. <span class="badge">pip install scikit-learn pandas</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code10')">Copy Code</button>
-            <pre><code id="code10">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;title&gt;Quiz Application&lt;/title&gt;
-  &lt;style&gt;
-    body { font-family: Arial, sans-serif; padding:50px; background:#f5f5f5; }
-    .quiz-container { background:white; padding:30px; border-radius:12px; max-width:600px; margin:auto; }
-    h2 { color:#0d6efd; }
-    .options { list-style:none; padding:0; }
-    .options li { background:#f8f9fa; padding:10px; margin-bottom:10px; cursor:pointer; }
-    .btn { margin-top:20px; padding:10px 20px; background:#0d6efd; color:white; border:none; cursor:pointer; }
-    .score { text-align:center; font-size:1.5rem; color:#28a745; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div class="quiz-container"&gt;
-    &lt;h2 id="question"&gt;Question text&lt;/h2&gt;
-    &lt;ul class="options" id="options"&gt;&lt;/ul&gt;
-    &lt;button class="btn" id="nextBtn"&gt;Next&lt;/button&gt;
-    &lt;div class="score" id="score"&gt;&lt;/div&gt;
-  &lt;/div&gt;
-
-  &lt;script&gt;
-    const quizData = [
-      { question: "What is the capital of France?", options: ["Paris", "London", "Berlin", "Rome"], answer: "Paris" },
-      { question: "2 + 2 = ?", options: ["3","4","5","6"], answer: "4" },
-      { question: "Which language is used for web apps?", options: ["Python","JavaScript","C++","Java"], answer: "JavaScript" }
-    ];
-
-    let currentQuestion = 0, score = 0;
-
-    function loadQuestion() {
-      const q = quizData[currentQuestion];
-      document.getElementById('question').textContent = q.question;
-      const optionsEl = document.getElementById('options');
-      optionsEl.innerHTML = '';
-      q.options.forEach(option => {
-        const li = document.createElement('li');
-        li.textContent = option;
-        li.onclick = function() {
-          if(option === q.answer) score++;
-          document.getElementById('nextBtn').style.display = 'inline-block';
-        };
-        optionsEl.appendChild(li);
-      });
-    }
-
-    document.getElementById('nextBtn').onclick = function() {
-      currentQuestion++;
-      if(currentQuestion < quizData.length){
-        loadQuestion();
-        this.style.display = 'none';
-      } else {
-        document.getElementById('question').textContent = 'Quiz Completed!';
-        document.getElementById('options').innerHTML = '';
-        this.style.display = 'none';
-        document.getElementById('score').textContent = `Your Score: ${score} / ${quizData.length}`;
-      }
-    };
-
-    loadQuestion();
-    document.getElementById('nextBtn').style.display = 'none';
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+            <pre><code id="code10">&lt;
+import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report
+# Sample dataset: normal vs obfuscated commands
+data = {
+'command': [
+'powershell -exec bypass -enc
+SQBFAFgAIAByAGUAZwBlAHIAcwB0AHIAeQAuAEUA
+eABlAGMAdQB0AGU',
+'cmd.exe /c calc.exe',
+'p"+"o"+"w"+"e"+"r"+"s"+"h"+"e"+"l"+"l"',
+'powershell -NoProfile -Command "Get-Process"',
+'ping 127.0.0.1',
+'whoami',
+'powershell -e
+JABwAHMAPQBnAGUAdAAtAHAAcgBvAGMAZQBzAH
+MA',
+'dir',
+'tasklist',
+'powershell -Command "Start-Sleep -Seconds 5"'
+],
+'label': [1, 0, 1, 0, 0, 0, 1, 0, 0, 0] # 1 = obfuscated, 0 =
+normal
+}
+# Load data
+df = pd.DataFrame(data)
+# Vectorize command strings
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(df['command'])
+y = df['label']
+# Train/test split
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+test_size=0.3, random_state=42)
+# Train model
+model = LogisticRegression()
+model.fit(X_train, y_train)
+# Predict and evaluate
+y_pred = model.predict(X_test)
+print(classification_report(y_test, y_pred))
+# Test a new command
+new_command = ['powershell -enc
+SQBFAFgAIAByAGUAZwBlAHIAcwB0AHIAeQAuAEUA
+eABlAGMAdQB0AGU']
+new_vec = vectorizer.transform(new_command)
+prediction = model.predict(new_vec)
+print("Prediction:", "Obfuscated" if prediction[0] == 1 else
+"Normal")            
+            </code></pre>
         </div>
 
         <!-- Project 11 -->
         <div class="project" id="project-11">
             <div class="project-header">
-                <h2>11. Restaurant Menu <span class="badge">HTML + CSS</span></h2>
+                <h2>11. *****************************dont go down****************Restaurant Menu <span class="badge">HTML + CSS</span></h2>
             </div>
             <button class="copy-btn" onclick="copyCode('code11')">Copy Code</button>
             <pre><code id="code11">&lt;!DOCTYPE html&gt;
@@ -1240,3 +1066,4 @@ displayCourses(courses);</code></pre>
 </body>
 
 </html>
+
