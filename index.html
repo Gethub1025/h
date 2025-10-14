@@ -1,882 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eduplusCampus</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FDA PBL Questions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            padding: 20px;
-            line-height: 1.6;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      line-height: 1.6;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-        }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
 
-        header {
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 2px solid #333;
-            margin-bottom: 30px;
-        }
+    ul {
+      list-style: none;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      padding: 0;
+    }
 
-        h1 {
-            font-size: 2rem;
-            color: #333;
-        }
+    li {
+      background: white;
+      margin: 10px 0;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: 0.2s;
+    }
 
-        .project {
-            margin-bottom: 40px;
-            border: 1px solid #ddd;
-            padding: 20px;
-        }
+    li:hover {
+      background: #e8f0fe;
+    }
 
-        .project-header {
-            background: #333;
-            color: white;
-            padding: 10px 15px;
-            margin: -20px -20px 20px -20px;
-        }
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 18px;
+    }
 
-        .project-header h2 {
-            font-size: 1.2rem;
-        }
+    section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin: 30px auto;
+      max-width: 900px;
+      position: relative;
+    }
 
-        .badge {
-            display: inline-block;
-            background: #666;
-            color: white;
-            padding: 3px 8px;
-            font-size: 0.8rem;
-            margin-left: 10px;
-        }
+    section h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
 
-        pre {
-            background: #f4f4f4;
-            border: 1px solid #ddd;
-            padding: 15px;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
+    pre {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-size: 15px;
+      position: relative;
+      white-space: pre-wrap;
+    }
 
-        code {
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            color: #333;
-        }
+    .copy-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: 0.2s;
+    }
 
-        .copy-btn {
-            background: #333;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            cursor: pointer;
-            margin-bottom: 10px;
-        }
+    .copy-btn:hover {
+      background: #0056b3;
+    }
 
-        .copy-btn:hover {
-            background: #555;
-        }
+    .back-top {
+      text-align: right;
+      margin-top: 10px;
+    }
 
-        .toc {
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
+    .back-top a {
+      color: #007BFF;
+      text-decoration: none;
+    }
 
-        .toc h2 {
-            margin-bottom: 15px;
-        }
-
-        .toc ol {
-            margin-left: 20px;
-        }
-
-        .toc a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .toc a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .back-top a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>eduplusCampus</h1>
-            <p>Complete collection of 20 projects</p>
-        </header>
 
-        <div class="toc">
-            <h2>Table of Contents</h2>
-            <ol>
-                <li><a href="#project-1">Login Page Validation Create a login form with email and password fields.When the user clicks “Login,” show an alert saying “Login Successful” if both fields are filled, otherwise “Please enter all details.” Login Page Validation</a></li>
-                <li><a href="#project-2">encryption and decryption using a substitution cipher</a></li>
-                <li><a href="#project-3">Hill Cipher encryption and decryption</a></li>
-                <li><a href="#project-4">DES encryption and decryption</a></li>
-                <li><a href="#project-5">AES Encryption & Decryption in Python</a></li>
-                <li><a href="#project-6">a confidential message to User B using RSA encryption</a></li>
-                <li><a href="#project-7">User B using Elliptic Curve Cryptography (ECC)(pip install eciespy)</a></li>
-                <li><a href="#project-8">PKI infrastructure in one Python script</a></li>
-                <li><a href="#project-9">SHA and MD5 hash generation and verification</a></li>
-                <li><a href="#project-10">machine learning to detect obfuscated command-line strings.(pip install scikit-learn pandas)</a></li>
-                <li><a href="#project-11">Q1. Write a program to perform encryption and decryption using caeser cipher </a></li>
-                <li><a href="#project-12">Q2. Write a program to perform encryption and decryption using substitution cipher</a></li>
-                <li><a href="#project-13">Q3. Write a program to perform encryption and decryption using Hill cipher simpel code</a></li>
-                <li><a href="#project-14">Q4. User A want to send the message “Meet me very urgently” to user B by using DES algorithms encrypt it at sender end and decrypt it at receiver end</a></li>
-                <li><a href="#project-15">Q5. AES algorithms encrypt it and decrypt it at receiver end.</a></li>
-                <li><a href="#project-16">Q6. A confidential message to User B using RSA </a></li>
-                <li><a href="#project-17">Q7. User A want to send the message “Sanjivani University” to user B by using ECC algorithms encrypt it at sender end and decrypt it at receiver end.Comment on Key sharing.</a></li>
-                <li><a href="#project-18">*************************************</a></li>
-                <li><a href="#project-19">***************************************</a></li>
-                <li><a href="#project-20">****************************************</a></li>
-            </ol>
-        </div>
+  <h1 id="top">EduPlusCampus</h1>
 
-        <!-- Project 1 -->
-        <div class="project" id="project-1">
-            <div class="project-header">
-                <h2>1. Caesar Cipher ENCRYPTION AND DECRYPTION <span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code1')">Copy Code</button>
-            <pre><code id="code1">&lt;
- <!DOCTYPE html>
-<html>
-<head>
-  <title>Login Page</title>
-</head>
-<body>
-  <h2>Login Form</h2>
+  <!-- Question List -->
+  <ul>
+    <li><a href="#q1">1. Login Page Validation</a></li>
+    <li><a href="#q2">2. Dark Mode Toggle</a></li>
+    <li><a href="#q3">3. Character Counter</a></li>
+    <li><a href="#q4">4. Image Slideshow</a></li>
+    <li><a href="#q5">5. Online Order Form</a></li>
+    <li><a href="#q6">6. Change Background Color</a></li>
+    <li><a href="#q7">7. Registration Form Validation</a></li>
+    <li><a href="#q8">8. Basic Calculator</a></li>
+    <li><a href="#q9">9. Simple Login Page</a></li>
+    <li><a href="#q10">10. Feedback Form</a></li>
+  </ul>
 
-  <input type="text" id="email" placeholder="Enter Email"><br><br>
-  <input type="password" id="password" placeholder="Enter Password"><br><br>
-  <button onclick="login()">Login</button>
+  <!-- Answers Sections -->
+  <section id="q1">
+    <h2>1. Login Page Validation</h2>
+    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
+    <pre>
+&lt;input type="email" id="email" placeholder="Enter Email"&gt;
+&lt;input type="password" id="password" placeholder="Enter Password"&gt;
+&lt;button onclick="login1()"&gt;Login&lt;/button&gt;
 
+&lt;script&gt;
+function login1() {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  if (email === "" || password === "") {
+    alert("Please enter all details.");
+  } else {
+    alert("Login Successful!");
+  }
+}
+&lt;/script&gt;
+    </pre>
+  </section>
+
+  <section id="q2">
+    <h2>2. Dark Mode Toggle</h2>
+    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
+    <pre>
+&lt;button onclick="toggleTheme()"&gt;Toggle Theme&lt;/button&gt;
+
+&lt;script&gt;
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+.dark { background-color: #333; color: white; }
+&lt;/style&gt;
+    </pre>
+  </section>
+
+  <section id="q3">
+    <h2>3. Character Counter</h2>
+    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
+    <pre>
+&lt;textarea id="text" maxlength="100" oninput="countChars()"&gt;&lt;/textarea&gt;
+&lt;p id="count"&gt;Characters typed: 0 / 100&lt;/p&gt;
+
+&lt;script&gt;
+function countChars() {
+  const text = document.getElementById('text').value.length;
+  document.getElementById('count').innerText = "Characters typed: " + text + " / 100";
+}
+&lt;/script&gt;
+    </pre>
+  </section>
+
+  <section id="q4">
+    <h2>4. Image Slideshow</h2>
+    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
+    <pre>
+&lt;img id="slide" width="300" height="200"&gt;&lt;br&gt;
+&lt;button onclick="prev()"&gt;Previous&lt;/button&gt;
+&lt;button onclick="next()"&gt;Next&lt;/button&gt;
+
+&lt;script&gt;
+let images = ['img1.jpg','img2.jpg','img3.jpg'];
+let index = 0;
+document.getElementById('slide').src = images[index];
+function next(){ index = (index + 1) % images.length; document.getElementById('slide').src = images[index]; }
+function prev(){ index = (index - 1 + images.length) % images.length; document.getElementById('slide').src = images[index]; }
+setInterval(next, 3000);
+&lt;/script&gt;
+    </pre>
+  </section>
+
+  <section id="q5">
+    <h2>5. Online Order Form</h2>
+    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
+    <pre>
+&lt;input id="name" placeholder="Name"&gt;
+&lt;input id="item" placeholder="Item"&gt;
+&lt;input id="qty" type="number" placeholder="Quantity"&gt;
+&lt;button onclick="order()"&gt;Place Order&lt;/button&gt;
+&lt;p id="summary"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function order(){
+  let n=document.getElementById('name').value;
+  let i=document.getElementById('item').value;
+  let q=document.getElementById('qty').value;
+  document.getElementById('summary').innerText=`Order Placed by ${n} for ${q} ${i}(s).`;
+}
+&lt;/script&gt;
+    </pre>
+  </section>
+
+  <section id="q6">
+    <h2>6. Change Background Color</h2>
+    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
+    <pre>
+&lt;button onclick="changeColor()"&gt;Change Color&lt;/button&gt;
+&lt;script&gt;
+function changeColor(){
+  const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+  document.body.style.backgroundColor = randomColor;
+}
+&lt;/script&gt;
+    </pre>
+  </section>
+
+  <section id="q7">
+    <h2>7. Registration Form Validation</h2>
+    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
+    <pre>
+&lt;input id="rname" placeholder="Name"&gt;
+&lt;input id="remail" placeholder="Email"&gt;
+&lt;select id="gender"&gt;
+  &lt;option value=""&gt;Select Gender&lt;/option&gt;
+  &lt;option&gt;Male&lt;/option&gt;
+  &lt;option&gt;Female&lt;/option&gt;
+&lt;/select&gt;
+&lt;input id="dept" placeholder="Department"&gt;
+&lt;button onclick="register()"&gt;Register&lt;/button&gt;
+
+&lt;script&gt;
+function register(){
+  let n=document.getElementById('rname').value;
+  let e=document.getElementById('remail').value;
+  let g=document.getElementById('gender').value;
+  let d=document.getElementById('dept').value;
+  if(n && e && g && d) alert("Registered Successfully!");
+  else alert("Please fill all fields!");
+}
+&lt;/script&gt;
+    </pre>
+  </section>
+
+  <section id="q8">
+    <h2>8. Basic Calculator</h2>
+    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
+    <pre>
+&lt;input id="num1" type="number" placeholder="Number 1"&gt;
+&lt;input id="num2" type="number" placeholder="Number 2"&gt;
+&lt;button onclick="calc('+')"&gt;+&lt;/button&gt;
+&lt;button onclick="calc('-')"&gt;-&lt;/button&gt;
+&lt;button onclick="calc('*')"&gt;×&lt;/button&gt;
+&lt;button onclick="calc('/')"&gt;÷&lt;/button&gt;
+&lt;p id="result"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function calc(op){
+  let a=parseFloat(document.getElementById('num1').value);
+  let b=parseFloat(document.getElementById('num2').value);
+  let res;
+  if(isNaN(a)||isNaN(b)){res="Error";}
+  else{
+    if(op=='+') res=a+b;
+    else if(op=='-') res=a-b;
+    else if(op=='*') res=a*b;
+    else if(op=='/') res=b!==0?a/b:"Error";
+  }
+  document.getElementById('result').innerText="Result: "+res;
+}
+&lt;/script&gt;
+    </pre>
+  </section>
+
+  <section id="q9">
+    <h2>9. Simple Login Page (Predefined Check)</h2>
+    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
+    <pre>
+&lt;input id="uname" placeholder="Username"&gt;
+&lt;input id="pass" type="password" placeholder="Password"&gt;
+&lt;button onclick="checkLogin()"&gt;Login&lt;/button&gt;
+
+&lt;script&gt;
+function checkLogin(){
+  const u=document.getElementById('uname').value;
+  const p=document.getElementById('pass').value;
+  if(u==='admin' && p==='1234') alert("Welcome, Admin!");
+  else alert("Invalid Credentials!");
+}
+&lt;/script&gt;
+    </pre>
+  </section>
+
+  <section id="q10">
+    <h2>10. Feedback Form</h2>
+    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
+    <pre>
+&lt;input id="fname" placeholder="Name"&gt;
+&lt;input id="femail" placeholder="Email"&gt;
+&lt;input id="rating" type="number" min="1" max="5" placeholder="Rating (1-5)"&gt;
+&lt;textarea id="comment" placeholder="Comments"&gt;&lt;/textarea&gt;
+&lt;button onclick="feedback()"&gt;Submit&lt;/button&gt;
+
+&lt;script&gt;
+function feedback(){
+  let n=fname.value, e=femail.value, r=rating.value, c=comment.value;
+  if(n && e && r && c) alert("Thank you for your feedback!");
+  else alert("Please fill all fields.");
+}
+&lt;/script&gt;
+    </pre>
+  </section>
+
+  <!-- Copy Function -->
   <script>
-    function login() {
-      var email = document.getElementById("email").value;
-      var password = document.getElementById("password").value;
-
-      if (email === "" || password === "") {
-        alert("Please enter all details.");
-      } else {
-        alert("Login Successful");
-      }
+    function copyCode(btn) {
+      const code = btn.nextElementSibling.innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.innerText = "✅ Copied!";
+        setTimeout(() => btn.innerText = "📋 Copy Code", 1500);
+      });
     }
   </script>
+
 </body>
-</html> 
-
- &gt;</code></pre>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project" id="project-2">
-            <div class="project-header">
-                <h2>2. encryption and decryption using a substitution cipher <span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code2')">Copy Code</button>
-            <pre><code id="code2">&lt;def generate_key_map(key):
-alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-key = key.upper()
-return dict(zip(alphabet, key))
-def invert_key_map(key_map):
-return {v: k for k, v in key_map.items()}
-def encrypt(text, key_map):
-result = ""
-for char in text:
-if char.isalpha():
-base = 'A' if char.isupper() else 'a'
-mapped = key_map[char.upper()]
-result += mapped if char.isupper() else mapped.lower()
-else:
-result += char
-return result
-def decrypt(cipher, key_map):
-inverse_map = invert_key_map(key_map)
-return encrypt(cipher, inverse_map)
-# Example usage
-key = "QWERTYUIOPASDFGHJKLZXCVBNM" # 26-letter substitution key
-text = "Hello, People!"
-key_map = generate_key_map(key)
-encrypted = encrypt(text, key_map)
-decrypted = decrypt(encrypted, key_map)
-print("Original Text:", text)
-print("Encrypted Text:", encrypted)
-print("Decrypted Text:", decrypted)
-&gt;</code></pre>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project" id="project-3">
-            <div class="project-header">
-                <h2>3. Hill Cipher encryption and decryption <span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code3')">Copy Code</button>
-            <pre><code id="code3">&lt;
-import numpy as np
-# Convert text to numbers (A=0, B=1, ..., Z=25)
-def text_to_numbers(text):
-return [ord(char.upper()) - ord('A') for char in text if char.isalpha()]
-# Convert numbers back to text
-def numbers_to_text(numbers):
-return ''.join([chr(num % 26 + ord('A')) for num in numbers])
-# Pad text to match matrix size
-def pad_text(text, size):
-while len(text) % size != 0:
-text += 'X' # Padding with 'X'
-return text
-# Encryption: C = (K × P) mod 26
-def hill_encrypt(plain_text, key_matrix):
-size = key_matrix.shape[0]
-plain_text = pad_text(plain_text, size)
-numbers = text_to_numbers(plain_text)
-cipher = []
-for i in range(0, len(numbers), size):
-block = np.array(numbers[i:i+size])
-encrypted_block = np.dot(key_matrix, block) % 26
-cipher.extend(encrypted_block)
-return numbers_to_text(cipher)
-# Decryption: P = (K⁻¹ × C) mod 26
-def hill_decrypt(cipher_text, key_matrix):
-size = key_matrix.shape[0]
-numbers = text_to_numbers(cipher_text)
-# Compute inverse of key matrix mod 26
-det = int(np.round(np.linalg.det(key_matrix)))
-det_inv = pow(det, -1, 26) # Modular inverse of determinant
-adj = np.round(det * np.linalg.inv(key_matrix)).astype(int) % 26
-inverse_matrix = (det_inv * adj) % 26
-plain = []
-for i in range(0, len(numbers), size):
-block = np.array(numbers[i:i+size])
-decrypted_block = np.dot(inverse_matrix, block) % 26
-plain.extend(decrypted_block)
-return numbers_to_text(plain)
-# Example usage
-key = np.array([[3, 3],
-[2, 5]]) # Must be invertible mod 26
-text = "HELLO"
-encrypted = hill_encrypt(text, key)
-decrypted = hill_decrypt(encrypted, key)
-print("Original Text:", text)
-print("Encrypted Text:", encrypted)
-print("Decrypted Text:", decrypted)    
-            &gt;</code></pre>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project" id="project-4">
-            <div class="project-header">
-                <h2>4.DES encryption and decryption<span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code4')">Copy Code</button>
-            <pre><code id="code4">&lt;
-from Crypto.Cipher import DES
-from Crypto.Util.Padding import pad, unpad
-# Key must be 8 bytes
-key = b'8bytekey' # Shared secret key
-# Message to send
-message = "Meet me very urgently"
-# Encrypt at sender (User A)
-cipher = DES.new(key, DES.MODE_ECB)
-encrypted = cipher.encrypt(pad(message.encode(), DES.block_size))
-print("Encrypted:", encrypted)
-# Decrypt at receiver (User B)
-decipher = DES.new(key, DES.MODE_ECB)
-decrypted = unpad(decipher.decrypt(encrypted), DES.block_size)
-print("Decrypted:", decrypted.decode())       
-            
-           &gt;</code></pre>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project" id="project-5">
-            <div class="project-header">
-                <h2>5. AES Encryption & Decryption in Python <span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code5')">Copy Code</button>
-            <pre><code id="code5">&lt;
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
-# AES key must be 16, 24, or 32 bytes
-key = b'ThisIsA16ByteKey' # Shared secret key (16 bytes)
-# Message to send
-message = "welcome to cse"
-# Encrypt at sender (User C)
-cipher = AES.new(key, AES.MODE_ECB)
-encrypted = cipher.encrypt(pad(message.encode(), AES.block_size))
-print("Encrypted:", encrypted)
-# Decrypt at receiver (User D)
-decipher = AES.new(key, AES.MODE_ECB)
-decrypted = unpad(decipher.decrypt(encrypted), AES.block_size)
-print("Decrypted:", decrypted.decode())  
-            &gt;</code></pre>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project" id="project-6">
-            <div class="project-header">
-                <h2>6. a confidential message to User B using RSA encryption<span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code6')">Copy Code</button>
-            <pre><code id="code6">&lt;   
-from Crypto.PublicKey import RSA
-from Crypto.Cipher import PKCS1_OAEP
-# Generate RSA key pair for User B
-key = RSA.generate(2048)
-public_key = key.publickey()
-# User A encrypts the message using User B's public key
-message = "Hello User B, this is confidential"
-cipher = PKCS1_OAEP.new(public_key)
-encrypted = cipher.encrypt(message.encode())
-print("Encrypted:", encrypted)
-# User B decrypts the message using their private key
-decipher = PKCS1_OAEP.new(key)
-decrypted = decipher.decrypt(encrypted)
-print("Decrypted:", decrypted.decode())
-            </code></pre>
-        </div>
-
-        <!-- Project 7 -->
-        <div class="project" id="project-7">
-            <div class="project-header">
-                <h2>7. User B using Elliptic Curve Cryptography (ECC)<span class="badge">pip install eciespy</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code7')">Copy Code</button>
-            <pre><code id="code7">&lt;
-from ecies.utils import generate_key
-from ecies import encrypt, decrypt
-# Receiver (User B) generates ECC key pair
-receiver_private_key = generate_key()
-receiver_public_key = receiver_private_key.public_key
-# Sender (User A) encrypts the message using receiver's public key
-message = "Sanjivani University"
-encrypted_message = encrypt(receiver_public_key.format(True),
-message.encode())
-print("Encrypted:", encrypted_message.hex()) # Show as hex for readability
-# Receiver (User B) decrypts the message using their private key
-decrypted_message = decrypt(receiver_private_key.to_bytes(),
-encrypted_message)
-print("Decrypted:", decrypted_message.decode())               
-            &gt;</code></pre>
-        </div>
-
-        <!-- Project 8 -->
-        <div class="project" id="project-8">
-            <div class="project-header">
-                <h2>8.PKI infrastructure in one Python script <span class="badge">Python Script + Pip install cryptography</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code8')">Copy Code</button>
-            <pre><code id="code8">&lt;
-Pip install cryptography
-from cryptography.hazmat.primitives import serialization,
-hashes
-from cryptography.hazmat.primitives.asymmetric import rsa,
-padding
-from cryptography.x509 import NameOID, CertificateBuilder
-from cryptography import x509
-from datetime import datetime, timedelta
-# Step 1: Generate Root CA key and self-signed certificate
-root_key = rsa.generate_private_key(public_exponent=65537,
-key_size=2048)
-root_subject =
-x509.Name([x509.NameAttribute(NameOID.COMMON_NA
-ME, "Root CA")])
-root_cert = CertificateBuilder().subject_name(root_subject)\
- .issuer_name(root_subject)\
- .public_key(root_key.public_key())\
- .serial_number(x509.random_serial_number())\
- .not_valid_before(datetime.utcnow())\
- .not_valid_after(datetime.utcnow() + timedelta(days=365))\
- .sign(root_key, hashes.SHA256())
-# Step 2: Generate User B's key and CSR
-user_key = rsa.generate_private_key(public_exponent=65537,
-key_size=2048)
-user_subject =
-x509.Name([x509.NameAttribute(NameOID.COMMON_NA
-ME, "User B")])
-csr =
-x509.CertificateSigningRequestBuilder().subject_name(user_
-subject).sign(user_key, hashes.SHA256())
-# Step 3: CA signs User B's certificate
-user_cert = CertificateBuilder().subject_name(user_subject)\
- .issuer_name(root_cert.subject)\
- .public_key(user_key.public_key())\
- .serial_number(x509.random_serial_number())\
- .not_valid_before(datetime.utcnow())\
- .not_valid_after(datetime.utcnow() + timedelta(days=365))\
- .sign(root_key, hashes.SHA256())
-# Step 4: User A encrypts message using User B's public key
-message = b"Sanjivani University"
-encrypted = user_key.public_key().encrypt(
- message,
-
-padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA2
-56()), algorithm=hashes.SHA256(), label=None)
-)
-# Step 5: User B decrypts using their private key
-decrypted = user_key.decrypt(
- encrypted,
-
-padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA2
-56()), algorithm=hashes.SHA256(), label=None)
-)
-# Output
-print("Encrypted:", encrypted.hex())
-print("Decrypted:", decrypted.decode())
-            
-            &gt;</code></pre>
-        </div>
-
-        <!-- Project 9 -->
-        <div class="project" id="project-9">
-            <div class="project-header">
-                <h2>9.SHA and MD5 hash generation and verification<span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code9')">Copy Code</button>
-            <pre><code id="code9">&lt;
-import hashlib
-# Message to hash
-message = "Sanjivani University"
-# Generate MD5 hash
-md5_hash = hashlib.md5(message.encode()).hexdigest()
-print("MD5 Hash:", md5_hash)
-# Generate SHA-256 hash
-sha256_hash = hashlib.sha256(message.encode()).hexdigest()
-print("SHA-256 Hash:", sha256_hash)
-# Verification example
-def verify_hash(input_text, original_hash,
-algorithm='sha256'):
-if algorithm == 'md5':
-new_hash =
-hashlib.md5(input_text.encode()).hexdigest()
-elif algorithm == 'sha256':
-new_hash =
-hashlib.sha256(input_text.encode()).hexdigest()
-else:
-return False
-return new_hash == original_hash
-# Verify both hashes
-print("MD5 Verified:", verify_hash("Sanjivani University",
-md5_hash, 'md5'))
-print("SHA-256 Verified:", verify_hash("Sanjivani
-University", sha256_hash, 'sha256')) 
-            &gt;</code></pre>
-        </div>
-
-        <!-- Project 10 -->
-        <div class="project" id="project-10">
-            <div class="project-header">
-                <h2>10.machine learning to detect obfuscated command-line strings. <span class="badge">pip install scikit-learn pandas</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code10')">Copy Code</button>
-            <pre><code id="code10">&lt;
-import pandas as pd
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import classification_report
-# Sample dataset: normal vs obfuscated commands
-data = {
-'command': [
-'powershell -exec bypass -enc
-SQBFAFgAIAByAGUAZwBlAHIAcwB0AHIAeQAuAEUA
-eABlAGMAdQB0AGU',
-'cmd.exe /c calc.exe',
-'p"+"o"+"w"+"e"+"r"+"s"+"h"+"e"+"l"+"l"',
-'powershell -NoProfile -Command "Get-Process"',
-'ping 127.0.0.1',
-'whoami',
-'powershell -e
-JABwAHMAPQBnAGUAdAAtAHAAcgBvAGMAZQBzAH
-MA',
-'dir',
-'tasklist',
-'powershell -Command "Start-Sleep -Seconds 5"'
-],
-'label': [1, 0, 1, 0, 0, 0, 1, 0, 0, 0] # 1 = obfuscated, 0 =
-normal
-}
-# Load data
-df = pd.DataFrame(data)
-# Vectorize command strings
-vectorizer = CountVectorizer()
-X = vectorizer.fit_transform(df['command'])
-y = df['label']
-# Train/test split
-X_train, X_test, y_train, y_test = train_test_split(X, y,
-test_size=0.3, random_state=42)
-# Train model
-model = LogisticRegression()
-model.fit(X_train, y_train)
-# Predict and evaluate
-y_pred = model.predict(X_test)
-print(classification_report(y_test, y_pred))
-# Test a new command
-new_command = ['powershell -enc
-SQBFAFgAIAByAGUAZwBlAHIAcwB0AHIAeQAuAEUA
-eABlAGMAdQB0AGU']
-new_vec = vectorizer.transform(new_command)
-prediction = model.predict(new_vec)
-print("Prediction:", "Obfuscated" if prediction[0] == 1 else
-"Normal")            
-           &gt;</code></pre>
-        </div>
-
-        <!-- Project 11 -->
-        <div class="project" id="project-11">
-            <div class="project-header">
-                <h2>11.Q1. Write a program to perform encryption and decryption using caeser cipher <span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code11')">Copy Code</button>
-            <pre><code id="code11">&lt;text=input("Enter a message to encrypt")
-shift=int(input("Enter ashift number"))
-#encryption
-encrypted=""
-for ch in text:
-if ch.isalpha():
-if ch.isupper():
-encrypted+=chr((ord(ch)-65+shift)%26+65)
-else:
-encrypted+=chr((ord(ch)-97+shift)%26+97)
-else:
-encrypted+=ch
-print("encrypted:",encrypted)
-#decryption
-decrypted=""
-for ch in encrypted:
-if ch.isalpha():
-if ch.isupper():
-decrypted+=chr((ord(ch)-65-shift)%26+65)
-else:
-decrypted+=chr((ord(ch)-97-shift)%26+97)
-else:
-decrypted+=ch
-print("decrypted:", decrypted)
-
-                
-'''Encryption part
-1. text = input(...) → takes the message.
-2. shift = int(input(...)) → takes how many letters to shift.
-3. Loop through each character in text:
-o If it’s a letter, shift it by shift positions using ASCII (ord() and chr()).
- Uppercase → base 65 ('A')
- Lowercase → base 97 ('a')
-o If it’s not a letter, keep it unchanged.
-4. Print the encrypted text.
-Decryption part
-1. Loop through each character in encrypted:
-o If it’s a letter, shift backward by the same number (-shift).
-o Keep non-letters unchanged.
-2. Print the decrypted text (it matches the original message).'''&gt;</code></pre>
-        </div>
-
-        <!-- Project 12 -->
-        <div class="project" id="project-12">
-            <div class="project-header">
-                <h2>12.Q2. Write a program to perform encryption and decryption using substitution cipher <span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code12')">Copy Code</button>
-            <pre><code id="code12">&lt;plain_text="BABADONS"
-cipher_text="BABCAZYB"
-text=input("enter a text").upper()
-#encrypted
-encrypted=""
-for ch in text:
-if ch.isalpha():
-index=plain_text.index(ch)
-encrypted+=cipher_text[index]
-else:
-encrypted+=ch
-print("Encrypted",encrypted)
-#decrypted
-decrypted=""
-for ch in encrypted:
-if ch.isalpha():
-index=cipher_text.index(ch)
-decrypted+=plain_text[index]
-else:
-decrypted+=ch
-print("decrypted",decrypted)
-    
-'''Encryption part
-1. plain_text → defines original letters (mapping source).
-2. cipher_text → defines replacement letters (mapping target).
-3. text = input(...).upper() → takes user input and converts it to uppercase.
-4. Loop through each character in text:
-o If it’s a letter, find its index in plain_text.
-o Replace it with the letter at the same index in cipher_text.
-o If it’s not a letter, keep it unchanged.
-5. Print the encrypted text.
-Decryption part
-1. Loop through each character in the encrypted text:
-o If it’s a letter, find its index in cipher_text.
-o Replace it with the letter at the same index in plain_text.
-o Keep non-letters unchanged.
-2. Print the decrypted text (original message restored).'''&gt;</code></pre>
-        </div>
-
-        <!-- Project 13 -->
-        <div class="project" id="project-13">
-            <div class="project-header">
-                <h2>13. Q3. Write a program to perform encryption and decryption using Hill cipher simpel code <span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code13')">Copy Code</button>
-            <pre><code id="code13">&lt;def to_num(text): return [ord(c)-65 for c in text.upper()]
-def to_text(nums): return ''.join([chr(n+65) for n in nums])
-def encrypt(msg, k):
- if len(msg)%2: msg += 'X'
- nums = to_num(msg)
- res = []
- for i in range(0,len(nums),2):
- a,b = nums[i], nums[i+1]
- res += [(k[0][0]*a + k[0][1]*b)%26, (k[1][0]*a + k[1][1]*b)%26]
- return to_text(res)
-def decrypt(msg, k):
- det = k[0][0]*k[1][1]-k[0][1]*k[1][0]
- inv = pow(det, -1, 26)
- k_inv = [[k[1][1]*inv%26, -k[0][1]*inv%26], [-k[1][0]*inv%26, k[0][0]*inv%26]]
- return encrypt(msg, k_inv) # reuse encrypt with inverse key
-# Example
-key = [[3,3],[2,5]]
-msg = "HELP"
-cipher = encrypt(msg,key)
-print("Encrypted:", cipher)
-print("Decrypted:", decrypt(cipher,key))
-                
-'''Encryption part
-1. Import the required libraries: DES for encryption/decryption and pad, unpad for data padding.
-2. Define an 8-byte secret key → key = b'8bytekey'.
-3. Enter the plaintext message to encrypt → "Meet me very urgently".
-4. Create a DES cipher object using the key and ECB mode → DES.new(key, DES.MODE_ECB).
-5. Convert the message to bytes and pad it to make its length a multiple of 8 bytes.
-6. Encrypt the padded message using the cipher object → produces ciphertext.
-7. Print the encrypted message (ciphertext).
-Decryption part
-1. Create a new DES cipher object with the same key and mode for decryption.
-2. Use it to decrypt the encrypted message (ciphertext).
-3. Unpad the decrypted bytes to remove the extra padding added earlier.
-4. Convert the decrypted bytes back to text using .decode().
-5. Print the decrypted text (original plaintext restored).'''&gt;</code></pre>
-        </div>
-
-        <!-- Project 14 -->
-        <div class="project" id="project-14">
-            <div class="project-header">
-                <h2>14.Q4. User A want to send the message “Meet me very urgently” to user B by using DES algorithms encrypt it at sender end and decrypt it at receiver end<span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code14')">Copy Code</button>
-            <pre><code id="code14">DES encryption and decryption
-from Crypto.Cipher import DES
-from Crypto.Util.Padding import pad, unpad
-# Key must be 8 bytes
-key = b'8bytekey' # Shared secret key
-# Message to send
-message = "Meet me very urgently"
-# Encrypt at sender (User A)
-cipher = DES.new(key, DES.MODE_ECB)
-encrypted = cipher.encrypt(pad(message.encode(), DES.block_size))
-print("Encrypted:", encrypted)
-# Decrypt at receiver (User B)
-decipher = DES.new(key, DES.MODE_ECB)
-decrypted = unpad(decipher.decrypt(encrypted), DES.block_size)
-print("Decrypted:", decrypted.decode())
-                
-'''Encryption part (Sender)
-1. Import necessary libraries: DES for encryption/decryption, pad and unpad for block padding.
-2. Define an 8-byte secret key → key = b'8bytekey'.
-3. Prepare the plaintext message → "Meet me very urgently".
-4. Create a DES cipher object in ECB mode → DES.new(key, DES.MODE_ECB).
-5. Convert the message to bytes, pad it to a multiple of 8 bytes, and encrypt → produces
-encrypted ciphertext.
-6. Print the encrypted message.
-Decryption part (Receiver)
-1. Create a new DES cipher object with the same key and mode for decryption.
-2. Decrypt the encrypted ciphertext using the cipher object.
-3. Unpad the decrypted bytes to remove extra padding.
-4. Convert the decrypted bytes back to string using .decode().
-5. Print the decrypted message (original plaintext restored).'''</code></pre>
-        </div>
-
-        <!-- Project 15 -->
-        <div class="project" id="project-15">
-            <div class="project-header">
-                <h2>15.Q5. AES algorithms encrypt it and decrypt it at receiver end. <span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code15')">Copy Code</button>
-            <pre><code id="code15">&lt;from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad, unpad
-# AES key must be 16, 24, or 32 bytes
-key = b'ThisIsA16ByteKey' # Shared secret key (16 bytes)
-message = "welcome to cse"
-# Encrypt at sender (User C)
-cipher = AES.new(key, AES.MODE_ECB)
-encrypted = cipher.encrypt(pad(message.encode(), AES.block_size))
-print("Encrypted:", encrypted)
-# Decrypt at receiver (User D)
-decipher = AES.new(key, AES.MODE_ECB)
-decrypted = unpad(decipher.decrypt(encrypted), AES.block_size)
-print("Decrypted:", decrypted.decode())
-                
-'''Encryption part
-1. Import necessary libraries: AES for encryption/decryption, pad and unpad for padding.
-2. Define a shared secret key of valid length (16, 24, or 32 bytes) → key =
-b'ThisIsA16ByteKey'.
-3. Enter the plaintext message → "welcome to cse".
-4. Create an AES cipher object using the key in ECB mode → AES.new(key, AES.MODE_ECB).
-5. Convert the message to bytes and pad it to make its length a multiple of AES block size (16
-bytes).
-6. Encrypt the padded message using the cipher object → produces ciphertext.
-7. Print the encrypted message.
-Decryption part
-1. Create a new AES cipher object with the same key and mode for decryption.
-2. Decrypt the encrypted message (ciphertext) using the cipher object.
-3. Unpad the decrypted bytes to remove extra padding.
-4. Convert the decrypted bytes back to string using .decode().
-5. Print the decrypted text (original message restored).'''&gt;</code></pre>
-        </div>
-
-        <!-- Project 16 -->
-        <div class="project" id="project-16">
-            <div class="project-header">
-                <h2>16. Q6. A confidential message to User B using RSA <span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code16')">Copy Code</button>
-            <pre><code id="code16">&lt;from Crypto.PublicKey import RSA
-from Crypto.Cipher import PKCS1_OAEP
-# Generate RSA key pair for User B
-key = RSA.generate(2048)
-public_key = key.publickey()
-# User A encrypts the message using User B's public key
-message = "Hello User B, this is confidential"
-cipher = PKCS1_OAEP.new(public_key)
-encrypted = cipher.encrypt(message.encode())
-print("Encrypted:", encrypted)
-# User B decrypts the message using their private key
-decipher = PKCS1_OAEP.new(key)
-decrypted = decipher.decrypt(encrypted)
-print("Decrypted:", decrypted.decode())
-                
-'''Encryption part (User A sending to User B)
-1. Import necessary libraries: RSA for key generation and PKCS1_OAEP for encryption/decryption.
-2. Generate an RSA key pair for User B (2048-bit key).
- key → private key (kept secret by User B).
- public_key → public key (shared with User A).
-3. User A prepares the plaintext message → "Hello User B, this is confidential".
-4. Create a cipher object using User B’s public key → PKCS1_OAEP.new(public_key).
-5. Encrypt the message → produces ciphertext.
-6. Print the encrypted message.
-Decryption part (User B receiving message)
-1. Create a decipher object using User B’s private key → PKCS1_OAEP.new(key).
-2. Decrypt the ciphertext → recovers the original message in bytes.
-3. Convert the decrypted bytes back to string using .decode().
-4. Print the decrypted message (original plaintext restored)'''&gt;</code></pre>
-        </div>
-
-        <!-- Project 17 -->
-        <div class="project" id="project-17">
-            <div class="project-header">
-                <h2>17.Q7. User A want to send the message “Sanjivani University” to user B by using ECC algorithms encrypt it at sender end and decrypt it at receiver end. Comment on Key sharing.<span class="badge">Python</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code17')">Copy Code</button>
-            <pre><code id="code17">&lt;pip install eciespy
-from ecies.utils import generate_key
-from ecies import encrypt, decrypt
-# Receiver (User B) generates ECC key pair
-receiver_private_key = generate_key()
-receiver_public_key = receiver_private_key.public_key
-# Sender (User A) encrypts the message using receiver's public key
-message = "Sanjivani University"
-encrypted_message = encrypt(receiver_public_key.format(True),
-message.encode())
-print("Encrypted:", encrypted_message.hex()) # Show as hex for readability
-# Receiver (User B) decrypts the message using their private key
-decrypted_message = decrypt(receiver_private_key.to_bytes(),
-encrypted_message)
-print("Decrypted:", decrypted_message.decode())
-                
-'''Encryption part (User A sending to User B)
-1. Install and import eciespy libraries:
- generate_key → generate ECC keys.
- encrypt / decrypt → perform ECC encryption/decryption.
-2. User B generates an ECC key pair:
- receiver_private_key → private key (kept secret).
- receiver_public_key → public key (shared with sender).
-3. User A prepares the plaintext message → "Sanjivani University".
-4. Encrypt the message using User B’s public key → produces encrypted_message.
-5. Print the encrypted message in hex format for readability.
-Decryption part (User B receiving message)
-1. User B uses their private key to decrypt the encrypted_message.
-2. Convert the decrypted bytes back to string using .decode().
-3. Print the decrypted message (original plaintext restored).'''&gt;</code></pre>
-        </div>
-
-        <!-- Project 18 -->
-        <div class="project" id="project-18">
-            <div class="project-header">
-                <h2>**********************************<span class="badge">***************</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code18')">Copy Code</button>
-            <pre><code id="code18">&lt;
-                ********************************************************
-                &gt;</code></pre>
-        </div>
-
-        <!-- Project 19 -->
-        <div class="project" id="project-19">
-            <div class="project-header">
-                <h2>****************** <span class="badge">********</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code19')">Copy Code</button>
-            <pre><code id="code19">&lt;
-                ***********************************************
-                &gt;</code></pre>
-        </div>
-
-        <!-- Project 20 -->
-        <div class="project" id="project-20">
-            <div class="project-header">
-                <h2>*********************<span class="badge">***************8</span></h2>
-            </div>
-            <button class="copy-btn" onclick="copyCode('code20')">Copy Code</button>
-            <p style="margin: 15px 0; color: #666;"><strong>File 1:</strong> course_list_display_simulated_angular.html</p>
-            <pre><code id="code20">
-                
-                ***************************
-            
-            </code></pre>
-        </div>
-
-    </div>
-
-    <script>
-        function copyCode(elementId) {
-            const code = document.getElementById(elementId).textContent;
-            navigator.clipboard.writeText(code).then(() => {
-                alert('Code copied to clipboard!');
-            });
-        }
-    </script>
-</body>
-
 </html>
-
-
-
-
