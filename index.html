@@ -156,24 +156,33 @@
             </div>
             <button class="copy-btn" onclick="copyCode('code1')">Copy Code</button>
             <pre><code id="code1">&lt;
-def caesar_encrypt(text, shift):
-result = ""
-for char in text:
-if char.isalpha():
-base = ord('A') if char.isupper() else ord('a')
-result += chr((ord(char) - base + shift) % 26 + base)
-else:
-result += char
-return result
-def caesar_decrypt(cipher, shift):
-return caesar_encrypt(cipher, -shift)
-plain_text = "Hello, Sayali!"
-shift_key = 3
-encrypted = caesar_encrypt(plain_text, shift_key)
-decrypted = caesar_decrypt(encrypted, shift_key)
-print("Original Text:", plain_text)
-print("Encrypted Text:", encrypted)
-print("Decrypted Text:", decrypted)
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+</head>
+<body>
+  <h2>Login Form</h2>
+
+  <input type="text" id="email" placeholder="Enter Email"><br><br>
+  <input type="password" id="password" placeholder="Enter Password"><br><br>
+  <button onclick="login()">Login</button>
+
+  <script>
+    function login() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      if (email === "" || password === "") {
+        alert("Please enter all details.");
+      } else {
+        alert("Login Successful");
+      }
+    }
+  </script>
+</body>
+</html> 
+
  &gt;</code></pre>
         </div>
 
@@ -867,6 +876,7 @@ Decryption part (User B receiving message)
 </body>
 
 </html>
+
 
 
 
