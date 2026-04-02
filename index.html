@@ -5,76 +5,54 @@
 <title>FDA PBL Questions</title>
 
 <style>
-body {
-  font-family: Arial;
-  background: #f5f5f5;
-  padding: 20px;
-}
-
-h1 {
-  text-align: center;
-}
+body {font-family: Arial; background:#f5f5f5; padding:20px;}
+h1 {text-align:center;}
 
 /* LIST */
 ul {
-  max-width: 700px;
-  margin: auto;
-  list-style: none;
-  padding: 0;
+  max-width:700px;
+  margin:auto;
+  list-style:none;
+  padding:0;
 }
-
 li {
-  background: white;
-  margin: 10px 0;
-  padding: 15px;
-  border-radius: 10px;
-  transition: 0.3s;
+  background:white;
+  margin:10px 0;
+  padding:15px;
+  border-radius:10px;
 }
+li:hover {background:#e0f0ff;}
+a {text-decoration:none; font-weight:bold; color:black;}
 
-li:hover {
-  background: #e0f0ff;
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: black;
-}
-
-/* SECTIONS */
+/* SECTION */
 section {
-  background: #fff;
-  padding: 20px;
-  margin: 30px auto;
-  max-width: 900px;
-  border-radius: 10px;
-  position: relative;
+  background:#fff;
+  padding:20px;
+  margin:30px auto;
+  max-width:900px;
+  border-radius:10px;
+  position:relative;
 }
 
 pre {
-  background: #f4f4f4;
-  padding: 15px;
-  border-radius: 10px;
-  overflow-x: auto;
+  background:#f4f4f4;
+  padding:15px;
+  border-radius:10px;
+  overflow:auto;
 }
 
-/* COPY BUTTON */
 .copy-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: #007BFF;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  cursor: pointer;
-  border-radius: 5px;
+  position:absolute;
+  top:15px;
+  right:20px;
+  background:#007BFF;
+  color:white;
+  border:none;
+  padding:5px 10px;
+  cursor:pointer;
 }
 
-/* SMOOTH SCROLL */
-html {
-  scroll-behavior: smooth;
-}
+html {scroll-behavior:smooth;}
 </style>
 </head>
 
@@ -82,7 +60,7 @@ html {
 
 <h1 id="top">EduPlusCampus</h1>
 
-<!-- ✅ NAVIGATION LIST -->
+<!-- ✅ NAVIGATION -->
 <ul>
   <li><a href="#q1">1. Hospital Patient Management System</a></li>
   <li><a href="#q2">2. Electricity Bill Calculation</a></li>
@@ -95,41 +73,60 @@ html {
 <h2>1. Hospital Patient Management System</h2>
 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>
-import java.util.*;
-class Patient {
-    int id; String name, disease, doctor;
-    Patient(int id,String name,String disease,String doctor){
-        this.id=id; this.name=name; this.disease=disease; this.doctor=doctor;
-    }
-}
+import java.util.Scanner;
+
 public class HospitalSystem {
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        ArrayList&lt;Patient&gt; list=new ArrayList&lt;&gt;();
-        while(true){
+
+    static int[] id = new int[10];
+    static String[] name = new String[10];
+    static String[] disease = new String[10];
+    static String[] doctor = new String[10];
+    static int count = 0;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+
+        do {
             System.out.println("1.Add 2.Display 3.Search 4.Delete 5.Count 6.Exit");
-            int ch=sc.nextInt();
-            switch(ch){
-                case 1:
-                    list.add(new Patient(sc.nextInt(),sc.next(),sc.next(),sc.next()));
-                    break;
-                case 2:
-                    for(Patient p:list) System.out.println(p.id+" "+p.name);
-                    break;
-                case 3:
-                    int id=sc.nextInt();
-                    for(Patient p:list) if(p.id==id) System.out.println("Found");
-                    break;
-                case 4:
-                    id=sc.nextInt();
-                    list.removeIf(p->p.id==id);
-                    break;
-                case 5:
-                    System.out.println(list.size());
-                    break;
-                case 6: return;
+            choice = sc.nextInt();
+
+            if (choice == 1) {
+                id[count]=sc.nextInt();
+                name[count]=sc.next();
+                disease[count]=sc.next();
+                doctor[count]=sc.next();
+                count++;
             }
-        }
+            else if (choice == 2) {
+                for(int i=0;i<count;i++)
+                    System.out.println(id[i]+" "+name[i]);
+            }
+            else if (choice == 3) {
+                int searchId=sc.nextInt();
+                for(int i=0;i<count;i++)
+                    if(id[i]==searchId) System.out.println("Found");
+            }
+            else if (choice == 4) {
+                int delId=sc.nextInt();
+                for(int i=0;i<count;i++){
+                    if(id[i]==delId){
+                        for(int j=i;j<count-1;j++){
+                            id[j]=id[j+1];
+                            name[j]=name[j+1];
+                            disease[j]=disease[j+1];
+                            doctor[j]=doctor[j+1];
+                        }
+                        count--;
+                        break;
+                    }
+                }
+            }
+            else if (choice == 5) {
+                System.out.println(count);
+            }
+
+        } while (choice != 6);
     }
 }
 </pre>
@@ -140,28 +137,31 @@ public class HospitalSystem {
 <h2>2. Electricity Bill Calculation</h2>
 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>
-import java.util.*;
-class Bill{
-    int id,units; String name;
-    Bill(int id,String name,int units){
-        this.id=id; this.name=name; this.units=units;
-    }
-    double calc(){
-        if(units<=100) return units*5;
-        else if(units<=200) return 100*5+(units-100)*7;
-        else return 100*5+100*7+(units-200)*10;
-    }
-}
-public class ElectricityBill{
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        ArrayList&lt;Bill&gt; list=new ArrayList&lt;&gt;();
-        int n=sc.nextInt();
-        for(int i=0;i&lt;n;i++){
-            list.add(new Bill(sc.nextInt(),sc.next(),sc.nextInt()));
+import java.util.Scanner;
+
+public class ElectricityBill {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] id = new int[n];
+        String[] name = new String[n];
+        int[] units = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            id[i]=sc.nextInt();
+            name[i]=sc.next();
+            units[i]=sc.nextInt();
         }
-        for(Bill b:list)
-            System.out.println(b.name+" ₹"+b.calc());
+
+        for (int i = 0; i < n; i++) {
+            double bill=0;
+            if(units[i]<=100) bill=units[i]*5;
+            else if(units[i]<=200) bill=100*5+(units[i]-100)*7;
+            else bill=100*5+100*7+(units[i]-200)*10;
+
+            System.out.println(name[i]+" Rs."+bill);
+        }
     }
 }
 </pre>
@@ -172,42 +172,52 @@ public class ElectricityBill{
 <h2>3. Inventory Management System</h2>
 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>
-import java.util.*;
-class Product{
-    int id,qty; String name; double price;
-    Product(int id,String name,double price,int qty){
-        this.id=id; this.name=name; this.price=price; this.qty=qty;
-    }
-}
-public class Inventory{
+import java.util.Scanner;
+
+public class Inventory {
+
+    static int[] id=new int[10];
+    static String[] name=new String[10];
+    static double[] price=new double[10];
+    static int[] qty=new int[10];
+    static int count=0;
+
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
-        ArrayList&lt;Product&gt; list=new ArrayList&lt;&gt;();
-        while(true){
-            int ch=sc.nextInt();
-            switch(ch){
-                case 1:
-                    list.add(new Product(sc.nextInt(),sc.next(),sc.nextDouble(),sc.nextInt()));
-                    break;
-                case 2:
-                    for(Product p:list) System.out.println(p.name+" "+p.qty);
-                    break;
-                case 3:
-                    int id=sc.nextInt(),q=sc.nextInt();
-                    for(Product p:list) if(p.id==id) p.qty=q;
-                    break;
-                case 4:
-                    double total=0;
-                    for(Product p:list) total+=p.price*p.qty;
-                    System.out.println(total);
-                    break;
-                case 5:
-                    id=sc.nextInt();
-                    for(Product p:list) if(p.id==id) System.out.println("Found");
-                    break;
-                case 6:return;
+        int choice;
+
+        do{
+            choice=sc.nextInt();
+
+            if(choice==1){
+                id[count]=sc.nextInt();
+                name[count]=sc.next();
+                price[count]=sc.nextDouble();
+                qty[count]=sc.nextInt();
+                count++;
             }
-        }
+            else if(choice==2){
+                for(int i=0;i<count;i++)
+                    System.out.println(name[i]+" "+qty[i]);
+            }
+            else if(choice==3){
+                int idd=sc.nextInt(),q=sc.nextInt();
+                for(int i=0;i<count;i++)
+                    if(id[i]==idd) qty[i]=q;
+            }
+            else if(choice==4){
+                double total=0;
+                for(int i=0;i<count;i++)
+                    total+=price[i]*qty[i];
+                System.out.println(total);
+            }
+            else if(choice==5){
+                int sid=sc.nextInt();
+                for(int i=0;i<count;i++)
+                    if(id[i]==sid) System.out.println("Found");
+            }
+
+        }while(choice!=6);
     }
 }
 </pre>
@@ -218,30 +228,43 @@ public class Inventory{
 <h2>4. Online Voting System</h2>
 <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>
-import java.util.*;
-public class VotingSystem{
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-        int[] votes=new int[3];
-        HashSet&lt;Integer&gt; set=new HashSet&lt;&gt;();
-        while(true){
-            int id=sc.nextInt();
-            if(id==0) break;
-            if(set.contains(id)){
-                System.out.println("Already voted");
-                continue;
-            }
-            int c=sc.nextInt();
-            if(c>=1&&c<=3){
-                votes[c-1]++;
-                set.add(id);
+import java.util.Scanner;
+
+public class VotingSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String[] candidates={"Alice","Bob","Charlie"};
+        int[] votes={0,0,0};
+
+        int n=sc.nextInt();
+
+        int[] voterId=new int[n];
+        String[] voterName=new String[n];
+        boolean[] hasVoted=new boolean[n];
+
+        for(int i=0;i<n;i++){
+            voterId[i]=sc.nextInt();
+            voterName[i]=sc.next();
+        }
+
+        for(int i=0;i<n;i++){
+            int choice=sc.nextInt();
+            if(choice>=1 && choice<=3){
+                votes[choice-1]++;
+                hasVoted[i]=true;
             }
         }
+
         int max=0,w=0;
-        for(int i=0;i&lt;3;i++){
-            if(votes[i]&gt;max){max=votes[i]; w=i;}
+        for(int i=0;i<3;i++){
+            if(votes[i]>max){
+                max=votes[i];
+                w=i;
+            }
         }
-        System.out.println("Winner: "+(w+1));
+
+        System.out.println("Winner: "+candidates[w]);
     }
 }
 </pre>
@@ -251,7 +274,7 @@ public class VotingSystem{
 function copyCode(btn){
   let code = btn.nextElementSibling.innerText;
   navigator.clipboard.writeText(code);
-  btn.innerText = "Copied!";
+  btn.innerText="Copied!";
   setTimeout(()=>btn.innerText="Copy",1000);
 }
 </script>
