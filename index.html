@@ -116,10 +116,10 @@
 
   <!-- Question List -->
   <ul>
-    <li><a href="#q1">1. Login Page Validation</a></li>
-    <li><a href="#q2">2. Dark Mode Toggle</a></li>
-    <li><a href="#q3">3. Character Counter</a></li>
-    <li><a href="#q4">4. Image Slideshow</a></li>
+    <li><a href="#q1">1. Hospital Patient Management System</a></li>
+    <li><a href="#q2">2. Electricity Bill Calculation</a></li>
+    <li><a href="#q3">3. Inventory Management System</a></li>
+    <li><a href="#q4">4. Online Voting System</a></li>
     <li><a href="#q5">5. Online Order Form</a></li>
     <li><a href="#q6">6. Change Background Color</a></li>
     <li><a href="#q7">7. Registration Form Validation</a></li>
@@ -130,22 +130,57 @@
 
   <!-- Answers Sections -->
   <section id="q1">
-    <h2>1. Login Page Validation</h2>
+    <h2>1. Hospital Patient Management System</h2>
     <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
     <pre>
-&lt;input type="email" id="email" placeholder="Enter Email"&gt;
-&lt;input type="password" id="password" placeholder="Enter Password"&gt;
-&lt;button onclick="login1()"&gt;Login&lt;/button&gt;
+import java.util.*;
+class Patient {
+    int id;
+    String name, disease, doctor;
+    Patient(int id, String name, String disease, String doctor) {
+        this.id = id;
+        this.name = name;
+        this.disease = disease;
+        this.doctor = doctor;
+    }
+}
+public class HospitalSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Patient> list = new ArrayList<>();
+        while (true) {
+            System.out.println("\n1.Add 2.Display 3.Search 4.Discharge 5.Count 6.Exit");
+            int ch = sc.nextInt();
+            switch (ch) {
+                case 1:
+                    System.out.print("ID Name Disease Doctor: ");
+                    list.add(new Patient(sc.nextInt(), sc.next(), sc.next(), sc.next()));
+                    break;
+                case 2:
+                    for (Patient p : list)
+                        System.out.println(p.id + " " + p.name + " " + p.disease + " " + p.doctor);
+                    break;
+                case 3:
+                    System.out.print("Enter ID: ");
+                    int id = sc.nextInt();
+                    for (Patient p : list)
+                        if (p.id == id)
+                            System.out.println(p.name + " Found");
+                    break;
+                case 4:
+                    System.out.print("Enter ID: ");
+                    id = sc.nextInt();
+                    list.removeIf(p -> p.id == id);
+                    break;
 
-&lt;script&gt;
-function login1() {
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  if (email === "" || password === "") {
-    alert("Please enter all details.");
-  } else {
-    alert("Login Successful!");
-  }
+                case 5:
+                    System.out.println("Total Patients: " + list.size());
+                    break;
+                case 6:
+                    return;
+            }
+        }
+    }
 }
 &lt;/script&gt;
     </pre>
