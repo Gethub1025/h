@@ -135,128 +135,151 @@
     <pre>
 import java.util.*;
 class Patient {
-    int id;
-    String name, disease, doctor;
-    Patient(int id, String name, String disease, String doctor) {
-        this.id = id;
-        this.name = name;
-        this.disease = disease;
-        this.doctor = doctor;
+    int id; String name, disease, doctor;
+    Patient(int id,String name,String disease,String doctor){
+        this.id=id; this.name=name; this.disease=disease; this.doctor=doctor;
     }
 }
 public class HospitalSystem {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        ArrayList<Patient> list = new ArrayList<>();
-        while (true) {
-            System.out.println("\n1.Add 2.Display 3.Search 4.Discharge 5.Count 6.Exit");
-            int ch = sc.nextInt();
-            switch (ch) {
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        ArrayList&lt;Patient&gt; list=new ArrayList&lt;&gt;();
+        while(true){
+            System.out.println("1.Add 2.Display 3.Search 4.Delete 5.Count 6.Exit");
+            int ch=sc.nextInt();
+            switch(ch){
                 case 1:
-                    System.out.print("ID Name Disease Doctor: ");
-                    list.add(new Patient(sc.nextInt(), sc.next(), sc.next(), sc.next()));
+                    list.add(new Patient(sc.nextInt(),sc.next(),sc.next(),sc.next()));
                     break;
                 case 2:
-                    for (Patient p : list)
-                        System.out.println(p.id + " " + p.name + " " + p.disease + " " + p.doctor);
+                    for(Patient p:list) System.out.println(p.id+" "+p.name);
                     break;
                 case 3:
-                    System.out.print("Enter ID: ");
-                    int id = sc.nextInt();
-                    for (Patient p : list)
-                        if (p.id == id)
-                            System.out.println(p.name + " Found");
+                    int id=sc.nextInt();
+                    for(Patient p:list) if(p.id==id) System.out.println("Found");
                     break;
                 case 4:
-                    System.out.print("Enter ID: ");
-                    id = sc.nextInt();
-                    list.removeIf(p -> p.id == id);
+                    id=sc.nextInt();
+                    list.removeIf(p->p.id==id);
                     break;
-
                 case 5:
-                    System.out.println("Total Patients: " + list.size());
+                    System.out.println(list.size());
                     break;
-                case 6:
-                    return;
+                case 6: return;
             }
         }
     }
 }
-&lt;/script&gt;
     </pre>
   </section>
 
   <section id="q2">
-    <h2>2. Dark Mode Toggle</h2>
+    <h2>2. Electricity Bill Calculation</h2>
     <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
-    <pre>
-&lt;button onclick="toggleTheme()"&gt;Toggle Theme&lt;/button&gt;
-
-&lt;script&gt;
-function toggleTheme() {
-  document.body.classList.toggle("dark");
+   <pre>
+import java.util.*;
+class Bill{
+    int id,units; String name;
+    Bill(int id,String name,int units){
+        this.id=id; this.name=name; this.units=units;
+    }
+    double calc(){
+        if(units<=100) return units*5;
+        else if(units<=200) return 100*5+(units-100)*7;
+        else return 100*5+100*7+(units-200)*10;
+    }
 }
-&lt;/script&gt;
-
-&lt;style&gt;
-.dark { background-color: #333; color: white; }
-&lt;/style&gt;
-    </pre>
-  </section>
-
-  <section id="q3">
-    <h2>3. Character Counter</h2>
-    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
-    <pre>
-&lt;textarea id="text" maxlength="100" oninput="countChars()"&gt;&lt;/textarea&gt;
-&lt;p id="count"&gt;Characters typed: 0 / 100&lt;/p&gt;
-
-&lt;script&gt;
-function countChars() {
-  const text = document.getElementById('text').value.length;
-  document.getElementById('count').innerText = "Characters typed: " + text + " / 100";
+public class ElectricityBill{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        ArrayList&lt;Bill&gt; list=new ArrayList&lt;&gt;();
+        int n=sc.nextInt();
+        for(int i=0;i&lt;n;i++){
+            list.add(new Bill(sc.nextInt(),sc.next(),sc.nextInt()));
+        }
+        for(Bill b:list)
+            System.out.println(b.name+" ₹"+b.calc());
+    }
 }
-&lt;/script&gt;
-    </pre>
-  </section>
+</pre>
+</section>    
+    
 
   <section id="q4">
-    <h2>4. Image Slideshow</h2>
+    <h2>3.Inventory Management System</h2>
     <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
     <pre>
-&lt;img id="slide" width="300" height="200"&gt;&lt;br&gt;
-&lt;button onclick="prev()"&gt;Previous&lt;/button&gt;
-&lt;button onclick="next()"&gt;Next&lt;/button&gt;
-
-&lt;script&gt;
-let images = ['img1.jpg','img2.jpg','img3.jpg'];
-let index = 0;
-document.getElementById('slide').src = images[index];
-function next(){ index = (index + 1) % images.length; document.getElementById('slide').src = images[index]; }
-function prev(){ index = (index - 1 + images.length) % images.length; document.getElementById('slide').src = images[index]; }
-setInterval(next, 3000);
-&lt;/script&gt;
+import java.util.*;
+class Product{
+    int id,qty; String name; double price;
+    Product(int id,String name,double price,int qty){
+        this.id=id; this.name=name; this.price=price; this.qty=qty;
+    }
+}
+public class Inventory{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        ArrayList&lt;Product&gt; list=new ArrayList&lt;&gt;();
+        while(true){
+            int ch=sc.nextInt();
+            switch(ch){
+                case 1:
+                    list.add(new Product(sc.nextInt(),sc.next(),sc.nextDouble(),sc.nextInt()));
+                    break;
+                case 2:
+                    for(Product p:list) System.out.println(p.name+" "+p.qty);
+                    break;
+                case 3:
+                    int id=sc.nextInt(),q=sc.nextInt();
+                    for(Product p:list) if(p.id==id) p.qty=q;
+                    break;
+                case 4:
+                    double total=0;
+                    for(Product p:list) total+=p.price*p.qty;
+                    System.out.println(total);
+                    break;
+                case 5:
+                    id=sc.nextInt();
+                    for(Product p:list) if(p.id==id) System.out.println("Found");
+                    break;
+                case 6:return;
+            }
+        }
+    }
+}
     </pre>
   </section>
 
   <section id="q5">
-    <h2>5. Online Order Form</h2>
+    <h2>4. Online Voting System</h2>
     <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
     <pre>
-&lt;input id="name" placeholder="Name"&gt;
-&lt;input id="item" placeholder="Item"&gt;
-&lt;input id="qty" type="number" placeholder="Quantity"&gt;
-&lt;button onclick="order()"&gt;Place Order&lt;/button&gt;
-&lt;p id="summary"&gt;&lt;/p&gt;
-
-&lt;script&gt;
-function order(){
-  let n=document.getElementById('name').value;
-  let i=document.getElementById('item').value;
-  let q=document.getElementById('qty').value;
-  document.getElementById('summary').innerText=`Order Placed by ${n} for ${q} ${i}(s).`;
+import java.util.*;
+public class VotingSystem{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int[] votes=new int[3];
+        HashSet&lt;Integer&gt; set=new HashSet&lt;&gt;();
+        while(true){
+            int id=sc.nextInt();
+            if(id==0) break;
+            if(set.contains(id)){
+                System.out.println("Already voted");
+                continue;
+            }
+            int c=sc.nextInt();
+            if(c>=1&&c<=3){
+                votes[c-1]++;
+                set.add(id);
+            }
+        }
+        int max=0,w=0;
+        for(int i=0;i&lt;3;i++){
+            if(votes[i]&gt;max){max=votes[i]; w=i;}
+        }
+        System.out.println("Winner: "+(w+1));
+    }
 }
-&lt;/script&gt;
     </pre>
   </section>
 
