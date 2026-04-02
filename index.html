@@ -5,54 +5,73 @@
 <title>FDA PBL Questions</title>
 
 <style>
-body {font-family: Arial; background:#f5f5f5; padding:20px;}
-h1 {text-align:center;}
+body {
+  font-family: Arial;
+  background: #f5f5f5;
+  padding: 20px;
+}
 
-/* LIST */
+h1 {
+  text-align: center;
+}
+
 ul {
-  max-width:700px;
-  margin:auto;
-  list-style:none;
-  padding:0;
+  max-width: 700px;
+  margin: auto;
+  list-style: none;
+  padding: 0;
 }
-li {
-  background:white;
-  margin:10px 0;
-  padding:15px;
-  border-radius:10px;
-}
-li:hover {background:#e0f0ff;}
-a {text-decoration:none; font-weight:bold; color:black;}
 
-/* SECTION */
+li {
+  background: white;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+li:hover {
+  background: #e0f0ff;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
 section {
-  background:#fff;
-  padding:20px;
-  margin:30px auto;
-  max-width:900px;
-  border-radius:10px;
-  position:relative;
+  background: #fff;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 10px;
+  position: relative;
 }
 
 pre {
-  background:#f4f4f4;
-  padding:15px;
-  border-radius:10px;
-  overflow:auto;
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+  white-space: pre-wrap;
 }
 
 .copy-btn {
-  position:absolute;
-  top:15px;
-  right:20px;
-  background:#007BFF;
-  color:white;
-  border:none;
-  padding:5px 10px;
-  cursor:pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-html {scroll-behavior:smooth;}
+html {
+  scroll-behavior: smooth;
+}
 </style>
 </head>
 
@@ -60,7 +79,6 @@ html {scroll-behavior:smooth;}
 
 <h1 id="top">EduPlusCampus</h1>
 
-<!-- ✅ NAVIGATION -->
 <ul>
   <li><a href="#q1">1. Hospital Patient Management System</a></li>
   <li><a href="#q2">2. Electricity Bill Calculation</a></li>
@@ -77,56 +95,95 @@ import java.util.Scanner;
 
 public class HospitalSystem {
 
-    static int[] id = new int[10];
-    static String[] name = new String[10];
+    // Arrays to store patient data
+    static int[]    id      = new int[10];
+    static String[] name    = new String[10];
     static String[] disease = new String[10];
-    static String[] doctor = new String[10];
-    static int count = 0;
+    static String[] doctor  = new String[10];
+    static int count = 0;  // total patients added
 
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
         int choice;
 
+        System.out.println("=== Hospital Patient Management System ===");
+
         do {
-            System.out.println("1.Add 2.Display 3.Search 4.Delete 5.Count 6.Exit");
+            // Show menu
+            System.out.println("\n1. Add Patient");
+            System.out.println("2. Display All Patients");
+            System.out.println("3. Search Patient by ID");
+            System.out.println("4. Discharge Patient");
+            System.out.println("5. Count Total Patients");
+            System.out.println("6. Exit");
+            System.out.print("Enter your choice: ");
             choice = sc.nextInt();
 
+            // ---- ADD PATIENT ----
             if (choice == 1) {
-                id[count]=sc.nextInt();
-                name[count]=sc.next();
-                disease[count]=sc.next();
-                doctor[count]=sc.next();
+                System.out.print("Enter Patient ID   : "); id[count]      = sc.nextInt();
+                System.out.print("Enter Patient Name : "); name[count]    = sc.next();
+                System.out.print("Enter Disease      : "); disease[count] = sc.next();
+                System.out.print("Enter Doctor Name  : "); doctor[count]  = sc.next();
                 count++;
+                System.out.println("Patient added successfully!");
             }
+
+            // ---- DISPLAY ALL ----
             else if (choice == 2) {
-                for(int i=0;i<count;i++)
-                    System.out.println(id[i]+" "+name[i]);
+                System.out.println("\n--- Patient List ---");
+                for (int i = 0; i &lt; count; i++) {
+                    System.out.println("ID: " + id[i] + " | Name: " + name[i] +
+                                       " | Disease: " + disease[i] + " | Doctor: " + doctor[i]);
+                }
             }
+
+            // ---- SEARCH ----
             else if (choice == 3) {
-                int searchId=sc.nextInt();
-                for(int i=0;i<count;i++)
-                    if(id[i]==searchId) System.out.println("Found");
+                System.out.print("Enter Patient ID to search: ");
+                int searchId = sc.nextInt();
+                boolean found = false;
+
+                for (int i = 0; i &lt; count; i++) {
+                    if (id[i] == searchId) {
+                        System.out.println("Found! Name: " + name[i] +
+                                           " | Disease: " + disease[i] + " | Doctor: " + doctor[i]);
+                        found = true;
+                    }
+                }
+                if (!found) System.out.println("Patient not found.");
             }
+
+            // ---- DISCHARGE (DELETE) ----
             else if (choice == 4) {
-                int delId=sc.nextInt();
-                for(int i=0;i<count;i++){
-                    if(id[i]==delId){
-                        for(int j=i;j<count-1;j++){
-                            id[j]=id[j+1];
-                            name[j]=name[j+1];
-                            disease[j]=disease[j+1];
-                            doctor[j]=doctor[j+1];
+                System.out.print("Enter Patient ID to discharge: ");
+                int delId = sc.nextInt();
+
+                for (int i = 0; i &lt; count; i++) {
+                    if (id[i] == delId) {
+                        // Shift all elements one step left to remove this record
+                        for (int j = i; j &lt; count - 1; j++) {
+                            id[j]      = id[j + 1];
+                            name[j]    = name[j + 1];
+                            disease[j] = disease[j + 1];
+                            doctor[j]  = doctor[j + 1];
                         }
                         count--;
+                        System.out.println("Patient discharged successfully.");
                         break;
                     }
                 }
             }
+
+            // ---- COUNT ----
             else if (choice == 5) {
-                System.out.println(count);
+                System.out.println("Total Patients: " + count);
             }
 
         } while (choice != 6);
+
+        System.out.println("Goodbye!");
     }
 }
 </pre>
@@ -140,27 +197,52 @@ public class HospitalSystem {
 import java.util.Scanner;
 
 public class ElectricityBill {
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
-        int[] id = new int[n];
-        String[] name = new String[n];
-        int[] units = new int[n];
+        System.out.println("=== Electricity Bill Calculation System ===");
 
-        for (int i = 0; i < n; i++) {
-            id[i]=sc.nextInt();
-            name[i]=sc.next();
-            units[i]=sc.nextInt();
+        System.out.print("How many consumers? ");
+        int n = sc.nextInt();
+
+        // Arrays to store consumer data
+        int[]    id    = new int[n];
+        String[] name  = new String[n];
+        int[]    units = new int[n];
+
+        // Take input for each consumer
+        for (int i = 0; i &lt; n; i++) {
+            System.out.println("\nConsumer " + (i + 1) + ":");
+            System.out.print("  Enter Consumer ID    : "); id[i]    = sc.nextInt();
+            System.out.print("  Enter Consumer Name  : "); name[i]  = sc.next();
+            System.out.print("  Enter Units Consumed : "); units[i] = sc.nextInt();
         }
 
-        for (int i = 0; i < n; i++) {
-            double bill=0;
-            if(units[i]<=100) bill=units[i]*5;
-            else if(units[i]<=200) bill=100*5+(units[i]-100)*7;
-            else bill=100*5+100*7+(units[i]-200)*10;
+        // Display bills
+        System.out.println("\n========= Bill Summary =========");
+        for (int i = 0; i &lt; n; i++) {
 
-            System.out.println(name[i]+" Rs."+bill);
+            double bill = 0;
+
+            // Slab rate calculation
+            if (units[i] &lt;= 100) {
+                // 0 to 100 units → Rs.5 per unit
+                bill = units[i] * 5;
+
+            } else if (units[i] &lt;= 200) {
+                // 101 to 200 units → first 100 at Rs.5, rest at Rs.7
+                bill = (100 * 5) + (units[i] - 100) * 7;
+
+            } else {
+                // Above 200 units → first 100 at Rs.5, next 100 at Rs.7, rest at Rs.10
+                bill = (100 * 5) + (100 * 7) + (units[i] - 200) * 10;
+            }
+
+            System.out.println("Consumer: " + name[i] +
+                               " | Units: " + units[i] +
+                               " | Bill Amount: Rs." + bill);
         }
     }
 }
@@ -176,48 +258,93 @@ import java.util.Scanner;
 
 public class Inventory {
 
-    static int[] id=new int[10];
-    static String[] name=new String[10];
-    static double[] price=new double[10];
-    static int[] qty=new int[10];
-    static int count=0;
+    // Arrays to store product data
+    static int[]    id    = new int[10];
+    static String[] name  = new String[10];
+    static double[] price = new double[10];
+    static int[]    qty   = new int[10];
+    static int count = 0;  // total products added
 
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
         int choice;
 
-        do{
-            choice=sc.nextInt();
+        System.out.println("=== Inventory Management System ===");
 
-            if(choice==1){
-                id[count]=sc.nextInt();
-                name[count]=sc.next();
-                price[count]=sc.nextDouble();
-                qty[count]=sc.nextInt();
+        do {
+            // Show menu
+            System.out.println("\n1. Add Product");
+            System.out.println("2. Display All Products");
+            System.out.println("3. Update Product Quantity");
+            System.out.println("4. Total Inventory Value");
+            System.out.println("5. Search Product by ID");
+            System.out.println("6. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+
+            // ---- ADD PRODUCT ----
+            if (choice == 1) {
+                System.out.print("Enter Product ID    : "); id[count]    = sc.nextInt();
+                System.out.print("Enter Product Name  : "); name[count]  = sc.next();
+                System.out.print("Enter Price         : "); price[count] = sc.nextDouble();
+                System.out.print("Enter Quantity      : "); qty[count]   = sc.nextInt();
                 count++;
-            }
-            else if(choice==2){
-                for(int i=0;i<count;i++)
-                    System.out.println(name[i]+" "+qty[i]);
-            }
-            else if(choice==3){
-                int idd=sc.nextInt(),q=sc.nextInt();
-                for(int i=0;i<count;i++)
-                    if(id[i]==idd) qty[i]=q;
-            }
-            else if(choice==4){
-                double total=0;
-                for(int i=0;i<count;i++)
-                    total+=price[i]*qty[i];
-                System.out.println(total);
-            }
-            else if(choice==5){
-                int sid=sc.nextInt();
-                for(int i=0;i<count;i++)
-                    if(id[i]==sid) System.out.println("Found");
+                System.out.println("Product added successfully!");
             }
 
-        }while(choice!=6);
+            // ---- DISPLAY ALL ----
+            else if (choice == 2) {
+                System.out.println("\n--- Product List ---");
+                for (int i = 0; i &lt; count; i++) {
+                    System.out.println("ID: " + id[i] + " | Name: " + name[i] +
+                                       " | Price: Rs." + price[i] + " | Qty: " + qty[i]);
+                }
+            }
+
+            // ---- UPDATE QUANTITY ----
+            else if (choice == 3) {
+                System.out.print("Enter Product ID to update: ");
+                int updateId = sc.nextInt();
+                System.out.print("Enter new Quantity: ");
+                int newQty = sc.nextInt();
+
+                for (int i = 0; i &lt; count; i++) {
+                    if (id[i] == updateId) {
+                        qty[i] = newQty;
+                        System.out.println("Quantity updated successfully.");
+                    }
+                }
+            }
+
+            // ---- TOTAL VALUE ----
+            else if (choice == 4) {
+                double total = 0;
+                for (int i = 0; i &lt; count; i++) {
+                    total = total + (price[i] * qty[i]);  // price x quantity for each product
+                }
+                System.out.println("Total Inventory Value: Rs." + total);
+            }
+
+            // ---- SEARCH ----
+            else if (choice == 5) {
+                System.out.print("Enter Product ID to search: ");
+                int searchId = sc.nextInt();
+                boolean found = false;
+
+                for (int i = 0; i &lt; count; i++) {
+                    if (id[i] == searchId) {
+                        System.out.println("Found! Name: " + name[i] +
+                                           " | Price: Rs." + price[i] + " | Qty: " + qty[i]);
+                        found = true;
+                    }
+                }
+                if (!found) System.out.println("Product not found.");
+            }
+
+        } while (choice != 6);
+
+        System.out.println("Goodbye!");
     }
 }
 </pre>
@@ -231,51 +358,83 @@ public class Inventory {
 import java.util.Scanner;
 
 public class VotingSystem {
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
-        String[] candidates={"Alice","Bob","Charlie"};
-        int[] votes={0,0,0};
+        // 3 fixed candidates
+        String[] candidates = {"Alice", "Bob", "Charlie"};
+        int[] votes = {0, 0, 0};  // vote count starts at 0
 
-        int n=sc.nextInt();
+        System.out.println("=== Online Voting System ===");
 
-        int[] voterId=new int[n];
-        String[] voterName=new String[n];
-        boolean[] hasVoted=new boolean[n];
+        // Step 1: Register voters
+        System.out.print("Enter number of voters: ");
+        int n = sc.nextInt();
 
-        for(int i=0;i<n;i++){
-            voterId[i]=sc.nextInt();
-            voterName[i]=sc.next();
+        int[]     voterId   = new int[n];
+        String[]  voterName = new String[n];
+        boolean[] hasVoted  = new boolean[n];  // false by default (not voted yet)
+
+        System.out.println("\n--- Register Voters ---");
+        for (int i = 0; i &lt; n; i++) {
+            System.out.print("Enter Voter ID   : "); voterId[i]   = sc.nextInt();
+            System.out.print("Enter Voter Name : "); voterName[i] = sc.next();
         }
 
-        for(int i=0;i<n;i++){
-            int choice=sc.nextInt();
-            if(choice>=1 && choice<=3){
-                votes[choice-1]++;
-                hasVoted[i]=true;
+        // Step 2: Voting
+        System.out.println("\n--- Voting Round ---");
+        System.out.println("Candidates: 1-" + candidates[0] +
+                           "  2-" + candidates[1] +
+                           "  3-" + candidates[2]);
+
+        for (int i = 0; i &lt; n; i++) {
+            System.out.println("\nVoter: " + voterName[i] + " (ID: " + voterId[i] + ")");
+
+            // Check if already voted
+            if (hasVoted[i]) {
+                System.out.println("Already voted! Skipping.");
+                continue;
+            }
+
+            System.out.print("Enter your choice (1 / 2 / 3): ");
+            int choice = sc.nextInt();
+
+            if (choice == 1 || choice == 2 || choice == 3) {
+                votes[choice - 1]++;   // increase vote count for chosen candidate
+                hasVoted[i] = true;    // mark this voter as voted
+                System.out.println("Vote cast successfully!");
+            } else {
+                System.out.println("Invalid choice! Vote not counted.");
             }
         }
 
-        int max=0,w=0;
-        for(int i=0;i<3;i++){
-            if(votes[i]>max){
-                max=votes[i];
-                w=i;
+        // Step 3: Show results and declare winner
+        System.out.println("\n========= Vote Results =========");
+        int maxVotes    = 0;
+        int winnerIndex = 0;
+
+        for (int i = 0; i &lt; 3; i++) {
+            System.out.println(candidates[i] + " : " + votes[i] + " votes");
+            if (votes[i] &gt; maxVotes) {
+                maxVotes    = votes[i];
+                winnerIndex = i;
             }
         }
 
-        System.out.println("Winner: "+candidates[w]);
+        System.out.println("\nWinner: " + candidates[winnerIndex] + " with " + maxVotes + " votes!");
     }
 }
 </pre>
 </section>
 
 <script>
-function copyCode(btn){
+function copyCode(btn) {
   let code = btn.nextElementSibling.innerText;
   navigator.clipboard.writeText(code);
-  btn.innerText="Copied!";
-  setTimeout(()=>btn.innerText="Copy",1000);
+  btn.innerText = "Copied!";
+  setTimeout(() => btn.innerText = "Copy", 1000);
 }
 </script>
 
