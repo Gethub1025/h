@@ -1,137 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FDA PBL Questions</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<meta charset="UTF-8">
+<title>FDA PBL Questions</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      padding: 20px;
-      line-height: 1.6;
-    }
+<style>
+body {
+  font-family: Arial;
+  background: #f5f5f5;
+  padding: 20px;
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
+h1 {
+  text-align: center;
+}
 
-    ul {
-      list-style: none;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      padding: 0;
-    }
+/* LIST */
+ul {
+  max-width: 700px;
+  margin: auto;
+  list-style: none;
+  padding: 0;
+}
 
-    li {
-      background: white;
-      margin: 10px 0;
-      padding: 15px 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: 0.2s;
-    }
+li {
+  background: white;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
 
-    li:hover {
-      background: #e8f0fe;
-    }
+li:hover {
+  background: #e0f0ff;
+}
 
-    a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      font-size: 18px;
-    }
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
 
-    section {
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin: 30px auto;
-      max-width: 900px;
-      position: relative;
-    }
+/* SECTIONS */
+section {
+  background: #fff;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 10px;
+  position: relative;
+}
 
-    section h2 {
-      color: #2c3e50;
-      margin-bottom: 10px;
-    }
+pre {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
 
-    pre {
-      background: #f4f4f4;
-      padding: 15px;
-      border-radius: 10px;
-      overflow-x: auto;
-      font-size: 15px;
-      position: relative;
-      white-space: pre-wrap;
-    }
+/* COPY BUTTON */
+.copy-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-    .copy-btn {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      background: #007BFF;
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 13px;
-      transition: 0.2s;
-    }
-
-    .copy-btn:hover {
-      background: #0056b3;
-    }
-
-    .back-top {
-      text-align: right;
-      margin-top: 10px;
-    }
-
-    .back-top a {
-      color: #007BFF;
-      text-decoration: none;
-    }
-
-    .back-top a:hover {
-      text-decoration: underline;
-    }
-  </style>
+/* SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+</style>
 </head>
+
 <body>
 
-  <h1 id="top">EduPlusCampus</h1>
+<h1 id="top">EduPlusCampus</h1>
 
-  <!-- Question List -->
-  <ul>
-    <li><a href="#q1">1. Hospital Patient Management System</a></li>
-    <li><a href="#q2">2. Electricity Bill Calculation</a></li>
-    <li><a href="#q4">3. Inventory Management System</a></li>
-    <li><a href="#q5">4. Online Voting System</a></li>
-    <li><a href="#q6">6. Change Background Color</a></li>
-    <li><a href="#q7">7. Registration Form Validation</a></li>
-    <li><a href="#q8">8. Basic Calculator</a></li>
-    <li><a href="#q9">9. Simple Login Page</a></li>
-    <li><a href="#q10">10. Feedback Form</a></li>
-  </ul>
+<!-- ✅ NAVIGATION LIST -->
+<ul>
+  <li><a href="#q1">1. Hospital Patient Management System</a></li>
+  <li><a href="#q2">2. Electricity Bill Calculation</a></li>
+  <li><a href="#q3">3. Inventory Management System</a></li>
+  <li><a href="#q4">4. Online Voting System</a></li>
+</ul>
 
-  <!-- Answers Sections -->
-  <section id="q1">
-    <h2>1. Hospital Patient Management System</h2>
-    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
-    <pre>
+<!-- Q1 -->
+<section id="q1">
+<h2>1. Hospital Patient Management System</h2>
+<button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>
 import java.util.*;
 class Patient {
     int id; String name, disease, doctor;
@@ -169,13 +132,14 @@ public class HospitalSystem {
         }
     }
 }
-    </pre>
-  </section>
+</pre>
+</section>
 
-  <section id="q2">
-    <h2>2. Electricity Bill Calculation</h2>
-    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
-   <pre>
+<!-- Q2 -->
+<section id="q2">
+<h2>2. Electricity Bill Calculation</h2>
+<button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>
 import java.util.*;
 class Bill{
     int id,units; String name;
@@ -201,13 +165,13 @@ public class ElectricityBill{
     }
 }
 </pre>
-</section>    
-    
+</section>
 
-  <section id="q4">
-    <h2>3.Inventory Management System</h2>
-    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
-    <pre>
+<!-- Q3 -->
+<section id="q3">
+<h2>3. Inventory Management System</h2>
+<button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>
 import java.util.*;
 class Product{
     int id,qty; String name; double price;
@@ -246,13 +210,14 @@ public class Inventory{
         }
     }
 }
-    </pre>
-  </section>
+</pre>
+</section>
 
-  <section id="q5">
-    <h2>4. Online Voting System</h2>
-    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
-    <pre>
+<!-- Q4 -->
+<section id="q4">
+<h2>4. Online Voting System</h2>
+<button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>
 import java.util.*;
 public class VotingSystem{
     public static void main(String[] args){
@@ -279,129 +244,17 @@ public class VotingSystem{
         System.out.println("Winner: "+(w+1));
     }
 }
-    </pre>
-  </section>
+</pre>
+</section>
 
-  <section id="q6">
-    <h2>6. Change Background Color</h2>
-    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
-    <pre>
-&lt;button onclick="changeColor()"&gt;Change Color&lt;/button&gt;
-&lt;script&gt;
-function changeColor(){
-  const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
-  document.body.style.backgroundColor = randomColor;
+<script>
+function copyCode(btn){
+  let code = btn.nextElementSibling.innerText;
+  navigator.clipboard.writeText(code);
+  btn.innerText = "Copied!";
+  setTimeout(()=>btn.innerText="Copy",1000);
 }
-&lt;/script&gt;
-    </pre>
-  </section>
-
-  <section id="q7">
-    <h2>7. Registration Form Validation</h2>
-    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
-    <pre>
-&lt;input id="rname" placeholder="Name"&gt;
-&lt;input id="remail" placeholder="Email"&gt;
-&lt;select id="gender"&gt;
-  &lt;option value=""&gt;Select Gender&lt;/option&gt;
-  &lt;option&gt;Male&lt;/option&gt;
-  &lt;option&gt;Female&lt;/option&gt;
-&lt;/select&gt;
-&lt;input id="dept" placeholder="Department"&gt;
-&lt;button onclick="register()"&gt;Register&lt;/button&gt;
-
-&lt;script&gt;
-function register(){
-  let n=document.getElementById('rname').value;
-  let e=document.getElementById('remail').value;
-  let g=document.getElementById('gender').value;
-  let d=document.getElementById('dept').value;
-  if(n && e && g && d) alert("Registered Successfully!");
-  else alert("Please fill all fields!");
-}
-&lt;/script&gt;
-    </pre>
-  </section>
-
-  <section id="q8">
-    <h2>8. Basic Calculator</h2>
-    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
-    <pre>
-&lt;input id="num1" type="number" placeholder="Number 1"&gt;
-&lt;input id="num2" type="number" placeholder="Number 2"&gt;
-&lt;button onclick="calc('+')"&gt;+&lt;/button&gt;
-&lt;button onclick="calc('-')"&gt;-&lt;/button&gt;
-&lt;button onclick="calc('*')"&gt;×&lt;/button&gt;
-&lt;button onclick="calc('/')"&gt;÷&lt;/button&gt;
-&lt;p id="result"&gt;&lt;/p&gt;
-
-&lt;script&gt;
-function calc(op){
-  let a=parseFloat(document.getElementById('num1').value);
-  let b=parseFloat(document.getElementById('num2').value);
-  let res;
-  if(isNaN(a)||isNaN(b)){res="Error";}
-  else{
-    if(op=='+') res=a+b;
-    else if(op=='-') res=a-b;
-    else if(op=='*') res=a*b;
-    else if(op=='/') res=b!==0?a/b:"Error";
-  }
-  document.getElementById('result').innerText="Result: "+res;
-}
-&lt;/script&gt;
-    </pre>
-  </section>
-
-  <section id="q9">
-    <h2>9. Simple Login Page (Predefined Check)</h2>
-    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
-    <pre>
-&lt;input id="uname" placeholder="Username"&gt;
-&lt;input id="pass" type="password" placeholder="Password"&gt;
-&lt;button onclick="checkLogin()"&gt;Login&lt;/button&gt;
-
-&lt;script&gt;
-function checkLogin(){
-  const u=document.getElementById('uname').value;
-  const p=document.getElementById('pass').value;
-  if(u==='admin' && p==='1234') alert("Welcome, Admin!");
-  else alert("Invalid Credentials!");
-}
-&lt;/script&gt;
-    </pre>
-  </section>
-
-  <section id="q10">
-    <h2>10. Feedback Form</h2>
-    <button class="copy-btn" onclick="copyCode(this)">📋 Copy Code</button>
-    <pre>
-&lt;input id="fname" placeholder="Name"&gt;
-&lt;input id="femail" placeholder="Email"&gt;
-&lt;input id="rating" type="number" min="1" max="5" placeholder="Rating (1-5)"&gt;
-&lt;textarea id="comment" placeholder="Comments"&gt;&lt;/textarea&gt;
-&lt;button onclick="feedback()"&gt;Submit&lt;/button&gt;
-
-&lt;script&gt;
-function feedback(){
-  let n=fname.value, e=femail.value, r=rating.value, c=comment.value;
-  if(n && e && r && c) alert("Thank you for your feedback!");
-  else alert("Please fill all fields.");
-}
-&lt;/script&gt;
-    </pre>
-  </section>
-
-  <!-- Copy Function -->
-  <script>
-    function copyCode(btn) {
-      const code = btn.nextElementSibling.innerText;
-      navigator.clipboard.writeText(code).then(() => {
-        btn.innerText = "✅ Copied!";
-        setTimeout(() => btn.innerText = "📋 Copy Code", 1500);
-      });
-    }
-  </script>
+</script>
 
 </body>
 </html>
