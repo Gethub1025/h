@@ -2,439 +2,735 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>FDA PBL Questions</title>
-
+<title>SBF PBL Questions</title>
 <style>
-body {
-  font-family: Arial;
-  background: #f5f5f5;
-  padding: 20px;
-}
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@400;600;700&display=swap');
 
-h1 {
-  text-align: center;
-}
+  :root {
+    --bg: #0d0f14;
+    --surface: #161a23;
+    --border: #252b38;
+    --accent: #4f8ef7;
+    --accent2: #7c3aed;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --code-bg: #0a0c10;
+    --success: #22c55e;
+  }
 
-ul {
-  max-width: 700px;
-  margin: auto;
-  list-style: none;
-  padding: 0;
-}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-li {
-  background: white;
-  margin: 10px 0;
-  padding: 15px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
+  body {
+    font-family: 'Sora', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
 
-li:hover {
-  background: #e0f0ff;
-}
+  /* ── Header ── */
+  header {
+    background: linear-gradient(135deg, #0d1525 0%, #1a0a2e 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 36px 24px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 50% -20%, rgba(79,142,247,.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    background: linear-gradient(90deg, var(--accent), #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  header p {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: .85rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
 
-a {
-  text-decoration: none;
-  font-weight: bold;
-  color: black;
-}
+  /* ── Layout ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px 80px; }
 
-section {
-  background: #fff;
-  padding: 20px;
-  margin: 30px auto;
-  max-width: 900px;
-  border-radius: 10px;
-  position: relative;
-}
+  /* ── Question index ── */
+  .index {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+  .index a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: .85rem;
+    font-weight: 600;
+    transition: border-color .2s, background .2s, transform .15s;
+  }
+  .index a:hover {
+    border-color: var(--accent);
+    background: #1c2236;
+    transform: translateY(-2px);
+  }
+  .q-num {
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    color: #fff;
+  }
 
-pre {
-  background: #f4f4f4;
-  padding: 15px;
-  border-radius: 10px;
-  overflow-x: auto;
-  white-space: pre-wrap;
-}
+  /* ── Answer sections ── */
+  .answer-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 24px;
+    background: linear-gradient(90deg, #131825, #0d1020);
+    border-bottom: 1px solid var(--border);
+  }
+  .section-header .num {
+    width: 34px; height: 34px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: .8rem;
+    flex-shrink: 0;
+    color: #fff;
+  }
+  .section-header h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
 
-.copy-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: #007BFF;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  cursor: pointer;
-  border-radius: 5px;
-}
+  /* ── Code block ── */
+  .code-wrapper { position: relative; }
+  .copy-btn {
+    position: absolute;
+    top: 14px; right: 14px;
+    background: rgba(79,142,247,.15);
+    border: 1px solid rgba(79,142,247,.3);
+    color: var(--accent);
+    padding: 5px 14px;
+    border-radius: 6px;
+    font-size: .78rem;
+    font-family: 'JetBrains Mono', monospace;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+    z-index: 2;
+  }
+  .copy-btn:hover { background: rgba(79,142,247,.28); }
+  .copy-btn.done { color: var(--success); border-color: rgba(34,197,94,.3); background: rgba(34,197,94,.1); }
 
-html {
-  scroll-behavior: smooth;
-}
+  pre {
+    background: var(--code-bg);
+    color: #c9d8f0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .8rem;
+    line-height: 1.7;
+    padding: 56px 24px 24px;
+    overflow-x: auto;
+    white-space: pre;
+    tab-size: 4;
+  }
+
+  html { scroll-behavior: smooth; }
 </style>
 </head>
-
 <body>
 
-<h1 id="top">EduPlusCampus</h1>
+<header>
+  <h1>EduPlusCampus</h1>
+  <p>Spring Boot Framework — PBL Question Bank</p>
+</header>
 
-<ul>
-  <li><a href="#q1">1. Hospital Patient Management System</a></li>
-  <li><a href="#q2">2. Electricity Bill Calculation</a></li>
-  <li><a href="#q3">3. Inventory Management System</a></li>
-  <li><a href="#q4">4. Online Voting System</a></li>
-</ul>
+<div class="container">
 
-<!-- Q1 -->
-<section id="q1">
-<h2>1. Hospital Patient Management System</h2>
-<button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>
-import java.util.Scanner;
+  <!-- Index -->
+  <nav class="index">
+    <a href="#q1"><span class="q-num">1</span>Student Management System</a>
+    <a href="#q2"><span class="q-num">2</span>ATM Transaction System</a>
+    <a href="#q3"><span class="q-num">3</span>Password Validation System</a>
+    <a href="#q4"><span class="q-num">4</span>Bank Account Simulation</a>
+    <a href="#q5"><span class="q-num">5</span>Library Management System</a>
+    <a href="#q6"><span class="q-num">6</span>Employee Payroll System</a>
+    <a href="#q7"><span class="q-num">7</span>Hotel Room Booking System</a>
+    <a href="#q8"><span class="q-num">8</span>Course Registration System</a>
+  </nav>
 
-public class HospitalSystem {
+  <!-- Q1 -->
+  <div class="answer-section" id="q1">
+    <div class="section-header">
+      <span class="num">1</span>
+      <h2>Student Management System using Java (Console-Based CRUD)</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>import java.util.*;
+public class StudentManagementSystem {
+    static class Student {
+        String id, name, branch;
+        double marks;
+        Student(String i, String n, String b, double m) {
+            id = i; name = n; branch = b; marks = m;
+        }
+        void show() {
+            System.out.printf("ID:%s | %s | %s | %.1f\n", id, name, branch, marks);
+        }
+    }
 
-    // Arrays to store patient data
-    static int[]    id      = new int[10];
-    static String[] name    = new String[10];
-    static String[] disease = new String[10];
-    static String[] doctor  = new String[10];
-    static int count = 0;  // total patients added
+    static ArrayList&lt;Student&gt; list = new ArrayList&lt;&gt;();
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-        int choice;
-
-        System.out.println("=== Hospital Patient Management System ===");
-
+        int ch;
         do {
-            // Show menu
-            System.out.println("\n1. Add Patient");
-            System.out.println("2. Display All Patients");
-            System.out.println("3. Search Patient by ID");
-            System.out.println("4. Discharge Patient");
-            System.out.println("5. Count Total Patients");
-            System.out.println("6. Exit");
-            System.out.print("Enter your choice: ");
+            System.out.print("\n1.Add 2.All 3.Find 4.Edit 5.Del 0.Exit &gt; ");
+            ch = sc.nextInt(); sc.nextLine();
+
+            switch (ch) {
+                case 1 -> {
+                    System.out.print("ID:"); String id = sc.nextLine();
+                    System.out.print("Name:"); String n = sc.nextLine();
+                    System.out.print("Branch:"); String b = sc.nextLine();
+                    System.out.print("Marks:"); double m = sc.nextDouble(); sc.nextLine();
+                    list.add(new Student(id, n, b, m));
+                    System.out.println("✓ Added");
+                }
+                case 2 -> {
+                    if (list.isEmpty()) System.out.print("Empty");
+                    else for (var s : list) s.show();
+                }
+                case 3 -> {
+                    System.out.print("ID:"); String fid = sc.nextLine();
+                    for (var s : list)
+                        if (s.id.equalsIgnoreCase(fid)) { s.show(); break; }
+                        else System.out.print("Not found");
+                }
+                case 4 -> {
+                    System.out.print("ID:"); String uid = sc.nextLine();
+                    for (var s : list)
+                        if (s.id.equalsIgnoreCase(uid)) {
+                            System.out.print("Name:"); s.name = sc.nextLine();
+                            System.out.print("Branch:"); s.branch = sc.nextLine();
+                            System.out.print("Marks:"); s.marks = sc.nextDouble(); sc.nextLine();
+                            System.out.println("✓ Updated"); break;
+                        } else System.out.print("Not found");
+                }
+                case 5 -> {
+                    System.out.print("ID:"); String did = sc.nextLine();
+                    list.removeIf(s -> s.id.equalsIgnoreCase(did));
+                    System.out.println("✓ Deleted");
+                }
+            }
+        } while (ch != 0);
+    }
+}</pre>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="answer-section" id="q2">
+    <div class="section-header">
+      <span class="num">2</span>
+      <h2>ATM Transaction System using Java</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>import java.util.Scanner;
+public class ATM {
+    static double balance = 5000.0; // Initial balance
+    static int pin = 1234;          // Default PIN
+    static Scanner sc = new Scanner(System.in);
+
+    static boolean authenticate() {
+        System.out.print("Enter PIN: ");
+        int inputPin = sc.nextInt();
+        return inputPin == pin;
+    }
+
+    static void showMenu() {
+        System.out.println("\n=== ATM SYSTEM ===");
+        System.out.println("1. Check Balance");
+        System.out.println("2. Deposit");
+        System.out.println("3. Withdraw");
+        System.out.println("4. Change PIN");
+        System.out.println("0. Exit");
+        System.out.print("Choose: ");
+    }
+
+    static void checkBalance() {
+        System.out.printf("Current Balance: Rs. %.2f\n", balance);
+    }
+
+    static void deposit() {
+        System.out.print("Enter amount to deposit: Rs. ");
+        double amt = sc.nextDouble();
+        if (amt &gt; 0) {
+            balance += amt;
+            System.out.printf("Deposited Rs. %.2f\n", amt);
+            checkBalance();
+        } else {
+            System.out.println("Invalid amount!");
+        }
+    }
+
+    static void withdraw() {
+        System.out.print("Enter amount to withdraw: Rs. ");
+        double amt = sc.nextDouble();
+        if (amt &gt; balance) {
+            System.out.println("Insufficient balance!");
+        } else if (amt &lt;= 0) {
+            System.out.println("Invalid amount!");
+        } else {
+            balance -= amt;
+            System.out.printf("Withdrew Rs. %.2f\n", amt);
+            checkBalance();
+        }
+    }
+
+    static void changePin() {
+        System.out.print("Enter new PIN: ");
+        pin = sc.nextInt();
+        System.out.println("PIN changed successfully!");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Welcome to ATM System");
+        if (!authenticate()) {
+            System.out.println("Invalid PIN! Access Denied.");
+            return;
+        }
+        int choice;
+        do {
+            showMenu();
             choice = sc.nextInt();
-
-            // ---- ADD PATIENT ----
-            if (choice == 1) {
-                System.out.print("Enter Patient ID   : "); id[count]      = sc.nextInt();
-                System.out.print("Enter Patient Name : "); name[count]    = sc.next();
-                System.out.print("Enter Disease      : "); disease[count] = sc.next();
-                System.out.print("Enter Doctor Name  : "); doctor[count]  = sc.next();
-                count++;
-                System.out.println("Patient added successfully!");
+            switch (choice) {
+                case 1 -> checkBalance();
+                case 2 -> deposit();
+                case 3 -> withdraw();
+                case 4 -> changePin();
+                case 0 -> System.out.println("Thank you! Visit again.");
+                default -> System.out.println("Invalid option!");
             }
+        } while (choice != 0);
+    }
+}</pre>
+    </div>
+  </div>
 
-            // ---- DISPLAY ALL ----
-            else if (choice == 2) {
-                System.out.println("\n--- Patient List ---");
-                for (int i = 0; i &lt; count; i++) {
-                    System.out.println("ID: " + id[i] + " | Name: " + name[i] +
-                                       " | Disease: " + disease[i] + " | Doctor: " + doctor[i]);
+  <!-- Q3 -->
+  <div class="answer-section" id="q3">
+    <div class="section-header">
+      <span class="num">3</span>
+      <h2>Password Validation System using Java</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class Pass {
+
+    static boolean isValid(String password) {
+        // Check minimum length
+        if (password.length() &lt; 8) return false;
+
+        // Check patterns using regex
+        boolean hasUpper = Pattern.compile("[A-Z]").matcher(password).find();
+        boolean hasLower = Pattern.compile("[a-z]").matcher(password).find();
+        boolean hasDigit = Pattern.compile("[0-9]").matcher(password).find();
+
+        return hasUpper &amp;&amp; hasLower &amp;&amp; hasDigit;
+    }
+
+    static void showStatus(String password, boolean valid) {
+        System.out.println("\n" + "=".repeat(40));
+        System.out.println("Password: " + password);
+        System.out.println(valid ? "✓ VALID PASSWORD" : "✗ INVALID PASSWORD");
+        System.out.println("=".repeat(40));
+
+        if (!valid) {
+            System.out.println("Requirements:");
+            System.out.println("• Minimum 8 characters");
+            System.out.println("• At least 1 UPPERCASE");
+            System.out.println("• At least 1 lowercase");
+            System.out.println("• At least 1 DIGIT");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("PASSWORD VALIDATOR");
+        System.out.println("-".repeat(30));
+        System.out.print("Enter password: ");
+        String password = sc.nextLine();
+        boolean valid = isValid(password);
+        showStatus(password, valid);
+        sc.close();
+    }
+}</pre>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="answer-section" id="q4">
+    <div class="section-header">
+      <span class="num">4</span>
+      <h2>Bank Account Simulation using Java</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>import java.util.Scanner;
+
+public class BankAccount {
+    String accNo;
+    double balance;
+
+    BankAccount(String accNo, double balance) {
+        this.accNo = accNo;
+        this.balance = balance;
+    }
+
+    void deposit(double amt) {
+        if (amt &gt; 0) {
+            balance += amt;
+            System.out.printf("Deposited: Rs. %.2f\n", amt);
+        } else System.out.println("Invalid amount!");
+    }
+
+    void withdraw(double amt) {
+        if (amt &gt; balance) System.out.println("Insufficient balance!");
+        else if (amt &lt;= 0) System.out.println("Invalid amount!");
+        else {
+            balance -= amt;
+            System.out.printf("Withdrew: Rs. %.2f\n", amt);
+        }
+    }
+
+    void show() {
+        System.out.printf("Account: %s | Balance: Rs. %.2f\n", accNo, balance);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Account No: "); String acc = sc.nextLine();
+        System.out.print("Initial Balance: "); double bal = sc.nextDouble();
+
+        BankAccount accObj = new BankAccount(acc, bal);
+
+        int ch;
+        do {
+            System.out.print("\n1.Deposit 2.Withdraw 3.Balance 0.Exit &gt; ");
+            ch = sc.nextInt();
+            if (ch == 1) { System.out.print("Amount: "); accObj.deposit(sc.nextDouble()); }
+            else if (ch == 2) { System.out.print("Amount: "); accObj.withdraw(sc.nextDouble()); }
+            else if (ch == 3) accObj.show();
+        } while (ch != 0);
+    }
+}</pre>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="answer-section" id="q5">
+    <div class="section-header">
+      <span class="num">5</span>
+      <h2>Library Management System using Java</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>import java.util.*;
+
+class Book {
+    String id, title, author;
+    int qty, issued;
+
+    Book(String id, String title, String author, int qty) {
+        this.id = id; this.title = title;
+        this.author = author; this.qty = qty; this.issued = 0;
+    }
+
+    void show() {
+        System.out.printf("%s | %s | %s | Available: %d\n",
+            id, title, author, qty - issued);
+    }
+}
+
+public class Library {
+    static ArrayList&lt;Book&gt; books = new ArrayList&lt;&gt;();
+    static Scanner sc = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        books.add(new Book("B001", "Java Basics", "John", 5));
+        books.add(new Book("B002", "Python", "Jane", 3));
+
+        int ch;
+        do {
+            System.out.print("\n1.Add Book 2.Show Books 3.Issue 4.Return 0.Exit &gt; ");
+            ch = sc.nextInt(); sc.nextLine();
+
+            switch (ch) {
+                case 1 -> {
+                    System.out.print("ID:"); String id = sc.nextLine();
+                    System.out.print("Title:"); String t = sc.nextLine();
+                    System.out.print("Author:"); String a = sc.nextLine();
+                    System.out.print("Qty:"); int q = sc.nextInt();
+                    books.add(new Book(id, t, a, q));
+                    System.out.println("Added!");
                 }
-            }
-
-            // ---- SEARCH ----
-            else if (choice == 3) {
-                System.out.print("Enter Patient ID to search: ");
-                int searchId = sc.nextInt();
-                boolean found = false;
-
-                for (int i = 0; i &lt; count; i++) {
-                    if (id[i] == searchId) {
-                        System.out.println("Found! Name: " + name[i] +
-                                           " | Disease: " + disease[i] + " | Doctor: " + doctor[i]);
-                        found = true;
-                    }
+                case 2 -> {
+                    System.out.println("\nAVAILABLE BOOKS:");
+                    for (var b : books) b.show();
                 }
-                if (!found) System.out.println("Patient not found.");
-            }
-
-            // ---- DISCHARGE (DELETE) ----
-            else if (choice == 4) {
-                System.out.print("Enter Patient ID to discharge: ");
-                int delId = sc.nextInt();
-
-                for (int i = 0; i &lt; count; i++) {
-                    if (id[i] == delId) {
-                        // Shift all elements one step left to remove this record
-                        for (int j = i; j &lt; count - 1; j++) {
-                            id[j]      = id[j + 1];
-                            name[j]    = name[j + 1];
-                            disease[j] = disease[j + 1];
-                            doctor[j]  = doctor[j + 1];
+                case 3 -> {
+                    System.out.print("Book ID:"); String iid = sc.nextLine();
+                    for (var b : books)
+                        if (b.id.equals(iid) &amp;&amp; b.issued &lt; b.qty) {
+                            b.issued++; System.out.println("Issued!"); return;
                         }
-                        count--;
-                        System.out.println("Patient discharged successfully.");
-                        break;
-                    }
+                    System.out.println("Not available!");
+                }
+                case 4 -> {
+                    System.out.print("Book ID:"); String rid = sc.nextLine();
+                    for (var b : books)
+                        if (b.id.equals(rid) &amp;&amp; b.issued &gt; 0) {
+                            b.issued--; System.out.println("Returned!"); return;
+                        }
+                    System.out.println("No issue record!");
                 }
             }
+        } while (ch != 0);
+    }
+}</pre>
+    </div>
+  </div>
 
-            // ---- COUNT ----
-            else if (choice == 5) {
-                System.out.println("Total Patients: " + count);
-            }
+  <!-- Q6 -->
+  <div class="answer-section" id="q6">
+    <div class="section-header">
+      <span class="num">6</span>
+      <h2>Employee Payroll System using Java</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>import java.util.Scanner;
 
-        } while (choice != 6);
+class Employee {
+    String id, name;
+    double basic;
 
-        System.out.println("Goodbye!");
+    Employee(String id, String name, double basic) {
+        this.id = id; this.name = name; this.basic = basic;
+    }
+
+    void salarySlip() {
+        double hra   = basic * 0.10;  // 10% HRA
+        double da    = basic * 0.15;  // 15% DA
+        double gross = basic + hra + da;
+        double pf    = gross * 0.05;  // 5% PF
+        double net   = gross - pf;
+
+        System.out.println("\nSALARY SLIP");
+        System.out.println("=".repeat(30));
+        System.out.printf("ID: %s | Name: %s\n", id, name);
+        System.out.printf("Basic:        Rs. %.2f\n", basic);
+        System.out.printf("HRA:          Rs. %.2f\n", hra);
+        System.out.printf("DA:           Rs. %.2f\n", da);
+        System.out.printf("Gross:        Rs. %.2f\n", gross);
+        System.out.printf("PF Deduction: Rs. %.2f\n", pf);
+        System.out.printf("Net Salary:   Rs. %.2f\n", net);
+        System.out.println("=".repeat(30));
     }
 }
-</pre>
-</section>
 
-<!-- Q2 -->
-<section id="q2">
-<h2>2. Electricity Bill Calculation</h2>
-<button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>
-import java.util.Scanner;
-
-public class ElectricityBill {
-
+public class Payroll {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
+        System.out.print("Emp ID: "); String id = sc.nextLine();
+        System.out.print("Name: "); String name = sc.nextLine();
+        System.out.print("Basic Salary: "); double basic = sc.nextDouble();
 
-        System.out.println("=== Electricity Bill Calculation System ===");
-
-        System.out.print("How many consumers? ");
-        int n = sc.nextInt();
-
-        // Arrays to store consumer data
-        int[]    id    = new int[n];
-        String[] name  = new String[n];
-        int[]    units = new int[n];
-
-        // Take input for each consumer
-        for (int i = 0; i &lt; n; i++) {
-            System.out.println("\nConsumer " + (i + 1) + ":");
-            System.out.print("  Enter Consumer ID    : "); id[i]    = sc.nextInt();
-            System.out.print("  Enter Consumer Name  : "); name[i]  = sc.next();
-            System.out.print("  Enter Units Consumed : "); units[i] = sc.nextInt();
-        }
-
-        // Display bills
-        System.out.println("\n========= Bill Summary =========");
-        for (int i = 0; i &lt; n; i++) {
-
-            double bill = 0;
-
-            // Slab rate calculation
-            if (units[i] &lt;= 100) {
-                // 0 to 100 units → Rs.5 per unit
-                bill = units[i] * 5;
-
-            } else if (units[i] &lt;= 200) {
-                // 101 to 200 units → first 100 at Rs.5, rest at Rs.7
-                bill = (100 * 5) + (units[i] - 100) * 7;
-
-            } else {
-                // Above 200 units → first 100 at Rs.5, next 100 at Rs.7, rest at Rs.10
-                bill = (100 * 5) + (100 * 7) + (units[i] - 200) * 10;
-            }
-
-            System.out.println("Consumer: " + name[i] +
-                               " | Units: " + units[i] +
-                               " | Bill Amount: Rs." + bill);
-        }
+        Employee emp = new Employee(id, name, basic);
+        emp.salarySlip();
     }
+}</pre>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="answer-section" id="q7">
+    <div class="section-header">
+      <span class="num">7</span>
+      <h2>Hotel Room Booking System using Java</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>import java.util.*;
+
+class Room {
+    int no;
+    String guest;
+    boolean booked;
+
+    Room(int no) { this.no = no; guest = ""; booked = false; }
 }
-</pre>
-</section>
 
-<!-- Q3 -->
-<section id="q3">
-<h2>3. Inventory Management System</h2>
-<button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>
-import java.util.Scanner;
-
-public class Inventory {
-
-    // Arrays to store product data
-    static int[]    id    = new int[10];
-    static String[] name  = new String[10];
-    static double[] price = new double[10];
-    static int[]    qty   = new int[10];
-    static int count = 0;  // total products added
+public class Hotel {
+    static ArrayList&lt;Room&gt; rooms = new ArrayList&lt;&gt;();
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        // Initialize 5 rooms
+        for (int i = 101; i &lt;= 105; i++) rooms.add(new Room(i));
 
-        Scanner sc = new Scanner(System.in);
-        int choice;
-
-        System.out.println("=== Inventory Management System ===");
-
+        int ch;
         do {
-            // Show menu
-            System.out.println("\n1. Add Product");
-            System.out.println("2. Display All Products");
-            System.out.println("3. Update Product Quantity");
-            System.out.println("4. Total Inventory Value");
-            System.out.println("5. Search Product by ID");
-            System.out.println("6. Exit");
-            System.out.print("Enter your choice: ");
-            choice = sc.nextInt();
+            System.out.print("\n1.Show Rooms 2.Book 3.Cancel 4.Bookings 0.Exit &gt; ");
+            ch = sc.nextInt(); sc.nextLine();
 
-            // ---- ADD PRODUCT ----
-            if (choice == 1) {
-                System.out.print("Enter Product ID    : "); id[count]    = sc.nextInt();
-                System.out.print("Enter Product Name  : "); name[count]  = sc.next();
-                System.out.print("Enter Price         : "); price[count] = sc.nextDouble();
-                System.out.print("Enter Quantity      : "); qty[count]   = sc.nextInt();
-                count++;
-                System.out.println("Product added successfully!");
-            }
-
-            // ---- DISPLAY ALL ----
-            else if (choice == 2) {
-                System.out.println("\n--- Product List ---");
-                for (int i = 0; i &lt; count; i++) {
-                    System.out.println("ID: " + id[i] + " | Name: " + name[i] +
-                                       " | Price: Rs." + price[i] + " | Qty: " + qty[i]);
+            switch (ch) {
+                case 1 -> {
+                    System.out.println("\nROOMS STATUS:");
+                    for (var r : rooms)
+                        System.out.printf("Room %d: %s\n", r.no, r.booked ? "BOOKED" : "FREE");
+                }
+                case 2 -> {
+                    System.out.print("Room No: "); int rn = sc.nextInt(); sc.nextLine();
+                    System.out.print("Guest: "); String g = sc.nextLine();
+                    for (var r : rooms)
+                        if (r.no == rn &amp;&amp; !r.booked) {
+                            r.guest = g; r.booked = true;
+                            System.out.println("Booked!"); return;
+                        }
+                    System.out.println("Room not available!");
+                }
+                case 3 -> {
+                    System.out.print("Room No: "); int cn = sc.nextInt();
+                    for (var r : rooms)
+                        if (r.no == cn &amp;&amp; r.booked) {
+                            r.guest = ""; r.booked = false;
+                            System.out.println("Cancelled!"); return;
+                        }
+                    System.out.println("No booking found!");
+                }
+                case 4 -> {
+                    int count = 0;
+                    System.out.println("\nBOOKINGS:");
+                    for (var r : rooms)
+                        if (r.booked) {
+                            System.out.printf("Room %d: %s\n", r.no, r.guest);
+                            count++;
+                        }
+                    System.out.println("Total Booked: " + count);
                 }
             }
-
-            // ---- UPDATE QUANTITY ----
-            else if (choice == 3) {
-                System.out.print("Enter Product ID to update: ");
-                int updateId = sc.nextInt();
-                System.out.print("Enter new Quantity: ");
-                int newQty = sc.nextInt();
-
-                for (int i = 0; i &lt; count; i++) {
-                    if (id[i] == updateId) {
-                        qty[i] = newQty;
-                        System.out.println("Quantity updated successfully.");
-                    }
-                }
-            }
-
-            // ---- TOTAL VALUE ----
-            else if (choice == 4) {
-                double total = 0;
-                for (int i = 0; i &lt; count; i++) {
-                    total = total + (price[i] * qty[i]);  // price x quantity for each product
-                }
-                System.out.println("Total Inventory Value: Rs." + total);
-            }
-
-            // ---- SEARCH ----
-            else if (choice == 5) {
-                System.out.print("Enter Product ID to search: ");
-                int searchId = sc.nextInt();
-                boolean found = false;
-
-                for (int i = 0; i &lt; count; i++) {
-                    if (id[i] == searchId) {
-                        System.out.println("Found! Name: " + name[i] +
-                                           " | Price: Rs." + price[i] + " | Qty: " + qty[i]);
-                        found = true;
-                    }
-                }
-                if (!found) System.out.println("Product not found.");
-            }
-
-        } while (choice != 6);
-
-        System.out.println("Goodbye!");
+        } while (ch != 0);
     }
-}
-</pre>
-</section>
+}</pre>
+    </div>
+  </div>
 
-<!-- Q4 -->
-<section id="q4">
-<h2>4. Online Voting System</h2>
-<button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>
-import java.util.Scanner;
+  <!-- Q8 -->
+  <div class="answer-section" id="q8">
+    <div class="section-header">
+      <span class="num">8</span>
+      <h2>Course Registration System using Java</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>import java.util.*;
 
-public class VotingSystem {
+public class CourseReg {
+    static class Student {
+        String id, name;
+        ArrayList&lt;String&gt; courses = new ArrayList&lt;&gt;();
+
+        Student(String id, String name) {
+            this.id = id; this.name = name;
+        }
+
+        void showCourses() {
+            System.out.printf("\nStudent: %s (%s)\n", name, id);
+            if (courses.isEmpty()) System.out.println("No courses registered");
+            else {
+                System.out.println("Courses: " + String.join(", ", courses));
+                System.out.println("Total: " + courses.size());
+            }
+        }
+    }
+
+    static Scanner sc = new Scanner(System.in);
+    static Student student;
 
     public static void main(String[] args) {
+        System.out.print("Student ID: "); String id = sc.nextLine();
+        System.out.print("Name: "); String name = sc.nextLine();
+        student = new Student(id, name);
 
-        Scanner sc = new Scanner(System.in);
+        int ch;
+        do {
+            System.out.print("\n1.Register Course 2.Show Courses 3.Drop Course 0.Exit &gt; ");
+            ch = sc.nextInt(); sc.nextLine();
 
-        // 3 fixed candidates
-        String[] candidates = {"Alice", "Bob", "Charlie"};
-        int[] votes = {0, 0, 0};  // vote count starts at 0
-
-        System.out.println("=== Online Voting System ===");
-
-        // Step 1: Register voters
-        System.out.print("Enter number of voters: ");
-        int n = sc.nextInt();
-
-        int[]     voterId   = new int[n];
-        String[]  voterName = new String[n];
-        boolean[] hasVoted  = new boolean[n];  // false by default (not voted yet)
-
-        System.out.println("\n--- Register Voters ---");
-        for (int i = 0; i &lt; n; i++) {
-            System.out.print("Enter Voter ID   : "); voterId[i]   = sc.nextInt();
-            System.out.print("Enter Voter Name : "); voterName[i] = sc.next();
-        }
-
-        // Step 2: Voting
-        System.out.println("\n--- Voting Round ---");
-        System.out.println("Candidates: 1-" + candidates[0] +
-                           "  2-" + candidates[1] +
-                           "  3-" + candidates[2]);
-
-        for (int i = 0; i &lt; n; i++) {
-            System.out.println("\nVoter: " + voterName[i] + " (ID: " + voterId[i] + ")");
-
-            // Check if already voted
-            if (hasVoted[i]) {
-                System.out.println("Already voted! Skipping.");
-                continue;
+            switch (ch) {
+                case 1 -> {
+                    System.out.print("Course Code: "); String course = sc.nextLine();
+                    student.courses.add(course);
+                    System.out.println("Registered!");
+                }
+                case 2 -> student.showCourses();
+                case 3 -> {
+                    System.out.print("Course Code: "); String drop = sc.nextLine();
+                    if (student.courses.remove(drop)) System.out.println("Dropped!");
+                    else System.out.println("Course not found!");
+                }
             }
-
-            System.out.print("Enter your choice (1 / 2 / 3): ");
-            int choice = sc.nextInt();
-
-            if (choice == 1 || choice == 2 || choice == 3) {
-                votes[choice - 1]++;   // increase vote count for chosen candidate
-                hasVoted[i] = true;    // mark this voter as voted
-                System.out.println("Vote cast successfully!");
-            } else {
-                System.out.println("Invalid choice! Vote not counted.");
-            }
-        }
-
-        // Step 3: Show results and declare winner
-        System.out.println("\n========= Vote Results =========");
-        int maxVotes    = 0;
-        int winnerIndex = 0;
-
-        for (int i = 0; i &lt; 3; i++) {
-            System.out.println(candidates[i] + " : " + votes[i] + " votes");
-            if (votes[i] &gt; maxVotes) {
-                maxVotes    = votes[i];
-                winnerIndex = i;
-            }
-        }
-
-        System.out.println("\nWinner: " + candidates[winnerIndex] + " with " + maxVotes + " votes!");
+        } while (ch != 0);
     }
-}
-</pre>
-</section>
+}</pre>
+    </div>
+  </div>
+
+</div><!-- /container -->
 
 <script>
 function copyCode(btn) {
-  let code = btn.nextElementSibling.innerText;
-  navigator.clipboard.writeText(code);
-  btn.innerText = "Copied!";
-  setTimeout(() => btn.innerText = "Copy", 1000);
+  const code = btn.nextElementSibling.innerText;
+  navigator.clipboard.writeText(code).then(() => {
+    btn.textContent = "Copied!";
+    btn.classList.add("done");
+    setTimeout(() => { btn.textContent = "Copy"; btn.classList.remove("done"); }, 1500);
+  });
 }
 </script>
 
