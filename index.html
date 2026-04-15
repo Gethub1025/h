@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SBF PBL Questions</title>
+<title>EduPlusCampus - Shell Scripting</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@400;600;700&display=swap');
 
@@ -64,7 +64,7 @@
   /* ── Question index ── */
   .index {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 12px;
     margin-bottom: 48px;
   }
@@ -170,558 +170,150 @@
 
 <header>
   <h1>EduPlusCampus</h1>
-  <p>Spring Boot Framework — PBL Question Bank</p>
+  <p>Linux Operating System — Shell Scripting Question Bank</p>
 </header>
 
 <div class="container">
 
-  <!-- Index -->
   <nav class="index">
-    <a href="#q1"><span class="q-num">1</span>Student Management System</a>
-    <a href="#q2"><span class="q-num">2</span>ATM Transaction System</a>
-    <a href="#q3"><span class="q-num">3</span>Password Validation System</a>
-    <a href="#q4"><span class="q-num">4</span>Bank Account Simulation</a>
-    <a href="#q5"><span class="q-num">5</span>Library Management System</a>
-    <a href="#q6"><span class="q-num">6</span>Employee Payroll System</a>
-    <a href="#q7"><span class="q-num">7</span>Hotel Room Booking System</a>
-    <a href="#q8"><span class="q-num">8</span>Course Registration System</a>
+    <a href="#q1"><span class="q-num">1</span>Odd or Even Number</a>
+    <a href="#q2"><span class="q-num">2</span>Leap Year Checker</a>
+    <a href="#q3"><span class="q-num">3</span>Prime Number Logic</a>
+    <a href="#q4"><span class="q-num">4</span>Pythagoras Theorem</a>
+    <a href="#q5"><span class="q-num">5</span>Maximum and Minimum</a>
   </nav>
 
-  <!-- Q1 -->
   <div class="answer-section" id="q1">
     <div class="section-header">
       <span class="num">1</span>
-      <h2>Student Management System using Java (Console-Based CRUD)</h2>
+      <h2>Shell Script to Determine whether a Number is Odd or Even</h2>
     </div>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>import java.util.*;
-public class StudentManagementSystem {
-    static class Student {
-        String id, name, branch;
-        double marks;
-        Student(String i, String n, String b, double m) {
-            id = i; name = n; branch = b; marks = m;
-        }
-        void show() {
-            System.out.printf("ID:%s | %s | %s | %.1f\n", id, name, branch, marks);
-        }
-    }
+<pre>#!/bin/bash
+# Program to check if a number is odd or even
 
-    static ArrayList&lt;Student&gt; list = new ArrayList&lt;&gt;();
-    static Scanner sc = new Scanner(System.in);
+echo -n "Enter a number: "
+read n
 
-    public static void main(String[] args) {
-        int ch;
-        do {
-            System.out.print("\n1.Add 2.All 3.Find 4.Edit 5.Del 0.Exit &gt; ");
-            ch = sc.nextInt(); sc.nextLine();
-
-            switch (ch) {
-                case 1 -> {
-                    System.out.print("ID:"); String id = sc.nextLine();
-                    System.out.print("Name:"); String n = sc.nextLine();
-                    System.out.print("Branch:"); String b = sc.nextLine();
-                    System.out.print("Marks:"); double m = sc.nextDouble(); sc.nextLine();
-                    list.add(new Student(id, n, b, m));
-                    System.out.println("✓ Added");
-                }
-                case 2 -> {
-                    if (list.isEmpty()) System.out.print("Empty");
-                    else for (var s : list) s.show();
-                }
-                case 3 -> {
-                    System.out.print("ID:"); String fid = sc.nextLine();
-                    for (var s : list)
-                        if (s.id.equalsIgnoreCase(fid)) { s.show(); break; }
-                        else System.out.print("Not found");
-                }
-                case 4 -> {
-                    System.out.print("ID:"); String uid = sc.nextLine();
-                    for (var s : list)
-                        if (s.id.equalsIgnoreCase(uid)) {
-                            System.out.print("Name:"); s.name = sc.nextLine();
-                            System.out.print("Branch:"); s.branch = sc.nextLine();
-                            System.out.print("Marks:"); s.marks = sc.nextDouble(); sc.nextLine();
-                            System.out.println("✓ Updated"); break;
-                        } else System.out.print("Not found");
-                }
-                case 5 -> {
-                    System.out.print("ID:"); String did = sc.nextLine();
-                    list.removeIf(s -> s.id.equalsIgnoreCase(did));
-                    System.out.println("✓ Deleted");
-                }
-            }
-        } while (ch != 0);
-    }
-}</pre>
+if [ $((n % 2)) -eq 0 ]; then
+    echo "$n is Even"
+else
+    echo "$n is Odd"
+fi</pre>
     </div>
   </div>
 
-  <!-- Q2 -->
   <div class="answer-section" id="q2">
     <div class="section-header">
       <span class="num">2</span>
-      <h2>ATM Transaction System using Java</h2>
+      <h2>Shell Script to Determine whether a Year is Leap Year or not</h2>
     </div>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>import java.util.Scanner;
-public class ATM {
-    static double balance = 5000.0; // Initial balance
-    static int pin = 1234;          // Default PIN
-    static Scanner sc = new Scanner(System.in);
+<pre>#!/bin/bash
+# Program to check if a year is a leap year
 
-    static boolean authenticate() {
-        System.out.print("Enter PIN: ");
-        int inputPin = sc.nextInt();
-        return inputPin == pin;
-    }
+echo -n "Enter year (YYYY): "
+read y
 
-    static void showMenu() {
-        System.out.println("\n=== ATM SYSTEM ===");
-        System.out.println("1. Check Balance");
-        System.out.println("2. Deposit");
-        System.out.println("3. Withdraw");
-        System.out.println("4. Change PIN");
-        System.out.println("0. Exit");
-        System.out.print("Choose: ");
-    }
-
-    static void checkBalance() {
-        System.out.printf("Current Balance: Rs. %.2f\n", balance);
-    }
-
-    static void deposit() {
-        System.out.print("Enter amount to deposit: Rs. ");
-        double amt = sc.nextDouble();
-        if (amt &gt; 0) {
-            balance += amt;
-            System.out.printf("Deposited Rs. %.2f\n", amt);
-            checkBalance();
-        } else {
-            System.out.println("Invalid amount!");
-        }
-    }
-
-    static void withdraw() {
-        System.out.print("Enter amount to withdraw: Rs. ");
-        double amt = sc.nextDouble();
-        if (amt &gt; balance) {
-            System.out.println("Insufficient balance!");
-        } else if (amt &lt;= 0) {
-            System.out.println("Invalid amount!");
-        } else {
-            balance -= amt;
-            System.out.printf("Withdrew Rs. %.2f\n", amt);
-            checkBalance();
-        }
-    }
-
-    static void changePin() {
-        System.out.print("Enter new PIN: ");
-        pin = sc.nextInt();
-        System.out.println("PIN changed successfully!");
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Welcome to ATM System");
-        if (!authenticate()) {
-            System.out.println("Invalid PIN! Access Denied.");
-            return;
-        }
-        int choice;
-        do {
-            showMenu();
-            choice = sc.nextInt();
-            switch (choice) {
-                case 1 -> checkBalance();
-                case 2 -> deposit();
-                case 3 -> withdraw();
-                case 4 -> changePin();
-                case 0 -> System.out.println("Thank you! Visit again.");
-                default -> System.out.println("Invalid option!");
-            }
-        } while (choice != 0);
-    }
-}</pre>
+if [ $((y % 400)) -eq 0 ]; then
+    echo "$y is a Leap Year"
+elif [ $((y % 100)) -ne 0 ] && [ $((y % 4)) -eq 0 ]; then
+    echo "$y is a Leap Year"
+else
+    echo "$y is not a Leap Year"
+fi</pre>
     </div>
   </div>
 
-  <!-- Q3 -->
   <div class="answer-section" id="q3">
     <div class="section-header">
       <span class="num">3</span>
-      <h2>Password Validation System using Java</h2>
+      <h2>Shell Script to Determine whether a Number is Prime or not</h2>
     </div>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>import java.util.Scanner;
-import java.util.regex.Pattern;
+<pre>#!/bin/bash
+# Program to check for prime numbers
 
-public class Pass {
+echo -n "Enter a number: "
+read n
 
-    static boolean isValid(String password) {
-        // Check minimum length
-        if (password.length() &lt; 8) return false;
+if [ $n -lt 2 ]; then
+    echo "$n is not prime"
+    exit
+fi
 
-        // Check patterns using regex
-        boolean hasUpper = Pattern.compile("[A-Z]").matcher(password).find();
-        boolean hasLower = Pattern.compile("[a-z]").matcher(password).find();
-        boolean hasDigit = Pattern.compile("[0-9]").matcher(password).find();
+for ((i=2; i<=n/2; i++))
+do
+    if [ $((n % i)) -eq 0 ]; then
+        echo "$n is not a prime number"
+        exit
+    fi
+done
 
-        return hasUpper &amp;&amp; hasLower &amp;&amp; hasDigit;
-    }
-
-    static void showStatus(String password, boolean valid) {
-        System.out.println("\n" + "=".repeat(40));
-        System.out.println("Password: " + password);
-        System.out.println(valid ? "✓ VALID PASSWORD" : "✗ INVALID PASSWORD");
-        System.out.println("=".repeat(40));
-
-        if (!valid) {
-            System.out.println("Requirements:");
-            System.out.println("• Minimum 8 characters");
-            System.out.println("• At least 1 UPPERCASE");
-            System.out.println("• At least 1 lowercase");
-            System.out.println("• At least 1 DIGIT");
-        }
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("PASSWORD VALIDATOR");
-        System.out.println("-".repeat(30));
-        System.out.print("Enter password: ");
-        String password = sc.nextLine();
-        boolean valid = isValid(password);
-        showStatus(password, valid);
-        sc.close();
-    }
-}</pre>
+echo "$n is a prime number"</pre>
     </div>
   </div>
 
-  <!-- Q4 -->
   <div class="answer-section" id="q4">
     <div class="section-header">
       <span class="num">4</span>
-      <h2>Bank Account Simulation using Java</h2>
+      <h2>Shell Script to Determine if a Triplet follows Pythagoras Theorem</h2>
     </div>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>import java.util.Scanner;
+<pre>#!/bin/bash
+# Program to check a^2 + b^2 = c^2
 
-public class BankAccount {
-    String accNo;
-    double balance;
+echo "Enter side a: "
+read a
+echo "Enter side b: "
+read b
+echo "Enter hypotenuse c: "
+read c
 
-    BankAccount(String accNo, double balance) {
-        this.accNo = accNo;
-        this.balance = balance;
-    }
+lhs=$((a*a + b*b))
+rhs=$((c*c))
 
-    void deposit(double amt) {
-        if (amt &gt; 0) {
-            balance += amt;
-            System.out.printf("Deposited: Rs. %.2f\n", amt);
-        } else System.out.println("Invalid amount!");
-    }
-
-    void withdraw(double amt) {
-        if (amt &gt; balance) System.out.println("Insufficient balance!");
-        else if (amt &lt;= 0) System.out.println("Invalid amount!");
-        else {
-            balance -= amt;
-            System.out.printf("Withdrew: Rs. %.2f\n", amt);
-        }
-    }
-
-    void show() {
-        System.out.printf("Account: %s | Balance: Rs. %.2f\n", accNo, balance);
-    }
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Account No: "); String acc = sc.nextLine();
-        System.out.print("Initial Balance: "); double bal = sc.nextDouble();
-
-        BankAccount accObj = new BankAccount(acc, bal);
-
-        int ch;
-        do {
-            System.out.print("\n1.Deposit 2.Withdraw 3.Balance 0.Exit &gt; ");
-            ch = sc.nextInt();
-            if (ch == 1) { System.out.print("Amount: "); accObj.deposit(sc.nextDouble()); }
-            else if (ch == 2) { System.out.print("Amount: "); accObj.withdraw(sc.nextDouble()); }
-            else if (ch == 3) accObj.show();
-        } while (ch != 0);
-    }
-}</pre>
+if [ $lhs -eq $rhs ]; then
+    echo "This is a Pythagorean Triplet."
+else
+    echo "This is NOT a Pythagorean Triplet."
+fi</pre>
     </div>
   </div>
 
-  <!-- Q5 -->
   <div class="answer-section" id="q5">
     <div class="section-header">
       <span class="num">5</span>
-      <h2>Library Management System using Java</h2>
+      <h2>Shell Script to Determine Maximum and Minimum of three Numbers</h2>
     </div>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>import java.util.*;
+<pre>#!/bin/bash
+# Program to find max and min among 3 numbers
 
-class Book {
-    String id, title, author;
-    int qty, issued;
+echo "Enter three numbers separated by spaces: "
+read a b c
 
-    Book(String id, String title, String author, int qty) {
-        this.id = id; this.title = title;
-        this.author = author; this.qty = qty; this.issued = 0;
-    }
+# Finding Maximum
+max=$a
+if [ $b -gt $max ]; then max=$b; fi
+if [ $c -gt $max ]; then max=$c; fi
 
-    void show() {
-        System.out.printf("%s | %s | %s | Available: %d\n",
-            id, title, author, qty - issued);
-    }
-}
+# Finding Minimum
+min=$a
+if [ $b -lt $min ]; then min=$b; fi
+if [ $c -lt $min ]; then min=$c; fi
 
-public class Library {
-    static ArrayList&lt;Book&gt; books = new ArrayList&lt;&gt;();
-    static Scanner sc = new Scanner(System.in);
-
-    public static void main(String[] args) {
-        books.add(new Book("B001", "Java Basics", "John", 5));
-        books.add(new Book("B002", "Python", "Jane", 3));
-
-        int ch;
-        do {
-            System.out.print("\n1.Add Book 2.Show Books 3.Issue 4.Return 0.Exit &gt; ");
-            ch = sc.nextInt(); sc.nextLine();
-
-            switch (ch) {
-                case 1 -> {
-                    System.out.print("ID:"); String id = sc.nextLine();
-                    System.out.print("Title:"); String t = sc.nextLine();
-                    System.out.print("Author:"); String a = sc.nextLine();
-                    System.out.print("Qty:"); int q = sc.nextInt();
-                    books.add(new Book(id, t, a, q));
-                    System.out.println("Added!");
-                }
-                case 2 -> {
-                    System.out.println("\nAVAILABLE BOOKS:");
-                    for (var b : books) b.show();
-                }
-                case 3 -> {
-                    System.out.print("Book ID:"); String iid = sc.nextLine();
-                    for (var b : books)
-                        if (b.id.equals(iid) &amp;&amp; b.issued &lt; b.qty) {
-                            b.issued++; System.out.println("Issued!"); return;
-                        }
-                    System.out.println("Not available!");
-                }
-                case 4 -> {
-                    System.out.print("Book ID:"); String rid = sc.nextLine();
-                    for (var b : books)
-                        if (b.id.equals(rid) &amp;&amp; b.issued &gt; 0) {
-                            b.issued--; System.out.println("Returned!"); return;
-                        }
-                    System.out.println("No issue record!");
-                }
-            }
-        } while (ch != 0);
-    }
-}</pre>
+echo "Maximum number is: $max"
+echo "Minimum number is: $min"</pre>
     </div>
   </div>
 
-  <!-- Q6 -->
-  <div class="answer-section" id="q6">
-    <div class="section-header">
-      <span class="num">6</span>
-      <h2>Employee Payroll System using Java</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>import java.util.Scanner;
-
-class Employee {
-    String id, name;
-    double basic;
-
-    Employee(String id, String name, double basic) {
-        this.id = id; this.name = name; this.basic = basic;
-    }
-
-    void salarySlip() {
-        double hra   = basic * 0.10;  // 10% HRA
-        double da    = basic * 0.15;  // 15% DA
-        double gross = basic + hra + da;
-        double pf    = gross * 0.05;  // 5% PF
-        double net   = gross - pf;
-
-        System.out.println("\nSALARY SLIP");
-        System.out.println("=".repeat(30));
-        System.out.printf("ID: %s | Name: %s\n", id, name);
-        System.out.printf("Basic:        Rs. %.2f\n", basic);
-        System.out.printf("HRA:          Rs. %.2f\n", hra);
-        System.out.printf("DA:           Rs. %.2f\n", da);
-        System.out.printf("Gross:        Rs. %.2f\n", gross);
-        System.out.printf("PF Deduction: Rs. %.2f\n", pf);
-        System.out.printf("Net Salary:   Rs. %.2f\n", net);
-        System.out.println("=".repeat(30));
-    }
-}
-
-public class Payroll {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Emp ID: "); String id = sc.nextLine();
-        System.out.print("Name: "); String name = sc.nextLine();
-        System.out.print("Basic Salary: "); double basic = sc.nextDouble();
-
-        Employee emp = new Employee(id, name, basic);
-        emp.salarySlip();
-    }
-}</pre>
-    </div>
-  </div>
-
-  <!-- Q7 -->
-  <div class="answer-section" id="q7">
-    <div class="section-header">
-      <span class="num">7</span>
-      <h2>Hotel Room Booking System using Java</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>import java.util.*;
-
-class Room {
-    int no;
-    String guest;
-    boolean booked;
-
-    Room(int no) { this.no = no; guest = ""; booked = false; }
-}
-
-public class Hotel {
-    static ArrayList&lt;Room&gt; rooms = new ArrayList&lt;&gt;();
-    static Scanner sc = new Scanner(System.in);
-
-    public static void main(String[] args) {
-        // Initialize 5 rooms
-        for (int i = 101; i &lt;= 105; i++) rooms.add(new Room(i));
-
-        int ch;
-        do {
-            System.out.print("\n1.Show Rooms 2.Book 3.Cancel 4.Bookings 0.Exit &gt; ");
-            ch = sc.nextInt(); sc.nextLine();
-
-            switch (ch) {
-                case 1 -> {
-                    System.out.println("\nROOMS STATUS:");
-                    for (var r : rooms)
-                        System.out.printf("Room %d: %s\n", r.no, r.booked ? "BOOKED" : "FREE");
-                }
-                case 2 -> {
-                    System.out.print("Room No: "); int rn = sc.nextInt(); sc.nextLine();
-                    System.out.print("Guest: "); String g = sc.nextLine();
-                    for (var r : rooms)
-                        if (r.no == rn &amp;&amp; !r.booked) {
-                            r.guest = g; r.booked = true;
-                            System.out.println("Booked!"); return;
-                        }
-                    System.out.println("Room not available!");
-                }
-                case 3 -> {
-                    System.out.print("Room No: "); int cn = sc.nextInt();
-                    for (var r : rooms)
-                        if (r.no == cn &amp;&amp; r.booked) {
-                            r.guest = ""; r.booked = false;
-                            System.out.println("Cancelled!"); return;
-                        }
-                    System.out.println("No booking found!");
-                }
-                case 4 -> {
-                    int count = 0;
-                    System.out.println("\nBOOKINGS:");
-                    for (var r : rooms)
-                        if (r.booked) {
-                            System.out.printf("Room %d: %s\n", r.no, r.guest);
-                            count++;
-                        }
-                    System.out.println("Total Booked: " + count);
-                }
-            }
-        } while (ch != 0);
-    }
-}</pre>
-    </div>
-  </div>
-
-  <!-- Q8 -->
-  <div class="answer-section" id="q8">
-    <div class="section-header">
-      <span class="num">8</span>
-      <h2>Course Registration System using Java</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>import java.util.*;
-
-public class CourseReg {
-    static class Student {
-        String id, name;
-        ArrayList&lt;String&gt; courses = new ArrayList&lt;&gt;();
-
-        Student(String id, String name) {
-            this.id = id; this.name = name;
-        }
-
-        void showCourses() {
-            System.out.printf("\nStudent: %s (%s)\n", name, id);
-            if (courses.isEmpty()) System.out.println("No courses registered");
-            else {
-                System.out.println("Courses: " + String.join(", ", courses));
-                System.out.println("Total: " + courses.size());
-            }
-        }
-    }
-
-    static Scanner sc = new Scanner(System.in);
-    static Student student;
-
-    public static void main(String[] args) {
-        System.out.print("Student ID: "); String id = sc.nextLine();
-        System.out.print("Name: "); String name = sc.nextLine();
-        student = new Student(id, name);
-
-        int ch;
-        do {
-            System.out.print("\n1.Register Course 2.Show Courses 3.Drop Course 0.Exit &gt; ");
-            ch = sc.nextInt(); sc.nextLine();
-
-            switch (ch) {
-                case 1 -> {
-                    System.out.print("Course Code: "); String course = sc.nextLine();
-                    student.courses.add(course);
-                    System.out.println("Registered!");
-                }
-                case 2 -> student.showCourses();
-                case 3 -> {
-                    System.out.print("Course Code: "); String drop = sc.nextLine();
-                    if (student.courses.remove(drop)) System.out.println("Dropped!");
-                    else System.out.println("Course not found!");
-                }
-            }
-        } while (ch != 0);
-    }
-}</pre>
-    </div>
-  </div>
-
-</div><!-- /container -->
+</div>
 
 <script>
 function copyCode(btn) {
