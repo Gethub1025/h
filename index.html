@@ -196,24 +196,28 @@
 <div class="container">
 
   <nav class="index">
-    <a href="#q1"><span class="q-num">1</span>Odd or Even Number</a>
-    <a href="#q2"><span class="q-num">2</span>Leap Year Checker</a>
-    <a href="#q3"><span class="q-num">3</span>Prime Number Logic</a>
+    <a href="#q1"><span class="q-num">1</span>Odd or Even</a>
+    <a href="#q2"><span class="q-num">2</span>Leap Year</a>
+    <a href="#q3"><span class="q-num">3</span>Prime Number</a>
     <a href="#q4"><span class="q-num">4</span>Pythagoras Theorem</a>
-    <a href="#q5"><span class="q-num">5</span>Maximum and Minimum</a>
+    <a href="#q5"><span class="q-num">5</span>Max & Min (3 Nos)</a>
+    <a href="#q6"><span class="q-num">6</span>Factorial of a Number</a>
+    <a href="#q7"><span class="q-num">7</span>Reverse a String</a>
+    <a href="#q8"><span class="q-num">8</span>Sum of Digits</a>
+    <a href="#q9"><span class="q-num">9</span>Fibonacci Series</a>
+    <a href="#q10"><span class="q-num">10</span>Largest of Three</a>
   </nav>
 
   <div class="answer-section" id="q1">
     <div class="section-header">
       <span class="num">1</span>
-      <h2>Shell Script to Determine whether a Number is Odd or Even</h2>
+      <h2>Determine whether a Number is Odd or Even</h2>
     </div>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>#!/bin/bash
 echo -n "Enter a number: "
 read n
-
 if [ $((n % 2)) -eq 0 ]; then
     echo "$n is Even"
 else
@@ -229,14 +233,13 @@ fi</pre>
   <div class="answer-section" id="q2">
     <div class="section-header">
       <span class="num">2</span>
-      <h2>Shell Script to Determine whether a Year is Leap Year or not</h2>
+      <h2>Determine whether a Year is Leap Year or not</h2>
     </div>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>#!/bin/bash
 echo -n "Enter year (YYYY): "
 read y
-
 if [ $((y % 400)) -eq 0 ]; then
     echo "$y is a Leap Year"
 elif [ $((y % 100)) -ne 0 ] && [ $((y % 4)) -eq 0 ]; then
@@ -254,27 +257,23 @@ fi</pre>
   <div class="answer-section" id="q3">
     <div class="section-header">
       <span class="num">3</span>
-      <h2>Shell Script to Determine whether a Number is Prime or not</h2>
+      <h2>Determine whether a Number is Prime or not</h2>
     </div>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>#!/bin/bash
 echo -n "Enter a number: "
 read n
-
 if [ $n -lt 2 ]; then
     echo "$n is not prime"
     exit
 fi
-
-for ((i=2; i<=n/2; i++))
-do
+for ((i=2; i<=n/2; i++)); do
     if [ $((n % i)) -eq 0 ]; then
-        echo "$n is not a prime number"
+        echo "$n is not prime"
         exit
     fi
 done
-
 echo "$n is a prime number"</pre>
     </div>
     <div class="command-box">
@@ -286,18 +285,15 @@ echo "$n is a prime number"</pre>
   <div class="answer-section" id="q4">
     <div class="section-header">
       <span class="num">4</span>
-      <h2>Shell Script to Determine if a Triplet follows Pythagoras Theorem</h2>
+      <h2>Determine if a Triplet follows Pythagoras Theorem</h2>
     </div>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>#!/bin/bash
-echo "Enter side a: "; read a
-echo "Enter side b: "; read b
-echo "Enter hypotenuse c: "; read c
-
+echo "Enter sides a, b and hypotenuse c: "
+read a b c
 lhs=$((a*a + b*b))
 rhs=$((c*c))
-
 if [ $lhs -eq $rhs ]; then
     echo "This is a Pythagorean Triplet."
 else
@@ -313,28 +309,145 @@ fi</pre>
   <div class="answer-section" id="q5">
     <div class="section-header">
       <span class="num">5</span>
-      <h2>Shell Script to Determine Maximum and Minimum of three Numbers</h2>
+      <h2>Determine Maximum and Minimum of Numbers</h2>
     </div>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>#!/bin/bash
-echo "Enter three numbers separated by spaces: "
+echo "Enter three numbers: "
 read a b c
-
 max=$a
-if [ $b -gt $max ]; then max=$b; fi
-if [ $c -gt $max ]; then max=$c; fi
-
+[ $b -gt $max ] && max=$b
+[ $c -gt $max ] && max=$c
 min=$a
-if [ $b -lt $min ]; then min=$b; fi
-if [ $c -lt $min ]; then min=$c; fi
-
-echo "Maximum number is: $max"
-echo "Minimum number is: $min"</pre>
+[ $b -lt $min ] && min=$b
+[ $c -lt $min ] && min=$c
+echo "Maximum: $max"
+echo "Minimum: $min"</pre>
     </div>
     <div class="command-box">
         <h4>Commands to run:</h4>
         <div class="cmd">chmod +x maxmin.sh && ./maxmin.sh</div>
+    </div>
+  </div>
+
+  <div class="answer-section" id="q6">
+    <div class="section-header">
+      <span class="num">6</span>
+      <h2>Factorial of a Number</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>#!/bin/bash
+echo -n "Enter a number: "
+read num
+fact=1
+for ((i=1; i<=num; i++)); do
+ fact=$((fact * i))
+done
+echo "Factorial of $num = $fact"</pre>
+    </div>
+    <div class="command-box">
+        <h4>Commands to run:</h4>
+        <div class="cmd">chmod +x factorial.sh && ./factorial.sh</div>
+    </div>
+  </div>
+
+  <div class="answer-section" id="q7">
+    <div class="section-header">
+      <span class="num">7</span>
+      <h2>Reverse a String</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>#!/bin/bash
+echo -n "Enter a string: "
+read str
+rev=""
+len=${#str}
+for ((i=$len-1; i>=0; i--)); do
+ rev="$rev${str:$i:1}"
+done
+echo "Reversed string: $rev"</pre>
+    </div>
+    <div class="command-box">
+        <h4>Commands to run:</h4>
+        <div class="cmd">chmod +x reverse.sh && ./reverse.sh</div>
+    </div>
+  </div>
+
+  <div class="answer-section" id="q8">
+    <div class="section-header">
+      <span class="num">8</span>
+      <h2>Sum of Digits of a Number</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>#!/bin/bash
+echo -n "Enter a number: "
+read num
+sum=0
+while [ $num -gt 0 ]; do
+ digit=$((num % 10))
+ sum=$((sum + digit))
+ num=$((num / 10))
+done
+echo "Sum of digits = $sum"</pre>
+    </div>
+    <div class="command-box">
+        <h4>Commands to run:</h4>
+        <div class="cmd">chmod +x sum_digits.sh && ./sum_digits.sh</div>
+    </div>
+  </div>
+
+  <div class="answer-section" id="q9">
+    <div class="section-header">
+      <span class="num">9</span>
+      <h2>Fibonacci Series up to N Terms</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>#!/bin/bash
+echo -n "Enter number of terms: "
+read n
+a=0
+b=1
+echo -n "Fibonacci Series: "
+for ((i=0; i<n; i++)); do
+ echo -n "$a "
+ fn=$((a + b))
+ a=$b
+ b=$fn
+done
+echo</pre>
+    </div>
+    <div class="command-box">
+        <h4>Commands to run:</h4>
+        <div class="cmd">chmod +x fibonacci.sh && ./fibonacci.sh</div>
+    </div>
+  </div>
+
+  <div class="answer-section" id="q10">
+    <div class="section-header">
+      <span class="num">10</span>
+      <h2>Find Largest of Three Numbers</h2>
+    </div>
+    <div class="code-wrapper">
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre>#!/bin/bash
+echo "Enter three numbers: "
+read a b c
+if [ $a -ge $b ] && [ $a -ge $c ]; then
+ echo "$a is Largest"
+elif [ $b -ge $a ] && [ $b -ge $c ]; then
+ echo "$b is Largest"
+else
+ echo "$c is Largest"
+fi</pre>
+    </div>
+    <div class="command-box">
+        <h4>Commands to run:</h4>
+        <div class="cmd">chmod +x largest.sh && ./largest.sh</div>
     </div>
   </div>
 
