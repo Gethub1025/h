@@ -16,6 +16,7 @@
     --muted: #64748b;
     --code-bg: #0a0c10;
     --success: #22c55e;
+    --cmd-bg: #1e293b;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -163,6 +164,25 @@
     tab-size: 4;
   }
 
+  /* ── Command Box ── */
+  .command-box {
+    background: var(--cmd-bg);
+    padding: 16px 24px;
+    border-top: 1px solid var(--border);
+  }
+  .command-box h4 {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .cmd {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--success);
+    font-size: 0.85rem;
+  }
+
   html { scroll-behavior: smooth; }
 </style>
 </head>
@@ -191,8 +211,6 @@
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>#!/bin/bash
-# Program to check if a number is odd or even
-
 echo -n "Enter a number: "
 read n
 
@@ -201,6 +219,10 @@ if [ $((n % 2)) -eq 0 ]; then
 else
     echo "$n is Odd"
 fi</pre>
+    </div>
+    <div class="command-box">
+        <h4>Commands to run:</h4>
+        <div class="cmd">chmod +x odd.sh && ./odd.sh</div>
     </div>
   </div>
 
@@ -212,8 +234,6 @@ fi</pre>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>#!/bin/bash
-# Program to check if a year is a leap year
-
 echo -n "Enter year (YYYY): "
 read y
 
@@ -225,6 +245,10 @@ else
     echo "$y is not a Leap Year"
 fi</pre>
     </div>
+    <div class="command-box">
+        <h4>Commands to run:</h4>
+        <div class="cmd">chmod +x leap.sh && ./leap.sh</div>
+    </div>
   </div>
 
   <div class="answer-section" id="q3">
@@ -235,8 +259,6 @@ fi</pre>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>#!/bin/bash
-# Program to check for prime numbers
-
 echo -n "Enter a number: "
 read n
 
@@ -255,6 +277,10 @@ done
 
 echo "$n is a prime number"</pre>
     </div>
+    <div class="command-box">
+        <h4>Commands to run:</h4>
+        <div class="cmd">chmod +x prime.sh && ./prime.sh</div>
+    </div>
   </div>
 
   <div class="answer-section" id="q4">
@@ -265,14 +291,9 @@ echo "$n is a prime number"</pre>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>#!/bin/bash
-# Program to check a^2 + b^2 = c^2
-
-echo "Enter side a: "
-read a
-echo "Enter side b: "
-read b
-echo "Enter hypotenuse c: "
-read c
+echo "Enter side a: "; read a
+echo "Enter side b: "; read b
+echo "Enter hypotenuse c: "; read c
 
 lhs=$((a*a + b*b))
 rhs=$((c*c))
@@ -282,6 +303,10 @@ if [ $lhs -eq $rhs ]; then
 else
     echo "This is NOT a Pythagorean Triplet."
 fi</pre>
+    </div>
+    <div class="command-box">
+        <h4>Commands to run:</h4>
+        <div class="cmd">chmod +x pythagoras.sh && ./pythagoras.sh</div>
     </div>
   </div>
 
@@ -293,23 +318,23 @@ fi</pre>
     <div class="code-wrapper">
       <button class="copy-btn" onclick="copyCode(this)">Copy</button>
 <pre>#!/bin/bash
-# Program to find max and min among 3 numbers
-
 echo "Enter three numbers separated by spaces: "
 read a b c
 
-# Finding Maximum
 max=$a
 if [ $b -gt $max ]; then max=$b; fi
 if [ $c -gt $max ]; then max=$c; fi
 
-# Finding Minimum
 min=$a
 if [ $b -lt $min ]; then min=$b; fi
 if [ $c -lt $min ]; then min=$c; fi
 
 echo "Maximum number is: $max"
 echo "Minimum number is: $min"</pre>
+    </div>
+    <div class="command-box">
+        <h4>Commands to run:</h4>
+        <div class="cmd">chmod +x maxmin.sh && ./maxmin.sh</div>
     </div>
   </div>
 
