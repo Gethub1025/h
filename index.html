@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>EduPlusCampus - Shell Scripting</title>
+<title>EduPlusCampus - DevOps Shell Scripting</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:wght@400;600;700&display=swap');
 
@@ -20,168 +20,42 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Sora', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; line-height: 1.5; }
 
-  body {
-    font-family: 'Sora', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-  }
-
-  /* ── Header ── */
   header {
     background: linear-gradient(135deg, #0d1525 0%, #1a0a2e 100%);
     border-bottom: 1px solid var(--border);
-    padding: 36px 24px 28px;
+    padding: 40px 24px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
   }
-  header::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 60% 80% at 50% -20%, rgba(79,142,247,.18) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: -.02em;
-    background: linear-gradient(90deg, var(--accent), #a78bfa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  header p {
-    margin-top: 6px;
-    color: var(--muted);
-    font-size: .85rem;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-  }
+  header h1 { font-size: 2.2rem; background: linear-gradient(90deg, var(--accent), #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  header p { margin-top: 8px; color: var(--muted); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.05em; }
 
-  /* ── Layout ── */
-  .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px 80px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
-  /* ── Question index ── */
-  .index {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 12px;
-    margin-bottom: 48px;
-  }
+  .set-label { font-weight: 700; color: var(--accent); margin: 30px 0 15px; display: block; border-left: 4px solid var(--accent); padding-left: 10px; }
+
+  .index { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-bottom: 50px; }
   .index a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 18px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    text-decoration: none;
-    color: var(--text);
-    font-size: .85rem;
-    font-weight: 600;
-    transition: border-color .2s, background .2s, transform .15s;
+    display: flex; align-items: center; gap: 10px; padding: 12px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    text-decoration: none; color: var(--text); font-size: 0.8rem; transition: 0.2s;
   }
-  .index a:hover {
-    border-color: var(--accent);
-    background: #1c2236;
-    transform: translateY(-2px);
-  }
-  .q-num {
-    width: 28px; height: 28px;
-    border-radius: 6px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: .75rem;
-    font-weight: 700;
-    flex-shrink: 0;
-    color: #fff;
-  }
+  .index a:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .q-num { width: 24px; height: 24px; border-radius: 4px; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0; }
 
-  /* ── Answer sections ── */
-  .answer-section {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    margin-bottom: 32px;
-    overflow: hidden;
-  }
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 20px 24px;
-    background: linear-gradient(90deg, #131825, #0d1020);
-    border-bottom: 1px solid var(--border);
-  }
-  .section-header .num {
-    width: 34px; height: 34px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 700;
-    font-size: .8rem;
-    flex-shrink: 0;
-    color: #fff;
-  }
-  .section-header h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text);
-  }
+  .answer-section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 40px; overflow: hidden; }
+  .section-header { padding: 18px 24px; background: #131825; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+  .section-header .num { width: 30px; height: 30px; border-radius: 6px; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; }
+  .section-header h2 { font-size: 1rem; }
 
-  /* ── Code block ── */
   .code-wrapper { position: relative; }
-  .copy-btn {
-    position: absolute;
-    top: 14px; right: 14px;
-    background: rgba(79,142,247,.15);
-    border: 1px solid rgba(79,142,247,.3);
-    color: var(--accent);
-    padding: 5px 14px;
-    border-radius: 6px;
-    font-size: .78rem;
-    font-family: 'JetBrains Mono', monospace;
-    cursor: pointer;
-    transition: background .2s, color .2s;
-    z-index: 2;
-  }
-  .copy-btn:hover { background: rgba(79,142,247,.28); }
-  .copy-btn.done { color: var(--success); border-color: rgba(34,197,94,.3); background: rgba(34,197,94,.1); }
+  .copy-btn { position: absolute; top: 12px; right: 12px; background: rgba(79,142,247,0.2); border: 1px solid var(--accent); color: var(--accent); padding: 4px 10px; border-radius: 4px; font-size: 0.7rem; cursor: pointer; }
+  pre { background: var(--code-bg); padding: 50px 24px 20px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; overflow-x: auto; color: #cbd5e1; }
 
-  pre {
-    background: var(--code-bg);
-    color: #c9d8f0;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: .8rem;
-    line-height: 1.7;
-    padding: 56px 24px 24px;
-    overflow-x: auto;
-    white-space: pre;
-    tab-size: 4;
-  }
-
-  /* ── Command Box ── */
-  .command-box {
-    background: var(--cmd-bg);
-    padding: 16px 24px;
-    border-top: 1px solid var(--border);
-  }
-  .command-box h4 {
-    font-size: 0.75rem;
-    color: var(--muted);
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .cmd {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--success);
-    font-size: 0.85rem;
-  }
+  .command-box { background: var(--cmd-bg); padding: 15px 24px; border-top: 1px solid var(--border); }
+  .cmd { font-family: 'JetBrains Mono', monospace; color: var(--success); font-size: 0.85rem; }
+  .cmd::before { content: "$ "; color: var(--muted); }
 
   html { scroll-behavior: smooth; }
 </style>
@@ -190,265 +64,185 @@
 
 <header>
   <h1>EduPlusCampus</h1>
-  <p>Linux Operating System — Shell Scripting Question Bank</p>
+  <p>Sanjivani University — DevOps (SET 2, 3, 4) Complete Question Bank</p>
 </header>
 
 <div class="container">
 
+  <span class="set-label">SET - 2 Scripts</span>
   <nav class="index">
-    <a href="#q1"><span class="q-num">1</span>Odd or Even</a>
-    <a href="#q2"><span class="q-num">2</span>Leap Year</a>
-    <a href="#q3"><span class="q-num">3</span>Prime Number</a>
-    <a href="#q4"><span class="q-num">4</span>Pythagoras Theorem</a>
-    <a href="#q5"><span class="q-num">5</span>Max & Min (3 Nos)</a>
-    <a href="#q6"><span class="q-num">6</span>Factorial of a Number</a>
-    <a href="#q7"><span class="q-num">7</span>Reverse a String</a>
-    <a href="#q8"><span class="q-num">8</span>Sum of Digits</a>
-    <a href="#q9"><span class="q-num">9</span>Fibonacci Series</a>
-    <a href="#q10"><span class="q-num">10</span>Largest of Three</a>
+    <a href="#s2q1"><span class="q-num">1</span>Min of N numbers</a>
+    <a href="#s2q2"><span class="q-num">2</span>Leap Year Check</a>
+    <a href="#s2q3"><span class="q-num">3</span>Palindrome String</a>
+    <a href="#s2q4"><span class="q-num">4</span>Area of Rectangle</a>
   </nav>
 
-  <div class="answer-section" id="q1">
-    <div class="section-header">
-      <span class="num">1</span>
-      <h2>Determine whether a Number is Odd or Even</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>#!/bin/bash
-echo -n "Enter a number: "
-read n
-if [ $((n % 2)) -eq 0 ]; then
-    echo "$n is Even"
-else
-    echo "$n is Odd"
-fi</pre>
-    </div>
-    <div class="command-box">
-        <h4>Commands to run:</h4>
-        <div class="cmd">chmod +x odd.sh && ./odd.sh</div>
-    </div>
+  <span class="set-label">SET - 3 Scripts</span>
+  <nav class="index">
+    <a href="#s3q1"><span class="q-num">1</span>Prime Number Check</a>
+    <a href="#s3q2"><span class="q-num">2</span>Sum of N numbers</a>
+    <a href="#s3q3"><span class="q-num">3</span>Display Vowels</a>
+    <a href="#s3q4"><span class="q-num">4</span>Volume of Cube</a>
+  </nav>
+
+  <span class="set-label">SET - 4 Scripts</span>
+  <nav class="index">
+    <a href="#s4q1"><span class="q-num">1</span>Sum of Digits</a>
+    <a href="#s4q2"><span class="q-num">2</span>Average of N numbers</a>
+    <a href="#s4q3"><span class="q-num">3</span>Display Consonants</a>
+    <a href="#s4q4"><span class="q-num">4</span>Volume of Cuboid</a>
+  </nav>
+
+  <div class="answer-section" id="s2q1">
+    <div class="section-header"><span class="num">1</span><h2>Find minimum of provided set of numbers</h2></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre>#!/bin/bash
+echo "Enter numbers separated by space:"
+read -a nums
+min=${nums[0]}
+for i in "${nums[@]}"; do
+    if [ $i -lt $min ]; then min=$i; fi
+done
+echo "Minimum number is: $min"</pre></div>
+    <div class="command-box"><div class="cmd">chmod +x min.sh && ./min.sh</div></div>
   </div>
 
-  <div class="answer-section" id="q2">
-    <div class="section-header">
-      <span class="num">2</span>
-      <h2>Determine whether a Year is Leap Year or not</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>#!/bin/bash
-echo -n "Enter year (YYYY): "
+  <div class="answer-section" id="s2q2">
+    <div class="section-header"><span class="num">2</span><h2>Determine whether a given year is leap year</h2></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre>#!/bin/bash
+echo -n "Enter year: "
 read y
-if [ $((y % 400)) -eq 0 ]; then
-    echo "$y is a Leap Year"
-elif [ $((y % 100)) -ne 0 ] && [ $((y % 4)) -eq 0 ]; then
+if [ $((y % 400)) -eq 0 ] || ([ $((y % 4)) -eq 0 ] && [ $((y % 100)) -ne 0 ]); then
     echo "$y is a Leap Year"
 else
     echo "$y is not a Leap Year"
-fi</pre>
-    </div>
-    <div class="command-box">
-        <h4>Commands to run:</h4>
-        <div class="cmd">chmod +x leap.sh && ./leap.sh</div>
-    </div>
+fi</pre></div>
+    <div class="command-box"><div class="cmd">chmod +x leap.sh && ./leap.sh</div></div>
   </div>
 
-  <div class="answer-section" id="q3">
-    <div class="section-header">
-      <span class="num">3</span>
-      <h2>Determine whether a Number is Prime or not</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>#!/bin/bash
-echo -n "Enter a number: "
+  <div class="answer-section" id="s2q3">
+    <div class="section-header"><span class="num">3</span><h2>Determine whether a string is palindrome</h2></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre>#!/bin/bash
+echo -n "Enter string: "
+read str
+rev=$(echo $str | rev)
+if [ "$str" == "$rev" ]; then
+    echo "String is Palindrome"
+else
+    echo "String is not Palindrome"
+fi</pre></div>
+    <div class="command-box"><div class="cmd">chmod +x pal.sh && ./pal.sh</div></div>
+  </div>
+
+  <div class="answer-section" id="s2q4">
+    <div class="section-header"><span class="num">4</span><h2>Find area of a rectangle</h2></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre>#!/bin/bash
+echo -n "Enter length: "
+read l
+echo -n "Enter width: "
+read w
+area=$(echo "$l * $w" | bc)
+echo "Area of Rectangle: $area"</pre></div>
+    <div class="command-box"><div class="cmd">chmod +x area.sh && ./area.sh</div></div>
+  </div>
+
+  <div class="answer-section" id="s3q1">
+    <div class="section-header"><span class="num">1</span><h2>Determine whether a given number is prime</h2></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre>#!/bin/bash
+echo -n "Enter number: "
 read n
-if [ $n -lt 2 ]; then
+for((i=2; i<=n/2; i++)); do
+  if [ $((n%i)) -eq 0 ]; then
     echo "$n is not prime"
     exit
-fi
-for ((i=2; i<=n/2; i++)); do
-    if [ $((n % i)) -eq 0 ]; then
-        echo "$n is not prime"
-        exit
-    fi
+  fi
 done
-echo "$n is a prime number"</pre>
-    </div>
-    <div class="command-box">
-        <h4>Commands to run:</h4>
-        <div class="cmd">chmod +x prime.sh && ./prime.sh</div>
-    </div>
+echo "$n is prime"</pre></div>
+    <div class="command-box"><div class="cmd">chmod +x prime.sh && ./prime.sh</div></div>
   </div>
 
-  <div class="answer-section" id="q4">
-    <div class="section-header">
-      <span class="num">4</span>
-      <h2>Determine if a Triplet follows Pythagoras Theorem</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>#!/bin/bash
-echo "Enter sides a, b and hypotenuse c: "
-read a b c
-lhs=$((a*a + b*b))
-rhs=$((c*c))
-if [ $lhs -eq $rhs ]; then
-    echo "This is a Pythagorean Triplet."
-else
-    echo "This is NOT a Pythagorean Triplet."
-fi</pre>
-    </div>
-    <div class="command-box">
-        <h4>Commands to run:</h4>
-        <div class="cmd">chmod +x pythagoras.sh && ./pythagoras.sh</div>
-    </div>
-  </div>
-
-  <div class="answer-section" id="q5">
-    <div class="section-header">
-      <span class="num">5</span>
-      <h2>Determine Maximum and Minimum of Numbers</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>#!/bin/bash
-echo "Enter three numbers: "
-read a b c
-max=$a
-[ $b -gt $max ] && max=$b
-[ $c -gt $max ] && max=$c
-min=$a
-[ $b -lt $min ] && min=$b
-[ $c -lt $min ] && min=$c
-echo "Maximum: $max"
-echo "Minimum: $min"</pre>
-    </div>
-    <div class="command-box">
-        <h4>Commands to run:</h4>
-        <div class="cmd">chmod +x maxmin.sh && ./maxmin.sh</div>
-    </div>
-  </div>
-
-  <div class="answer-section" id="q6">
-    <div class="section-header">
-      <span class="num">6</span>
-      <h2>Factorial of a Number</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>#!/bin/bash
-echo -n "Enter a number: "
-read num
-fact=1
-for ((i=1; i<=num; i++)); do
- fact=$((fact * i))
-done
-echo "Factorial of $num = $fact"</pre>
-    </div>
-    <div class="command-box">
-        <h4>Commands to run:</h4>
-        <div class="cmd">chmod +x factorial.sh && ./factorial.sh</div>
-    </div>
-  </div>
-
-  <div class="answer-section" id="q7">
-    <div class="section-header">
-      <span class="num">7</span>
-      <h2>Reverse a String</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>#!/bin/bash
-echo -n "Enter a string: "
-read str
-rev=""
-len=${#str}
-for ((i=$len-1; i>=0; i--)); do
- rev="$rev${str:$i:1}"
-done
-echo "Reversed string: $rev"</pre>
-    </div>
-    <div class="command-box">
-        <h4>Commands to run:</h4>
-        <div class="cmd">chmod +x reverse.sh && ./reverse.sh</div>
-    </div>
-  </div>
-
-  <div class="answer-section" id="q8">
-    <div class="section-header">
-      <span class="num">8</span>
-      <h2>Sum of Digits of a Number</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>#!/bin/bash
-echo -n "Enter a number: "
-read num
+  <div class="answer-section" id="s3q2">
+    <div class="section-header"><span class="num">2</span><h2>Find sum of provided set of numbers</h2></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre>#!/bin/bash
+echo "Enter numbers separated by space:"
+read -a nums
 sum=0
-while [ $num -gt 0 ]; do
- digit=$((num % 10))
- sum=$((sum + digit))
- num=$((num / 10))
+for i in "${nums[@]}"; do
+    sum=$((sum + i))
 done
-echo "Sum of digits = $sum"</pre>
-    </div>
-    <div class="command-box">
-        <h4>Commands to run:</h4>
-        <div class="cmd">chmod +x sum_digits.sh && ./sum_digits.sh</div>
-    </div>
+echo "Total Sum: $sum"</pre></div>
+    <div class="command-box"><div class="cmd">chmod +x sum_set.sh && ./sum_set.sh</div></div>
   </div>
 
-  <div class="answer-section" id="q9">
-    <div class="section-header">
-      <span class="num">9</span>
-      <h2>Fibonacci Series up to N Terms</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>#!/bin/bash
-echo -n "Enter number of terms: "
+  <div class="answer-section" id="s3q3">
+    <div class="section-header"><span class="num">3</span><h2>Display vowels in a string</h2></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre>#!/bin/bash
+echo -n "Enter string: "
+read str
+echo -n "Vowels: "
+echo $str | grep -oi '[aeiou]' | tr '\n' ' '
+echo</pre></div>
+    <div class="command-box"><div class="cmd">chmod +x vowels.sh && ./vowels.sh</div></div>
+  </div>
+
+  <div class="answer-section" id="s3q4">
+    <div class="section-header"><span class="num">4</span><h2>Find volume of cube</h2></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre>#!/bin/bash
+echo -n "Enter side: "
+read s
+vol=$((s * s * s))
+echo "Volume of Cube: $vol"</pre></div>
+    <div class="command-box"><div class="cmd">chmod +x cube.sh && ./cube.sh</div></div>
+  </div>
+
+  <div class="answer-section" id="s4q1">
+    <div class="section-header"><span class="num">1</span><h2>Find sum of digits of a number</h2></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre>#!/bin/bash
+echo -n "Enter number: "
 read n
-a=0
-b=1
-echo -n "Fibonacci Series: "
-for ((i=0; i<n; i++)); do
- echo -n "$a "
- fn=$((a + b))
- a=$b
- b=$fn
+sum=0
+while [ $n -gt 0 ]; do
+    sum=$((sum + n % 10))
+    n=$((n / 10))
 done
-echo</pre>
-    </div>
-    <div class="command-box">
-        <h4>Commands to run:</h4>
-        <div class="cmd">chmod +x fibonacci.sh && ./fibonacci.sh</div>
-    </div>
+echo "Sum of digits: $sum"</pre></div>
+    <div class="command-box"><div class="cmd">chmod +x sum_digits.sh && ./sum_digits.sh</div></div>
   </div>
 
-  <div class="answer-section" id="q10">
-    <div class="section-header">
-      <span class="num">10</span>
-      <h2>Find Largest of Three Numbers</h2>
-    </div>
-    <div class="code-wrapper">
-      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-<pre>#!/bin/bash
-echo "Enter three numbers: "
-read a b c
-if [ $a -ge $b ] && [ $a -ge $c ]; then
- echo "$a is Largest"
-elif [ $b -ge $a ] && [ $b -ge $c ]; then
- echo "$b is Largest"
-else
- echo "$c is Largest"
-fi</pre>
-    </div>
-    <div class="command-box">
-        <h4>Commands to run:</h4>
-        <div class="cmd">chmod +x largest.sh && ./largest.sh</div>
-    </div>
+  <div class="answer-section" id="s4q2">
+    <div class="section-header"><span class="num">2</span><h2>Determine average of provided set of numbers</h2></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre>#!/bin/bash
+echo "Enter numbers separated by space:"
+read -a nums
+sum=0
+count=${#nums[@]}
+for i in "${nums[@]}"; do
+    sum=$((sum + i))
+done
+avg=$(echo "scale=2; $sum / $count" | bc)
+echo "Average: $avg"</pre></div>
+    <div class="command-box"><div class="cmd">chmod +x avg.sh && ./avg.sh</div></div>
+  </div>
+
+  <div class="answer-section" id="s4q3">
+    <div class="section-header"><span class="num">3</span><h2>Display consonants in a string</h2></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre>#!/bin/bash
+echo -n "Enter string: "
+read str
+echo -n "Consonants: "
+echo $str | grep -oi '[bcdfghjklmnpqrstvwxyz]' | tr '\n' ' '
+echo</pre></div>
+    <div class="command-box"><div class="cmd">chmod +x cons.sh && ./cons.sh</div></div>
+  </div>
+
+  <div class="answer-section" id="s4q4">
+    <div class="section-header"><span class="num">4</span><h2>Find volume of cuboid</h2></div>
+    <div class="code-wrapper"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre>#!/bin/bash
+echo -n "Length: "; read l
+echo -n "Width: "; read w
+echo -n "Height: "; read h
+vol=$((l * w * h))
+echo "Volume of Cuboid: $vol"</pre></div>
+    <div class="command-box"><div class="cmd">chmod +x cuboid.sh && ./cuboid.sh</div></div>
   </div>
 
 </div>
@@ -458,8 +252,7 @@ function copyCode(btn) {
   const code = btn.nextElementSibling.innerText;
   navigator.clipboard.writeText(code).then(() => {
     btn.textContent = "Copied!";
-    btn.classList.add("done");
-    setTimeout(() => { btn.textContent = "Copy"; btn.classList.remove("done"); }, 1500);
+    setTimeout(() => { btn.textContent = "Copy"; }, 1500);
   });
 }
 </script>
